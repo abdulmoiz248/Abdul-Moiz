@@ -1,107 +1,68 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import { motion, useMotionValue } from 'framer-motion'
+import { FuturisticButton } from '@/components/Button/HeroButtons'
+import {FuturisticBackground} from "@/components/HeroBackground"
+import { TypewriterEffect } from './TypeWriterEffect'
+import {HolographicSphere} from './HolographicSphere'
 
-export default function CreativeHero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+interface HeroProps {
+  userName?: string;
+}
+
+const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
   const [isHovering, setIsHovering] = useState(false)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      mouseX.set(e.clientX)
+      mouseY.set(e.clientY)
     }
-
     window.addEventListener('mousemove', handleMouseMove)
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [mouseX, mouseY])
 
   return (
-    <section className="pl-[25%] relative h-screen overflow-hidden bg-black text-white">
-      {/* Content container */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center p-4">
-        {/* Animated name */}
-        <h1 className="text-6xl font-bold mb-4">
-  {'Abdul Moiz'}
-</h1>
-
-
-        {/* Tagline with typing effect */}
-    
-<p className="text-2xl mb-8 h-8 overflow-hidden ">
-  Web Developer & Digital Artist
-</p>
-
-
-        {/* Interactive image */}
-        <div 
-          className=" relative w-64 h-64 rounded-full overflow-hidden cursor-pointer mb-8 sm:mb-0 sm:absolute sm:left-8 sm:top-1/4"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
+    <div 
+      className="relative w-full h-screen bg-black overflow-hidden"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
         >
-          <Image
-            src="/me.jpg"
-            alt="Zoe Quantum"
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-300 hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-            <span className="text-white text-lg font-semibold">Explore My World</span>
-          </div>
+          <HolographicSphere imageSrc={'/me.jpg'} />
+        </motion.div>
+        <motion.h1
+          className="text-6xl font-bold mb-4 mt-8"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
+          {userName}
+        </motion.h1>
+        <TypewriterEffect text="Innovator | Visionary | Future-Shaper" />
+        <div className="mt-8 flex space-x-4">
+          <FuturisticButton onClick={() => console.log("Access Dimension clicked")}>
+            Access the Dimension
+          </FuturisticButton>
+          <FuturisticButton onClick={() => console.log("Send Signal clicked")}>
+            Send a Signal
+          </FuturisticButton>
         </div>
       </div>
-
-      {/* Particle effect */}
-      <Particles />
-
-      <style jsx global>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-        }
-
-        @keyframes typing {
-          from { width: 0; }
-          to { width: 100%; }
-        }
-
-        .animate-typing {
-          animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes blink-caret {
-          from, to { border-color: transparent; }
-          50% { border-color: white; }
-        }
-
-        h1 span {
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
-    </section>
-  )
-}
-
-function Particles() {
-  return (
-    <div className="absolute inset-0 pointer-events-none">
-      {[...Array(50)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute bg-white rounded-full opacity-50"
-          style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            width: `${Math.random() * 4 + 1}px`,
-            height: `${Math.random() * 4 + 1}px`,
-            animation: `float ${Math.random() * 10 + 5}s ease-in-out infinite`,
-          }}
-        />
-      ))}
     </div>
   )
 }
+
+
+
+export default Hero

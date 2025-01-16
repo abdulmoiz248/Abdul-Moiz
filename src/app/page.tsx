@@ -1,13 +1,17 @@
 
 
-import CreativeHero from '@/components/Hero'
+
+import ContributionsDisplay from '@/components/ContributionsDisplay'
+import Hero from '@/components/Hero'
+import { IconCloudDemo } from '@/components/SkillIcon'
 import React from 'react'
 
 export default function page() {
   return (
 <>
-
-<CreativeHero/>
+<Hero userName='Abdul Moiz'/>
+<ContributionsDisplay/>
+<IconCloudDemo/>
 </>
   
   )

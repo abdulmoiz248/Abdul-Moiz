@@ -1,7 +1,7 @@
 import React from "react";
 import ScratchToReveal from "@/components/ui/scratch-to-reveal";
 
-const ScratchToRevealDemo = () => {
+export const ScratchToRevealDemo = () => {
   const handleComplete = () => {
     // Do Something
   };
@@ -22,4 +22,3 @@ const ScratchToRevealDemo = () => {
   );
 };
 
-export ScratchToRevealDemo;

@@ -106,7 +106,7 @@ export function Header() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full text-white"
                     )}
                   >
                     <item.icon className="size-4 " />
@@ -128,7 +128,7 @@ export function Header() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full text-white"
                     )}
                   >
                     <social.icon className="size-4" />
@@ -144,7 +144,17 @@ export function Header() {
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
-                {/* <ModeToggle  /> */}
+              m
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Theme</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                h
               </TooltipTrigger>
               <TooltipContent>
                 <p>Theme</p>
