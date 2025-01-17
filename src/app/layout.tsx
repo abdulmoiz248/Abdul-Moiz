@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import CustomScrollbar from "@/components/CustomScrollbar";
 
 export const metadata: Metadata = {
   title: "Abdul Moiz",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <CustomScrollbar/>
         <Header/>
         {children}
       </body>

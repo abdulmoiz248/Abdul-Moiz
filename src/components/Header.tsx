@@ -94,7 +94,7 @@ const DATA = {
 
 export function Header() {
   return (
-    <header className=" fixed  flex z-40 w-full flex-col items-center justify-center overflow-hidden rounded-lg ">
+    <header className=" fixed  flex z-20 w-full flex-col items-center justify-center overflow-hidden rounded-lg ">
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
