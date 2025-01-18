@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import { IconCloud } from "@/components/ui/icon-cloud";
-import { FuturisticBackground } from './HeroBackground';
+import { FuturisticBackground } from '../HeroBackground';
 
 const slugs = [
   "typescript",
@@ -15,13 +15,17 @@ const slugs = [
   "nextdotjs",
   "vercel",
   "git",
- 
   "github",
-  "gitlab",
   "visualstudiocode",
-  "python",
+  "python3",
   "cplusplus",
+  "redux",
+  "mongodb",
+  "sql",
+  "mssql",
+  "intellij",
 ];
+
 
 export function IconCloudDemo() {
   const images = slugs.map(
