@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, useMotionValue } from 'framer-motion'
+import {  useMotionValue } from 'framer-motion'
 import { IconCloud } from "@/components/ui/icon-cloud";
 import { FuturisticBackground } from '../HeroBackground';
 
@@ -36,6 +36,7 @@ export function IconCloudDemo() {
   const mouseY = useMotionValue(0);
 
   useEffect(() => {
+    setIsHovering(false);
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);

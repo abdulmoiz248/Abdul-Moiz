@@ -1,8 +1,6 @@
 'use client'
-import { useState, useRef, useEffect } from 'react'
-import Image from 'next/image'
+import { useState,  useEffect } from 'react'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
-import { Github, ExternalLink, X } from 'lucide-react'
 import ProjectCard from './ProjectCard'
 import ProjectModal from './ProjectModal'
 export interface Project {

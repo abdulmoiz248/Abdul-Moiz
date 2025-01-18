@@ -1,7 +1,7 @@
 'use client'
-import { useState, useRef, useEffect } from 'react'
+import {  useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence, useAnimation } from 'framer-motion'
+import { motion,  } from 'framer-motion'
 import { Github, ExternalLink, X } from 'lucide-react'
 import { Project } from './Projects'
 export default function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {

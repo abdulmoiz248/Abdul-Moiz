@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
-import { FuturisticButton } from '@/components/Button/HeroButtons'
 import {FuturisticBackground} from "@/components/HeroBackground"
 import {HolographicSphere} from './HolographicSphere'
 import TypingAnimation from './ui/typing-animation'

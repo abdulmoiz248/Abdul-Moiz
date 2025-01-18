@@ -15,11 +15,14 @@ const fetchGitHubContributions = async (username: string) => {
     return response.data.data
   }
 }
+interface ContributionsData {
+  totalContributions: number
+}
 
 export default function GitHubLeetCodeStats() {
   const [leetCodeCount, setLeetCodeCount] = useState(0)
   const [githubContributions, setGithubContributions] = useState(0)
-  const [contributionsData, setContributionsData] = useState<any>(null)
+  const [contributionsData, setContributionsData] = useState<ContributionsData | null>(null)
   const [dataReady, setDataReady] = useState(false)
 
   useEffect(() => {

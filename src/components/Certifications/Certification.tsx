@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
 import { FuturisticBackground } from '../HeroBackground';
-import { Award, Calendar } from 'lucide-react';
+import {  Calendar } from 'lucide-react';
 import CertificateModal from './CertificateModal';
 
 interface Certificate {
@@ -49,6 +49,7 @@ export default function CertificateSection() {
   const mouseY = useMotionValue(0);
 
   useEffect(() => {
+    setIsHovering(false);
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);

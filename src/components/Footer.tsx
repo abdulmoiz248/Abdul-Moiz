@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactEventHandler, useState } from 'react'
+import {  useState } from 'react'
 import { useFormStatus } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send, CheckCircle } from 'lucide-react'
@@ -29,7 +29,7 @@ export default function StylishContactFooter() {
   const [message, setMessage] = useState('')
   const [feedback, setFeedback] = useState('')
 
-  async function handleSubmit(event:any) {
+  async function handleSubmit(event:React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
    let res=await axios.post('/api/send-mail',{message})
@@ -68,9 +68,9 @@ export default function StylishContactFooter() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Your thoughts, unfiltered and untraced. Share what's on your mind.
+          Your thoughts, unfiltered and untraced. Share what&apo;s on your mind.
         </motion.p>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={(e:React.FormEvent<HTMLFormElement>)=>handleSubmit(e)} className="space-y-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

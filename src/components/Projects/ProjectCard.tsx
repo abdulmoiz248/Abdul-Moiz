@@ -1,9 +1,7 @@
 
 'use client'
-import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence, useAnimation } from 'framer-motion'
-import { Github, ExternalLink, X } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { Project } from './Projects'
 export default function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
     return (

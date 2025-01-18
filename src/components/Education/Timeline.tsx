@@ -79,6 +79,7 @@ export default function Timeline() {
   const mouseY = useMotionValue(0)
 
   useEffect(() => {
+    setIsHovering(false);
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX)
       mouseY.set(e.clientY)
