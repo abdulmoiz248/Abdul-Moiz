@@ -1,10 +1,7 @@
-
-
-
 import CertificateSection from '@/components/Certifications/Certification'
 import ContributionsDisplay from '@/components/ContributionsDisplay'
 import Timeline from '@/components/Education/Timeline'
-import { ExperienceSection } from '@/components/ExperienceSection'
+import { ExperienceSection } from '@/components/Experience/ExperienceSection'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
