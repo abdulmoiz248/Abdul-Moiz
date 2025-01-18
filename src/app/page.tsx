@@ -4,7 +4,7 @@ import Timeline from '@/components/Education/Timeline'
 import { ExperienceSection } from '@/components/Experience/ExperienceSection'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
-import Projects from '@/components/Projects'
+import Projects from '@/components/Projects/Projects'
 import { IconCloudDemo } from '@/components/Skills/SkillIcon'
 import React from 'react'
 
