@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { GraduationCap, School, Laptop, Database } from 'lucide-react'
+import { GraduationCap, School, Laptop, Database,Book ,Clipboard  } from 'lucide-react'
 
 interface TimelineItemProps {
   event: {
@@ -17,6 +17,8 @@ const iconComponents = {
   School,
   Laptop,
   Database,
+  Book,
+  Clipboard
 }
 
 export default function TimelineItem({ event, onSelect }: TimelineItemProps) {

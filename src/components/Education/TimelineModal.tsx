@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { X } from 'lucide-react'
+import Link from 'next/link'
 
 interface TimelineModalProps {
   event: {
@@ -9,6 +10,7 @@ interface TimelineModalProps {
     year: number
     details?: string
     image?: string
+    link:string
   }
   onClose: () => void
 }
@@ -33,7 +35,9 @@ export default function TimelineModal({ event, onClose }: TimelineModalProps) {
         >
           <X className="w-6 h-6" />
         </button>
-        <h2 className="text-2xl font-bold mb-2 text-white">{event.title}</h2>
+        
+        <Link href={event.link}
+         className="text-2xl font-bold mb-2 text-white">{event.title}</Link>
         <p className="text-blue-500 font-semibold mb-4">{event.year}</p>
         {event.image && (
           <div className="mb-4 flex justify-center">

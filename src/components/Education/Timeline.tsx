@@ -15,44 +15,59 @@ interface TimelineEvent {
   icon: string
   details?: string
   image?: string
+  link:string
 }
 
 const events: TimelineEvent[] = [
   {
     id: 1,
-    year: 2010,
-    title: 'Primary School Graduation',
-    description: 'Completed primary education with honors',
-    icon: 'GraduationCap',
-    details: 'Graduated at the top of my class and received the "Outstanding Student" award.',
-    image: '/placeholder.svg?height=300&width=300'
+    year: 2020,
+    title: 'Divisional Public School',
+    description: 'Matriculation',
+    icon: 'School',
+    details: 'Marks: 1015/1100 Percentage:92%',
+    image: '/logo.jpg',
+    link:'https://www.dpslahore.edu.pk/'
   },
   {
     id: 2,
-    year: 2016,
-    title: 'High School Diploma',
-    description: 'Graduated from high school with distinction',
-    icon: 'School',
-    details: 'Valedictorian of my class. Participated in various extracurricular activities including debate club and science fair.',
-    image: '/placeholder.svg?height=300&width=300'
+    year: 2022,
+    title: 'Naeem Shah Acadmey',
+    description: 'Matriculation Preperation',
+    icon: 'Clipboard',
+    details: 'Prepared  for Matriculation Exams',
+    image: '/nsa.png',
+    link:"https://www.facebook.com/NSAcademy"
   },
   {
     id: 3,
-    year: 2020,
-    title: 'Bachelor\'s Degree',
-    description: 'Earned a Bachelor\'s degree in Computer Science',
-    icon: 'Laptop',
-    details: 'Graduated summa cum laude. Completed a thesis on "Artificial Intelligence in Healthcare".',
-    image: '/placeholder.svg?height=300&width=300'
+    year: 2022,
+    title: 'PGC',
+    description: 'Intermediate',
+    icon: 'GraduationCap',
+    details: 'Marks:928/1100 Percentage:85%',
+    image: '/pgc.jpg',
+    link:"https://pgc.edu/"
   },
   {
     id: 4,
     year: 2022,
-    title: 'Master\'s Degree',
-    description: 'Completed Master\'s in Data Science',
-    icon: 'Database',
-    details: 'Specialized in machine learning and big data analytics. Published two research papers during my studies.',
-    image: '/placeholder.svg?height=300&width=300'
+    title: 'STEP',
+    description: 'Entry Test Preperation',
+    icon: 'Book',
+    details: 'Preperation for Entry Test',
+    image: '/step.png',
+    link:"https://step.pgc.edu/"
+  },
+  {
+    id: 5,
+    year: 2026,
+    title: 'COMSATS',
+    description: 'Bachelor\'s degree in Computer Science',
+    icon: 'Laptop',
+    details: 'Current CGPA: 3.49',
+    image: '/cui.jpg',
+    link:"https://lahore.comsats.edu.pk"
   }
 ]
 
