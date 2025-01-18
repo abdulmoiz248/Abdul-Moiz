@@ -52,7 +52,7 @@ export default function StylishContactFooter() {
   }
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 sm:px-6 lg:px-8">
+    <footer id="contact" className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-4xl sm:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"

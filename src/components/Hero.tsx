@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
         >
           {userName}
         </motion.h1>
-      <TypingAnimation className='text-2xl text-black bg-gradient-to-r  from-blue-500 to-purple-500 p-2 rounded'>Driven by Vision, Powered by Innovation</TypingAnimation>
+      <TypingAnimation className='text-[15px] md:text-2xl text-black bg-gradient-to-r  from-blue-500 to-purple-500 p-2 rounded'>Driven by Vision, Powered by Innovation</TypingAnimation>
        
       </div>
     </div>
