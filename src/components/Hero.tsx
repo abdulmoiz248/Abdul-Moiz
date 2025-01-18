@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import { FuturisticButton } from '@/components/Button/HeroButtons'
 import {FuturisticBackground} from "@/components/HeroBackground"
-import { TypewriterEffect } from './TypeWriterEffect'
 import {HolographicSphere} from './HolographicSphere'
+import TypingAnimation from './ui/typing-animation'
 
 interface HeroProps {
   userName?: string;
@@ -42,22 +42,15 @@ const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
           <HolographicSphere imageSrc={'/me.jpg'} />
         </motion.div>
         <motion.h1
-          className="text-6xl font-bold mb-4 mt-8"
+          className="text-6xl font-bold mb-4 mt-8  bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
           {userName}
         </motion.h1>
-        <TypewriterEffect text="Innovator | Visionary | Future-Shaper" />
-        <div className="mt-8 flex space-x-4">
-          <FuturisticButton onClick={() => console.log("Access Dimension clicked")}>
-            Access the Dimension
-          </FuturisticButton>
-          <FuturisticButton onClick={() => console.log("Send Signal clicked")}>
-            Send a Signal
-          </FuturisticButton>
-        </div>
+      <TypingAnimation className='text-2xl text-black bg-gradient-to-r  from-blue-500 to-purple-500 p-2 rounded'>Driven by Vision, Powered by Innovation</TypingAnimation>
+       
       </div>
     </div>
   )

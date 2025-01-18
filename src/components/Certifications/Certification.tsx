@@ -61,7 +61,7 @@ export default function CertificateSection() {
     <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
       <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
       <div className="container z-10 mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center mb-16 text-white">My Certifications</h2>
+        <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">My Certifications</h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           initial={{ opacity: 0, y: 20 }}

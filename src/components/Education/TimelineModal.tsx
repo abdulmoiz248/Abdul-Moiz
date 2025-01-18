@@ -37,7 +37,7 @@ export default function TimelineModal({ event, onClose }: TimelineModalProps) {
         </button>
         
         <Link href={event.link}
-         className="text-2xl font-bold mb-2 text-white">{event.title}</Link>
+         className="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">{event.title}</Link>
         <p className="text-blue-500 font-semibold mb-4">{event.year}</p>
         {event.image && (
           <div className="mb-4 flex justify-center">

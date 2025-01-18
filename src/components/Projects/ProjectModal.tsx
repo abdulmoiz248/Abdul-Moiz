@@ -34,7 +34,7 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
         >
           <div className="flex justify-between items-start mb-4">
             <motion.h3 
-              className="text-2xl font-bold text-white"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}

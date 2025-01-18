@@ -9,7 +9,7 @@ export async function GET(req: Request) {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 
   if (!username) {
-    return NextResponse.json({ error: "GitHub username is required." }, { status: 400 })
+    return NextResponse.json({ sucess:false ,error: "GitHub username is required." }, { status: 400 })
   }
 
   try {
@@ -44,10 +44,10 @@ export async function GET(req: Request) {
     const { data } = await response.json()
 
     if (!data) {
-      return NextResponse.json({ error: "GitHub data not found." }, { status: 404 })
+      return NextResponse.json({sucess:false , error: "GitHub data not found." }, { status: 404 })
     }
 
-    return NextResponse.json(data.user.contributionsCollection.contributionCalendar)
+    return NextResponse.json({sucess:true ,data:data.user.contributionsCollection.contributionCalendar})
   } catch (error) {
     console.error("Error fetching GitHub contributions:", error)
     return NextResponse.json({ error: "Failed to fetch GitHub data" }, { status: 500 })

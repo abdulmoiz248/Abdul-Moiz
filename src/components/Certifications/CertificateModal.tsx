@@ -57,7 +57,7 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
           </motion.div>
           <div className="p-6">
             <motion.h3
-              className="text-2xl font-bold mb-2 text-white"
+              className="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}

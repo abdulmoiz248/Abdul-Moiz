@@ -31,7 +31,7 @@ export default function TimelineItem({ event, onSelect }: TimelineItemProps) {
       onClick={onSelect}
     >
       <div className="flex-1 text-right pr-4">
-        <h3 className="text-xl font-semibold">{event.title}</h3>
+        <h3 className="text-xl bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text font-semibold">{event.title}</h3>
         <p className="text-gray-400">{event.description}</p>
       </div>
       <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center z-10">
