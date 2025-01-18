@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { ReactEventHandler, useState } from 'react'
 import { useFormStatus } from 'react-dom'
-//import { submitMessage } from '../actions/submit-message'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send, CheckCircle } from 'lucide-react'
+import axios from 'axios'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -29,21 +29,32 @@ export default function StylishContactFooter() {
   const [message, setMessage] = useState('')
   const [feedback, setFeedback] = useState('')
 
-  async function handleSubmit(formData: FormData) {
-    // const result = await submitMessage(formData)
-    // if (result.success) {
-    //   setMessage('')
-    //   setFeedback(result.message)
-    //   setTimeout(() => setFeedback(''), 5000)
-    // } else {
-    //   setFeedback(result.message)
-    // }
+  async function handleSubmit(event:any) {
+    event.preventDefault()
+
+   let res=await axios.post('/api/send-mail',{message})
+  
+   if(res.data.success){
+    setMessage('')
+    setFeedback('Your message has been sent!')
+    setTimeout(() => setFeedback(''), 5000)
+   }else{//to counter 504 on vercel
+     res=await axios.post('/api/send-mail',message)
+     if(res.data.success){
+      setMessage('')
+      setFeedback('Your message has been sent!')
+      setTimeout(() => setFeedback(''), 5000)
+     }
+
+   }
+
+
   }
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <motion.h2 
+        <motion.h2
           className="text-4xl sm:text-5xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +70,7 @@ export default function StylishContactFooter() {
         >
           Your thoughts, unfiltered and untraced. Share what's on your mind.
         </motion.p>
-        <form action={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,7 +86,7 @@ export default function StylishContactFooter() {
               required
             ></textarea>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -97,8 +108,17 @@ export default function StylishContactFooter() {
             </AnimatePresence>
           </motion.div>
         </form>
+        <motion.div
+          className="mt-12 text-center text-gray-400"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          <p className="text-sm">© {new Date().getFullYear()} </p>
+       
+          <p className="text-sm">Designed with ❤️ Abdul Moiz</p>
+        </motion.div>
       </div>
     </footer>
   )
 }
-
