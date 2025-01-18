@@ -1,5 +1,5 @@
 'use client'
-import { motion, useMotionValue, useTransform, MotionValue } from "framer-motion";
+import { motion,  useTransform, MotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface FuturisticBackgroundProps {

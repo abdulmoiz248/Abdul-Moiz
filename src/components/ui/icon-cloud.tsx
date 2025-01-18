@@ -37,7 +37,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     startTime: number;
     duration: number;
   } | null>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number>(0);
   const rotationRef = useRef(rotation);
   const iconCanvasesRef = useRef<HTMLCanvasElement[]>([]);
   const imagesLoadedRef = useRef<boolean[]>([]);
@@ -96,6 +96,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
 
   // Generate initial icon positions on a sphere
   useEffect(() => {
+    setRotation({ x: 0, y: 0 });
     const items = icons || images || [];
     const newIcons: Icon[] = [];
     const numIcons = items.length || 20;
