@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import {  useMotionValue } from 'framer-motion'
 import { IconCloud } from "@/components/ui/icon-cloud";
-import { FuturisticBackground } from '../HeroBackground';
+import { FuturisticBackground } from '../Hero/HeroBackground';
 
 const slugs = [
   "typescript",

@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
-import {FuturisticBackground} from "@/components/HeroBackground"
+import {FuturisticBackground} from "@/components/Hero/HeroBackground"
 import {HolographicSphere} from './HolographicSphere'
-import TypingAnimation from './ui/typing-animation'
+import TypingAnimation from '../ui/typing-animation'
 
 interface HeroProps {
   userName?: string;
@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
       onMouseLeave={() => setIsHovering(false)}
     >
       <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-9">
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.5 }}

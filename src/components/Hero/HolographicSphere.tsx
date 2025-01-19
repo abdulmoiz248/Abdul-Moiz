@@ -6,7 +6,7 @@ interface HolographicSphereProps {
 
 export const HolographicSphere: React.FC<HolographicSphereProps> = ({ imageSrc }) => {
   return (
-    <div className="relative mt-[50%] w-40 h-40">
+    <div className="relative z-9 mt-[50%] w-40 h-40">
       {/* Animated Background */}
       <motion.div
         className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-75"

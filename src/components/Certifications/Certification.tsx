@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
-import { FuturisticBackground } from '../HeroBackground';
+import { FuturisticBackground } from '../Hero/HeroBackground';
 import {  Calendar } from 'lucide-react';
-import CertificateModal from './CertificateModal';
 
-interface Certificate {
+export interface Certificate {
   id: string;
   title: string;
   issuer: string;
@@ -42,8 +41,7 @@ const certificates: Certificate[] = [
   },
 ];
 
-export default function CertificateSection() {
-  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+export default function CertificateSection({setSelectedCertificate}: {setSelectedCertificate: (cert: Certificate) => void}) {
   const [isHovering, setIsHovering] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -119,10 +117,7 @@ export default function CertificateSection() {
           ))}
         </motion.div>
       </div>
-      <CertificateModal
-        certificate={selectedCertificate}
-        onClose={() => setSelectedCertificate(null)}
-      />
+
     </section>
   );
 }

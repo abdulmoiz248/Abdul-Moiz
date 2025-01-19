@@ -4,10 +4,9 @@ import { motion, useMotionValue } from 'framer-motion'
 import React, { useState, useEffect } from 'react'
 
 import TimelineItem from './TimelineItem'
-import TimelineModal from './TimelineModal'
-import { FuturisticBackground } from '../HeroBackground'
+import { FuturisticBackground } from '../Hero/HeroBackground'
 
-interface TimelineEvent {
+export interface TimelineEvent {
   id: number
   year: number
   title: string
@@ -71,8 +70,7 @@ const events: TimelineEvent[] = [
   }
 ]
 
-export default function Timeline() {
-  const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null)
+export default function Timeline({setSelectedEvent}: {setSelectedEvent: (event: TimelineEvent) => void}) {
 
   const [isHovering, setIsHovering] = useState(false)
   const mouseX = useMotionValue(0)
@@ -108,9 +106,7 @@ export default function Timeline() {
             ))}
           </div>
         </div>
-        {selectedEvent && (
-          <TimelineModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
-        )}
+       
       </div>
     </div>
   )

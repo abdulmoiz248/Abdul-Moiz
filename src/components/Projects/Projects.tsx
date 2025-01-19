@@ -2,7 +2,6 @@
 import { useState,  useEffect } from 'react'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 import ProjectCard from './ProjectCard'
-import ProjectModal from './ProjectModal'
 export interface Project {
   id: number
   title: string
@@ -62,8 +61,8 @@ const projects: Project[] = [
   }
 ]
 
-export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+export default function Projects({ setSelectedProject }:{setSelectedProject: (project: Project) => void}) {
+
   const controls = useAnimation()
 
   useEffect(() => {
@@ -102,12 +101,7 @@ export default function Projects() {
         </div>
       </div>
       <AnimatePresence>
-        {selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
+       
       </AnimatePresence>
     </section>
   )
