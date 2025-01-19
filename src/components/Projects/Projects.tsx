@@ -1,5 +1,5 @@
 'use client'
-import { useState,  useEffect } from 'react'
+import {   useEffect } from 'react'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 import ProjectCard from './ProjectCard'
 export interface Project {
