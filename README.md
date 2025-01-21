@@ -1,5 +1,3 @@
-Here’s the README.md in proper Markdown syntax:
-
 # Portfolio  
 
 Welcome to my personal portfolio! This project showcases my skills, creativity, and passion for web development. It highlights the projects I've worked on, my technical expertise, and my professional journey.  
