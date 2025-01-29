@@ -1,53 +1,58 @@
-## Abdul-Moiz
+**README.md**
 
-### Project Description
+# Abdul-Moiz
 
-Abdul-Moiz is a web application that enhances the user's browsing experience by providing a customizable and visually appealing interface. It features a modern and responsive design with various customization options, allowing users to tailor their browsing experience to their preferences.
+Abdul-Moiz is a Next.js application that provides a custom Tailwind CSS theme and a rewrite to the LeetCode website.
 
-### Installation
+## Installation
 
-**Prerequisites:**
+1. Clone the repository:
 
-* Node.js (version 16 or higher)
-* npm or yarn
+```
+git clone https://github.com/Abdul-Moiz/Abdul-Moiz.git
+```
 
-**Steps:**
+2. Install dependencies:
 
-1. Clone this repository: `git clone https://github.com/Abdul-Moiz/Abdul-Moiz.git`
-2. Navigate to the project directory: `cd Abdul-Moiz`
-3. Install the project's dependencies: `npm install` or `yarn`
+```
+npm install
+```
 
-### Usage
+## Usage
 
-1. Run the development server: `npm run dev` or `yarn dev`
-2. Open a browser and navigate to `localhost:3000` to view the application.
+1. Start the development server:
 
-### Customization
+```
+npm start
+```
 
-Abdul-Moiz allows for extensive customization to match users' preferences.
+2. Visit `http://localhost:3000` to see the application.
 
-* **Color Customization:** Change the application's color scheme by altering the CSS custom properties defined in the `theme` section of `tailwind.config.ts`.
-* **Font Customization:** Customize the application's typography by modifying variables within the CSS file.
-* **Layout Customization:** Adjust the layout by editing the `components.json` file.
+### LeetCode Rewrite
 
-### Contribution Guidelines
+The application includes a rewrite rule that redirects requests to `/leetcode/:path*` to `https://leetcode.com/:path*`. This allows you to access LeetCode directly from the application's URL bar.
 
-Contributions are welcome! To contribute to this project:
+## Tech Stack
 
-1. Fork this repository.
-2. Create a new branch for your feature or bug fix.
-3. Make changes to the code and ensure all tests pass.
-4. Submit a pull request against the `main` branch.
+- Next.js
+- Tailwind CSS
+- TypeScript
+- postcss-load-config
+- tailwindcss-animate
 
-### License
+## Contribution Guidelines
 
-This project is licensed under the MIT License. See the `LICENSE` file for full details.
+Contributions are welcome! Please follow these guidelines:
 
-### Acknowledgments
+- Fork the repository.
+- Create a new branch for your changes.
+- Make your changes and add tests for any new or modified functionality.
+- Submit a pull request with a clear description of your changes.
 
-This project was built upon the following open-source libraries:
+## License
 
-* Next.js
-* TailwindCSS
-* ESLint
-* Prettier
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
+
+## Acknowledgment
+
+This project was inspired by the [Vercel Next.js Blog Starter](https://github.com/vercel/next.js-blog-starter).
