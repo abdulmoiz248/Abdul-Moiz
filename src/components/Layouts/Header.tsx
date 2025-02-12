@@ -50,7 +50,7 @@ export default function Header() {
         
         <div className="flex items-center gap-2 px-2">
           <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="https://wa.me/+923080485737?text=Hello i visited you portfolio" target="_blank" rel="noopener noreferrer">
+            <Link href="https://wa.me/+923080485737?text=Hello! i visited your portfolio" target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon className="h-5 w-5" />
               <span className="sr-only">WhatsApp</span>
             </Link>

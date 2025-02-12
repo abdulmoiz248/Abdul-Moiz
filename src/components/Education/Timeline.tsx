@@ -30,7 +30,7 @@ const events: TimelineEvent[] = [
   },
   {
     id: 2,
-    year: 2022,
+    year: 2020,
     title: 'Naeem Shah Acadmey',
     description: 'Matriculation Preperation',
     icon: 'Clipboard',
