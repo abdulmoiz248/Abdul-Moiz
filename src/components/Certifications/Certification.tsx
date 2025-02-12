@@ -32,6 +32,14 @@ const certificates: Certificate[] = [
     skills: ["React", "MongoDB", "Web Dev", "Next.js"],
   },
   {
+    id: "4",
+    title: "Decathon",
+    issuer: "Decentral Developers",
+    date: "02-Feb-2025",
+    imageUrl: "/1st.png",
+    skills: ["Frontend Development", "React", "Tailwind"],
+  },
+  {
     id: "3",
     title: "Risk Assessment e-Learning",
     issuer: "Universal Robots",

@@ -15,6 +15,15 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    id: 6,
+    title: "Github-Agent",
+    description: "AI Agents that generate and push readme files for my repos",
+    fullDescription: "An intelligent AI-powered agent designed to analyze GitHub repositories and streamline project management. It automatically detects the tech stack and core functionality of any project, generates a detailed README.md file, and publishes it on GitHub. The agent simplifies documentation, ensures consistency across projects, and saves developers significant time.",
+     imageUrl: "/agent.png",
+    techStack: ["NestJs", "React", "TypeScript", "Gemini Api"],
+    githubUrl: "https://github.com/abdulmoiz248/Github-Agent",
+  },
+  {
     id: 1,
     title: "Zero Limit Apparel",
     description: "E-Commerce Platform",
@@ -26,12 +35,18 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Quiz App",
-    description: "Quiz App that uses RAG to answer questions by extracting information from uploaded PDFs.",
-    fullDescription: "The Quiz App is a collaborative project that utilizes Retrieval-Augmented Generation (RAG) to provide AI-generated answers to questions based on the content of PDFs uploaded by the user. Users can upload a PDF containing relevant information, ask specific questions, and receive accurate responses derived from the document's content. By combining document retrieval with AI generation, the app enhances the user's ability to quickly find and understand key information from uploaded PDFs in a seamless and interactive manner.",
-    imageUrl: "/quiz.png",
-    techStack: ["Next.js", "Python", "FastAPI", "React"],
-    githubUrl: "https://github.com/abdulmoiz248/Quiz-App",
+    title: "Personal Assistant",
+    description: "Your Ultimate Discord Personal Assistant – Automate Tasks, Manage Finances, and Boost Productivity",
+    fullDescription: `A smart Discord-based assistant designed to streamline productivity and daily management. It automates email handling, tracks income and expenses, and generates monthly income statements. The assistant also sends daily LeetCode challenges to keep coding skills sharp and provides task reminders for events, deadlines, and birthdays.
+
+Key Features includes Email Management: Sends, receives, and summarizes emails,
+Finance Tracker: Monitors income and expenses; auto-generates monthly income statements.
+,Daily Coding Practice: Sends LeetCode challenges and tracks your progress.
+,Task & Event Reminders: Keeps you organized with timely alerts.
+Perfect for developers and students seeking to simplify their workflow and stay consistent with learning and financial management.`,
+    imageUrl: "/assistant.png",
+    techStack: ["Nexs.js", "TypeScript", "Nodemailer"],
+    githubUrl: "https://github.com/abdulmoiz248/Ai-Assistant-",
   },{
     id: 3,
     title: "AI Tic Tac Toe",
@@ -50,6 +65,7 @@ const projects: Project[] = [
     techStack: ["Java", "JavaFx"],
     githubUrl: "https://github.com/abdulmoiz248/Twitter-clone?tab=readme-ov-file#twitter-clone-project"
   },
+  
   {
     id: 5,
     title: "FOOBER",

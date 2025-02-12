@@ -24,6 +24,7 @@ const slugs = [
   "sql",
   "mssql",
   "intellij",
+  "nestjs"
 ];
 
 
