@@ -1,58 +1,34 @@
-**README.md**
+# 🚀 Abdul Moiz - Portfolio
 
-# Abdul-Moiz
+Welcome to my portfolio! This repository showcases my work, projects, and skills as a Full-Stack Developer with expertise in Next.js, NestJS, Data Science, and Machine Learning.
 
-Abdul-Moiz is a Next.js application that provides a custom Tailwind CSS theme and a rewrite to the LeetCode website.
+## 🌟 About Me
+I am a passionate developer with a strong background in frontend and backend technologies. I am currently working on various projects, including AI, e-commerce, and IT consulting.
 
-## Installation
+## 🔗 Live Portfolio
+Check out my live portfolio: https://abdul-moiz-b419.vercel.app/
 
-1. Clone the repository:
+## 🛠 Tech Stack
+- **Frontend:** React, Next.js, Tailwind CSS
+- **Backend:** NestJS, Express.js, MongoDB, SQL
+- **Machine Learning & Data Science:** Python, TensorFlow, Scikit-learn, OpenCV
+- **DevOps & Tools:** Docker, GitHub, Vercel
 
-```
-git clone https://github.com/Abdul-Moiz/Abdul-Moiz.git
-```
+## 📂 Projects
+### 🎯 [Zero Limit Apparel](https://www.zerolimitapparel.com)
+An e-commerce brand I co-founded, built with **Next.js**, focusing on performance, UI/UX, and scalability.
 
-2. Install dependencies:
+### 💡 AI-Based Chatbot (Discord Assistant)
+A smart assistant capable of managing reminders, generating financial reports, and sending real-time notifications.
 
-```
-npm install
-```
 
-## Usage
+## 🚀 Features
+- 🔥 Fully responsive and dynamic UI
+- ⚡ Optimized performance with modern frameworks
+- 📊 AI-powered analytics and automation
+- 🔗 Scalable monorepo structure
+- 🔒 Secure authentication and data handling
 
-1. Start the development server:
 
-```
-npm start
-```
-
-2. Visit `http://localhost:3000` to see the application.
-
-### LeetCode Rewrite
-
-The application includes a rewrite rule that redirects requests to `/leetcode/:path*` to `https://leetcode.com/:path*`. This allows you to access LeetCode directly from the application's URL bar.
-
-## Tech Stack
-
-- Next.js
-- Tailwind CSS
-- TypeScript
-- postcss-load-config
-- tailwindcss-animate
-
-## Contribution Guidelines
-
-Contributions are welcome! Please follow these guidelines:
-
-- Fork the repository.
-- Create a new branch for your changes.
-- Make your changes and add tests for any new or modified functionality.
-- Submit a pull request with a clear description of your changes.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
-
-## Acknowledgment
-
-This project was inspired by the [Vercel Next.js Blog Starter](https://github.com/vercel/next.js-blog-starter).
+---
+🌟 *Feel free to explore my work and reach out for collaboration!*
