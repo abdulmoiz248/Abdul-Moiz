@@ -68,7 +68,7 @@ export default function StylishContactFooter() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Your thoughts, unfiltered and untraced. Share what&apo;s on your mind.
+          Your thoughts, unfiltered and untraced. Share whats on your mind.
         </motion.p>
         <form onSubmit={(e:React.FormEvent<HTMLFormElement>)=>handleSubmit(e)} className="space-y-6">
           <motion.div
