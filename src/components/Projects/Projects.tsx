@@ -20,7 +20,7 @@ const projects: Project[] = [
     description: "AI Agents that generate and push readme files for my repos",
     fullDescription: "An intelligent AI-powered agent designed to analyze GitHub repositories and streamline project management. It automatically detects the tech stack and core functionality of any project, generates a detailed README.md file, and publishes it on GitHub. The agent simplifies documentation, ensures consistency across projects, and saves developers significant time.",
      imageUrl: "/agent.png",
-    techStack: ["NestJs", "React", "TypeScript", "Gemini Api"],
+    techStack: ["NextJs", "React", "TypeScript", "Gemini Api"],
     githubUrl: "https://github.com/abdulmoiz248/Github-Agent",
   },
   {
@@ -45,7 +45,7 @@ Finance Tracker: Monitors income and expenses; auto-generates monthly income sta
 ,Task & Event Reminders: Keeps you organized with timely alerts.
 Perfect for developers and students seeking to simplify their workflow and stay consistent with learning and financial management.`,
     imageUrl: "/assistant.png",
-    techStack: ["Nexs.js", "TypeScript", "Nodemailer"],
+    techStack: ["Next.js", "TypeScript", "Nodemailer"],
     githubUrl: "https://github.com/abdulmoiz248/Ai-Assistant-",
   },{
     id: 3,
