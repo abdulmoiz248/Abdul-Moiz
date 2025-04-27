@@ -47,6 +47,22 @@ const certificates: Certificate[] = [
     imageUrl: "/risk.png",
     skills: ["Risk Assessment", "Safety", "Universal Robots"],
   },
+  {
+    id: "5",
+    title: "Infym AI Hackathon+Training",
+    issuer: "Infym Ai",
+    date: "1-March-2025",
+    imageUrl: "/infymAi.png",
+    skills: ["Machine Learning", "Data Cleaning", "Feature Engineering"],
+  },
+  {
+    id: "6",
+    title: "HR Hackathon 2.0",
+    issuer: "Code Blitz",
+    date: "1-Feb-2025",
+    imageUrl: "/fc.jpeg",
+    skills: ["Speed Programming", "DSA", "Problem Solving"]
+  },
 ];
 
 export default function CertificateSection({setSelectedCertificate}: {setSelectedCertificate: (cert: Certificate) => void}) {
@@ -68,7 +84,7 @@ export default function CertificateSection({setSelectedCertificate}: {setSelecte
     <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
       <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
       <div className="container z-10 mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">My Certifications</h2>
+        <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">My Certifications & Achievements</h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           initial={{ opacity: 0, y: 20 }}
