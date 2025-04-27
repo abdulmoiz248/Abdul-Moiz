@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://abdul-moiz-b419.vercel.app/
+
+# Sitemaps
+Sitemap: https://abdul-moiz-b419.vercel.app/sitemap.xml

@@ -17,7 +17,7 @@ import { TimelineEvent } from '@/components/Education/Timeline'
 import TimelineModal from '@/components/Education/TimelineModal'
 import { Project } from '@/components/Projects/Projects'
 import ProjectModal from '@/components/Projects/ProjectModal'
-import { NextSeo } from 'next-seo'
+//import { NextSeo } from 'next-seo'
 export default function Page() {
   
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
@@ -25,10 +25,10 @@ export default function Page() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   return (
     <>
-     <NextSeo
+     {/* <NextSeo
         title="Abdul Moiz | Portfolio"
         description="Explore Abdul Moiz's expertise in Full-Stack Development, Data Science, and AI."
-      />
+      /> */}
        {selectedEvent && (
           <TimelineModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
         )}
