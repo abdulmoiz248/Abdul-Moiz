@@ -118,7 +118,7 @@ export default function Projects({ setSelectedProject }:{setSelectedProject: (pr
   }, [controls])
 
   return (
-    <section className="bg-black py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
+    <section id='work' className="bg-black py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <motion.h2 
           className="text-4xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text sm:text-5xl mb-12 text-center"

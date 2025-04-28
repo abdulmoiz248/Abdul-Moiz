@@ -6,6 +6,7 @@ import {FuturisticBackground} from "@/components/Hero/HeroBackground"
 import {HolographicSphere} from './HolographicSphere'
 import TypingAnimation from '../ui/typing-animation'
 
+
 interface HeroProps {
   userName?: string;
 }
@@ -48,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
         >
           {userName}
         </motion.h1>
-      <TypingAnimation className='text-[15px] md:text-2xl text-white  p-2 rounded'>Driven by Vision, Powered by Innovation</TypingAnimation>
+      <TypingAnimation className='text-[15px] md:text-2xl text-white  p-2 rounded'>I Don’t Just Code Projects — I Engineer Possibilities</TypingAnimation>
        
       </div>
     </div>

@@ -18,6 +18,7 @@ import TimelineModal from '@/components/Education/TimelineModal'
 import { Project } from '@/components/Projects/Projects'
 import ProjectModal from '@/components/Projects/ProjectModal'
 import Head from 'next/head';
+import About from '@/components/Hero/About'
 export default function Page() {
   
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
@@ -62,7 +63,7 @@ export default function Page() {
       />
       <Hero userName='Abdul Moiz'/>
       
-    
+      <About/>
       <AnimatedSection>
         <ContributionsDisplay/>
       </AnimatedSection>
