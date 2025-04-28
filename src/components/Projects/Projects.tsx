@@ -75,6 +75,34 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     techStack: ["Java", "Javafx", "DSA", "OOP"],
     githubUrl: "https://github.com/abdulmoiz248/FOOBER",
   }
+  ,{
+    id: 7,
+    title: "Cachelogics Landing Page",
+    description: "A Hackathon project for Cachelogics",
+    fullDescription: "Cachelogics Landing Page is a project I developed during a hackathon, showcasing my skills in creating visually appealing and functional web pages. The landing page is designed to provide information about Cachelogics, its services, and its mission. It features a modern design, responsive layout, and smooth navigation to enhance user experience.",
+    imageUrl: "/cachelogics.png",
+    techStack: ["React", "TypeScript", "TailwindCSS","Next.js"],
+    githubUrl: "https://github.com/abdulmoiz248/cachelogics",
+    deployedUrl: "https://cachelogics.vercel.app/"
+  }
+  ,{
+    id: 8,
+    title: "GPT Emailer Extension",
+    description: "A Chrome Extension that generates and send emails using chatgpt website",  
+   "fullDescription": "GPT Emailer is a Chrome Extension that helps you generate and send emails directly using ChatGPT. It integrates with Gmail to create smart, context-aware emails quickly and easily, saving you time and effort."
+, imageUrl: "/gpt-email.png",
+    techStack: ["React", "TypeScript", "TailwindCSS","Next.js",'Nodemailer'],
+    githubUrl: "https://github.com/abdulmoiz248/Gpt-Emailer-Extension",
+  }
+  ,{
+    id: 9,
+    title: "Nexa Link",
+    description: "A Chatting App",  
+    "fullDescription": "Nexa Link is a Chatting App that allows users to connect and communicate with each other in real-time. It features a user-friendly interface, enabling seamless messaging, and group chats. The app is designed to enhance social interactions and foster connections among users.",
+    imageUrl: "/nexalink.png",
+    techStack: ["React", "TypeScript", "TailwindCSS","Next.js",'NestJs','Socket.io'],
+    githubUrl: "https://github.com/abdulmoiz248/NexaLink-Frontend",
+  },
 ]
 
 export default function Projects({ setSelectedProject }:{setSelectedProject: (project: Project) => void}) {
