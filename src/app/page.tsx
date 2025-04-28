@@ -17,7 +17,7 @@ import { TimelineEvent } from '@/components/Education/Timeline'
 import TimelineModal from '@/components/Education/TimelineModal'
 import { Project } from '@/components/Projects/Projects'
 import ProjectModal from '@/components/Projects/ProjectModal'
-//import { NextSeo } from 'next-seo'
+import Head from 'next/head';
 export default function Page() {
   
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
@@ -25,10 +25,27 @@ export default function Page() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   return (
     <>
-     {/* <NextSeo
-        title="Abdul Moiz | Portfolio"
-        description="Explore Abdul Moiz's expertise in Full-Stack Development, Data Science, and AI."
-      /> */}
+     <Head>
+        <title>Abdul Moiz</title>
+        <meta name="description" content="Welcome to Abdul Moiz's portfolio. Freelancer, full-stack and AI developer Showcasing projects, skills, and expertise." />
+        <meta name="keywords" content="Abdul Moiz, Moiz, developer, programmer, freelancer, Abdul Moiz Iqbal, portfolio" />
+        <meta name="author" content="Abdul Moiz" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://abdul-moiz-b419.vercel.app/" />
+        <meta property="og:title" content="Abdul Moiz | Developer, Freelancer" />
+        <meta property="og:description" content="Portfolio of Abdul Moiz: Web & AI developer, freelancer and tech enthusiast." />
+        <meta property="og:image" content="https://abdul-moiz-b419.vercel.app/og-image.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://abdul-moiz-b419.vercel.app/" />
+        <meta property="twitter:title" content="Abdul Moiz | Developer, Freelancer" />
+        <meta property="twitter:description" content="Portfolio of Abdul Moiz: Web  and AI developer, freelancer, and tech enthusiast." />
+        <meta property="twitter:image" content="https://abdul-moiz-b419.vercel.app/og-image.jpg" />
+      </Head>
+
        {selectedEvent && (
           <TimelineModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
         )}
