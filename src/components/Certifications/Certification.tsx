@@ -63,6 +63,30 @@ const certificates: Certificate[] = [
     imageUrl: "/fc.jpeg",
     skills: ["Speed Programming", "DSA", "Problem Solving"]
   },
+  {
+    id: "7",
+    title: "Webathon",
+    issuer: "Cachelogics",
+    date: "1-March-2025",
+    imageUrl: "/cachelogics-certificate.png",
+    skills: ["Frontend Development", "React", "Tailwind"],
+  },
+   {
+    id: "8",
+    title: "PF-PuCon'25",
+    issuer: "FCIT, Punjab University",
+    date: "1-May-2025",
+    imageUrl: "/pf-pucon.jpg",
+    skills: ["Feature Extraction", "Correlation", "AI", "Model Training", "Data cleaning"],
+  },
+   {
+    id: "9",
+    title: "Softec'25",
+    issuer: "Fast University",
+    date: "1-March-2025",
+    imageUrl: "/softec.png",
+    skills: ["Frontend Development", "React", "Tailwind"],
+  },
 ];
 
 export default function CertificateSection({setSelectedCertificate}: {setSelectedCertificate: (cert: Certificate) => void}) {
