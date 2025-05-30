@@ -32,14 +32,14 @@ const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
       onMouseLeave={() => setIsHovering(false)}
     >
       <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-9">
+      <div className="absolute inset-0 mt-40 flex flex-col items-center justify-center text-white z-9">
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <HolographicSphere imageSrc={'/me.jpg'} />
+          <HolographicSphere imageSrc={'/me-2.jpg'} />
         </motion.div>
         <motion.h1
           className="text-6xl font-bold mb-4 mt-8  bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
