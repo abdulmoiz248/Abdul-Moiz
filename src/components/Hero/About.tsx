@@ -50,7 +50,7 @@ const Particles = () => {
   }))
 
   return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div ref={containerRef} className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       {dimensions.width > 0 &&
         particles.map((particle) => (
           <motion.div
