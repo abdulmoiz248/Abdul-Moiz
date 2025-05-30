@@ -61,8 +61,10 @@ export default function Page() {
         certificate={selectedCertificate}
         onClose={() => setSelectedCertificate(null)}
       />
-      <Hero userName='Abdul Moiz'/>
+      <div className='pt-12'>
       
+      <Hero userName='Abdul Moiz'/>
+      </div>
       <About/>
       <AnimatedSection>
         <ContributionsDisplay/>

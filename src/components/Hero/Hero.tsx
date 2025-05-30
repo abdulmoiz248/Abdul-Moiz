@@ -26,33 +26,35 @@ const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
   }, [mouseX, mouseY])
 
   return (
-    <div 
-      className="relative w-full h-screen bg-black overflow-hidden"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+   <div 
+  className="relative pt-10 w-full min-h-screen bg-black overflow-hidden"
+  onMouseEnter={() => setIsHovering(true)}
+  onMouseLeave={() => setIsHovering(false)}
+>
+  <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
+  <div className="absolute inset-0 py-32 flex flex-col items-center justify-center text-white z-9">
+    <motion.div
+      className="relative"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
     >
-      <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
-      <div className="absolute inset-0 mt-40 flex flex-col items-center justify-center text-white z-9">
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <HolographicSphere imageSrc={'/me-2.jpg'} />
-        </motion.div>
-        <motion.h1
-          className="text-6xl font-bold mb-4 mt-8  bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          {userName}
-        </motion.h1>
-      <TypingAnimation className='text-[15px] md:text-2xl text-white  p-2 rounded'>I Don’t Just Code Projects — I Engineer Possibilities</TypingAnimation>
-       
-      </div>
-    </div>
+      <HolographicSphere imageSrc={'/me-2.jpg'} />
+    </motion.div>
+    <motion.h1
+      className="text-6xl font-bold mb-4 mt-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 1 }}
+    >
+      {userName}
+    </motion.h1>
+    <TypingAnimation className='text-[15px] md:text-2xl text-white p-2 rounded'>
+      I Don’t Just Code Projects — I Engineer Possibilities
+    </TypingAnimation>
+  </div>
+</div>
+
   )
 }
 

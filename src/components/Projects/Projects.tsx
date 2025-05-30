@@ -48,6 +48,15 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     techStack: ["Next.js", "TypeScript", "Nodemailer"],
     githubUrl: "https://github.com/abdulmoiz248/Ai-Assistant-",
   },{
+    id: 10,
+    title: "Predator-Prey Simulation",
+    description: "Parallel Computing Project",  
+    "fullDescription": "Built an interactive, parallelized ecosystem simulation using Python (backend) and TypeScript (frontend). Integrated real-time visualization, PDF report generation with dynamic graphs, and AI-powered summary using Gemini API. The web interface includes a chatbot for simulation assistance. Developed as part of a university-level parallel computing project.",
+    imageUrl: "/pdc.png",
+    techStack: ["React", "TypeScript", "TailwindCSS","Next.js",'Fast Api','Multi Processing','Socket.io'],
+    githubUrl: "https://github.com/abdulmoiz248/Predator-Prey-Simulation",
+  },
+  {
     id: 3,
     title: "AI Tic Tac Toe",
     description: "AI-powered Tic Tac Toe game using Gemini API",
@@ -102,6 +111,15 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     imageUrl: "/nexalink.png",
     techStack: ["React", "TypeScript", "TailwindCSS","Next.js",'NestJs','Socket.io'],
     githubUrl: "https://github.com/abdulmoiz248/NexaLink-Frontend",
+  }
+   ,{
+    id: 11,
+    title: "PF-PUCon-25",
+    description: "AI Hackathon",  
+    "fullDescription": "Participated in the PF PUCon '25 AI Hackathon hosted at PUCIT, collaborating with Zain to tackle real-world ML problems under time pressure. In Round 1, we focused on rigorous data preprocessing—handling missing values, encoding categorical features, normalizing data, and visualizing distributions—achieving a median error of 0.55. For Round 2, we built and optimized machine learning models aimed at solving complex predictive tasks with a focus on accuracy and performance. This project reflects our hands-on skills in data wrangling, rapid model development, and applying ML techniques in high-stakes, time-sensitive environments.",
+    imageUrl: "/pf.png",
+    techStack: ['Pre-Processing','Feature Extraction','Deep Learning'],
+    githubUrl: "https://github.com/abdulmoiz248/PF-PUCon-25",
   },
 ]
 
