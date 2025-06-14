@@ -19,12 +19,13 @@ import { Project } from '@/components/Projects/Projects'
 import ProjectModal from '@/components/Projects/ProjectModal'
 import Head from 'next/head';
 import About from '@/components/Hero/About'
+
 export default function Page() {
   
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null)
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  return (
+ return (
     <>
      <Head>
         <title>Abdul Moiz</title>
@@ -86,6 +87,7 @@ export default function Page() {
         <CertificateSection setSelectedCertificate={setSelectedCertificate}/>
        
       </AnimatedSection>
+     
       <Footer/>
     </>
   )

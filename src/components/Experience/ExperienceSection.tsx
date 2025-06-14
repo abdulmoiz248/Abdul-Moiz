@@ -22,6 +22,14 @@ const allExperiences = [
     description: "As a co-founder of Zero Limit Apparel, I contributed to the brand's strategic direction, website and product development,marketing, and overall growth",
     technologies: ['Next.js', 'React', 'MongoDB','Start-up Leadership'],
    
+  },  {
+    id: 3,
+    title: 'Private Tutor',
+    company: 'Free Lancing',
+    period: '2024 - 2025',
+ description: "Tutored a university student in core CS subjects like Distributed Computing, OS, and DSA—focused on concepts, assignments, projects, and boosting performance with hands-on examples and regular reviews."
+,   technologies: ['Operating Systems', 'Data Structures', 'OOP','Java'],
+   
   },
   
 ]
