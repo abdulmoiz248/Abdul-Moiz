@@ -75,7 +75,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "LeetCode Solutions is a curated collection of my attempted problems on LeetCode, showcasing efficient solutions in Java, JavaScript, and Python. It reflects my approach to solving algorithmic challenges, improving coding skills, and preparing for technical interviews.",
     imageUrl: "/leetcode.jpeg",
-    techStack: ["Java", "JavaScript", "Python"],
+    techStack: ["Java", "JavaScript", "Python", 'DSA'],
     githubUrl: "https://github.com/abdulmoiz248/LeetCode-Attempts",
     category: "dsa",
   },
@@ -86,7 +86,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "Docgent is an AI-powered document generation assistant built to create professional Word documents like assignments, reports, and invoices. Users can upload images, provide inputs, and get structured outlines through an integrated chatbot powered by Grok and Gemini APIs. The chatbot helps brainstorm, refine, and edit content, while the user verifies the outline before final generation. Docgent streamlines the entire documentation process—fully customizable, collaborative, and intelligent.",
     imageUrl: "/docgent.png",
-    techStack: ["Next.js", "TypeScript", "Gemini API", "Grok", "OpenAI", "Docx.js"],
+    techStack: ["Next.js", "TypeScript", "Gemini API", "Grok"],
     githubUrl: "https://github.com/abdulmoiz248/Docgent",
     category: "web",
   },
@@ -153,7 +153,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "Finance Flow Pro is a full-stack, vibe-coded personal finance app that evolved through 29 versions—driven purely by vision and vibes ✨. Originally a Vercel (v0.dev) test, it became a daily-use powerhouse that tracks transactions, auto-calculates income/expenses/net savings, visualizes data with sleek dashboards, and manages investments. It includes monthly summaries (1, 6, 12 months), saving goal tracking, invoice generation and email sending, and even lets you instantly add invoice values to your financial logs. With dark/light modes for every mood, this one’s built for me—but maybe perfect for you too.",
     imageUrl: "/finance.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "PostgreSQL", "Prisma"],
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "MongoDB",],
     githubUrl: "https://github.com/abdulmoiz248/Finance-Flow-Pro",
     category: "web",
   },
@@ -186,7 +186,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "COMSATS CGPA Calculator is a web-based tool built to help students at COMSATS University Islamabad accurately compute their CGPA and GPA. It includes three main modules: overall CGPA calculation using semester-wise inputs, GPA calculation based on quizzes, assignments, mids, and finals, and semester-specific CGPA using course-wise data. The app features a clean UI, progress bars, and responsive design. Built with HTML, CSS, and vanilla JS (plus jQuery), it’s flexible and functional—but grounded in the grading system used by COMSATS. Perfect for students who want clarity on their academic performance.",
     imageUrl: "/cgpa-calculator.png",
-    techStack: ["HTML", "CSS", "JavaScript", "jQuery"],
+    techStack: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/abdulmoiz248/COMSATS-CGPA-Calculator",
     deployedUrl: "https://abdulmoiz248.github.io/COMSATS-CGPA-Calculator/",
     category: "web",
@@ -198,7 +198,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "This MS SQL-based e-commerce system is a feature-rich backend project handling everything from user registration, cart handling via cookies, and categorized products to full order processing. It supports both guest and registered users, handles payments (cash/card), applies discount coupons, tracks shipping, and enables prebooking out-of-stock items. Users can add reviews, submit complaints (with ticketing), and request returns/refunds. Retailer billing is recorded, and daily revenue is calculated. It’s a complete database-driven solution simulating real-world e-commerce flow and business intelligence in a relational environment.",
     imageUrl: "/e-com-sql.png",
-    techStack: ["MS SQL", "T-SQL", "Stored Procedures", "ERD Design"],
+    techStack: ["MS SQL", "Lucide Chart"],
     githubUrl: "https://github.com/abdulmoiz248/MS-SQL-Project",
     category: "db",
   },
