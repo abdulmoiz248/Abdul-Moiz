@@ -75,7 +75,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "LeetCode Solutions is a curated collection of my attempted problems on LeetCode, showcasing efficient solutions in Java, JavaScript, and Python. It reflects my approach to solving algorithmic challenges, improving coding skills, and preparing for technical interviews.",
     imageUrl: "/leetcode.jpeg",
-    techStack: ["Java", "JavaScript", "Python"],
+    techStack: ["Java", "JavaScript", "Python", 'DSA'],
     githubUrl: "https://github.com/abdulmoiz248/LeetCode-Attempts",
     category: "dsa",
   },
@@ -86,7 +86,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "Docgent is an AI-powered document generation assistant built to create professional Word documents like assignments, reports, and invoices. Users can upload images, provide inputs, and get structured outlines through an integrated chatbot powered by Grok and Gemini APIs. The chatbot helps brainstorm, refine, and edit content, while the user verifies the outline before final generation. Docgent streamlines the entire documentation process—fully customizable, collaborative, and intelligent.",
     imageUrl: "/docgent.png",
-    techStack: ["Next.js", "TypeScript", "Gemini API", "Grok", "OpenAI", "Docx.js"],
+    techStack: ["Next.js", "TypeScript", "Gemini API", "Grok"],
     githubUrl: "https://github.com/abdulmoiz248/Docgent",
     category: "web",
   },
@@ -151,9 +151,9 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "Finance Flow Pro",
     description: "A vibe coded full-stack personal finance app with dashboards, invoices & goal tracking",
     fullDescription:
-      "Finance Flow Pro is a full-stack, vibe-coded personal finance app that evolved through 29 versions—driven purely by vision and vibes ✨. Originally a Vercel (v0.dev) test, it became a daily-use powerhouse that tracks transactions, auto-calculates income/expenses/net savings, visualizes data with sleek dashboards, and manages investments. It includes monthly summaries (1, 6, 12 months), saving goal tracking, invoice generation and email sending, and even lets you instantly add invoice values to your financial logs. With dark/light modes for every mood, this one's built for me—but maybe perfect for you too.",
+      "Finance Flow Pro is a full-stack, vibe-coded personal finance app that evolved through 29 versions—driven purely by vision and vibes ✨. Originally a Vercel (v0.dev) test, it became a daily-use powerhouse that tracks transactions, auto-calculates income/expenses/net savings, visualizes data with sleek dashboards, and manages investments. It includes monthly summaries (1, 6, 12 months), saving goal tracking, invoice generation and email sending, and even lets you instantly add invoice values to your financial logs. With dark/light modes for every mood, this one’s built for me—but maybe perfect for you too.",
     imageUrl: "/finance.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "PostgreSQL", "Prisma"],
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "MongoDB",],
     githubUrl: "https://github.com/abdulmoiz248/Finance-Flow-Pro",
     category: "web",
   },
@@ -173,7 +173,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "PDF Quiz App",
     description: "Ask MCQs from your own PDFs and get instant answers",
     fullDescription:
-      "PDF Quiz App is a collab I built with my friend Zain, where users upload PDFs and then ask multiple-choice questions based on the uploaded content. The backend (Python) processes the documents and responds with accurate answers sourced directly from the PDF. I handled the full frontend in Next.js, crafting a smooth and intuitive UI for uploading, questioning, and interacting with the quiz bot. It's like having your own AI-powered study buddy for any document.",
+      "PDF Quiz App is a collab I built with my friend Zain, where users upload PDFs and then ask multiple-choice questions based on the uploaded content. The backend (Python) processes the documents and responds with accurate answers sourced directly from the PDF. I handled the full frontend in Next.js, crafting a smooth and intuitive UI for uploading, questioning, and interacting with the quiz bot. It’s like having your own AI-powered study buddy for any document.",
     imageUrl: "/quiz-app.png",
     techStack: ["Next.js", "Tailwind", "Python", "HuggingFace"],
     githubUrl: "https://github.com/abdulmoiz248/Quiz-App",
@@ -184,9 +184,9 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "COMSATS CGPA Calculator",
     description: "A GPA/CGPA calculator tailored for COMSATS students",
     fullDescription:
-      "COMSATS CGPA Calculator is a web-based tool built to help students at COMSATS University Islamabad accurately compute their CGPA and GPA. It includes three main modules: overall CGPA calculation using semester-wise inputs, GPA calculation based on quizzes, assignments, mids, and finals, and semester-specific CGPA using course-wise data. The app features a clean UI, progress bars, and responsive design. Built with HTML, CSS, and vanilla JS (plus jQuery), it's flexible and functional—but grounded in the grading system used by COMSATS. Perfect for students who want clarity on their academic performance.",
+      "COMSATS CGPA Calculator is a web-based tool built to help students at COMSATS University Islamabad accurately compute their CGPA and GPA. It includes three main modules: overall CGPA calculation using semester-wise inputs, GPA calculation based on quizzes, assignments, mids, and finals, and semester-specific CGPA using course-wise data. The app features a clean UI, progress bars, and responsive design. Built with HTML, CSS, and vanilla JS (plus jQuery), it’s flexible and functional—but grounded in the grading system used by COMSATS. Perfect for students who want clarity on their academic performance.",
     imageUrl: "/cgpa-calculator.png",
-    techStack: ["HTML", "CSS", "JavaScript", "jQuery"],
+    techStack: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/abdulmoiz248/COMSATS-CGPA-Calculator",
     deployedUrl: "https://abdulmoiz248.github.io/COMSATS-CGPA-Calculator/",
     category: "web",
@@ -196,13 +196,39 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "E-Commerce System (MS SQL Project)",
     description: "Full-featured e-commerce DBMS project with inventory, orders, payments & analytics",
     fullDescription:
-      "This MS SQL-based e-commerce system is a feature-rich backend project handling everything from user registration, cart handling via cookies, and categorized products to full order processing. It supports both guest and registered users, handles payments (cash/card), applies discount coupons, tracks shipping, and enables prebooking out-of-stock items. Users can add reviews, submit complaints (with ticketing), and request returns/refunds. Retailer billing is recorded, and daily revenue is calculated. It's a complete database-driven solution simulating real-world e-commerce flow and business intelligence in a relational environment.",
+      "This MS SQL-based e-commerce system is a feature-rich backend project handling everything from user registration, cart handling via cookies, and categorized products to full order processing. It supports both guest and registered users, handles payments (cash/card), applies discount coupons, tracks shipping, and enables prebooking out-of-stock items. Users can add reviews, submit complaints (with ticketing), and request returns/refunds. Retailer billing is recorded, and daily revenue is calculated. It’s a complete database-driven solution simulating real-world e-commerce flow and business intelligence in a relational environment.",
     imageUrl: "/e-com-sql.png",
-    techStack: ["MS SQL", "T-SQL", "Stored Procedures", "ERD Design"],
+    techStack: ["MS SQL", "Lucide Chart"],
     githubUrl: "https://github.com/abdulmoiz248/MS-SQL-Project",
     category: "db",
   },
+  {
+  id: 17,
+  title: "BakeBot",
+  description: "AI-powered baking assistant built with Langchain & React",
+  fullDescription: "BakeBot is a smart baking assistant app developed for a client in collaboration with Zain Ul Abideen. I led the frontend in React to create a seamless user interface, while Zain built the backend, Langchain to power AI-driven recipe and baking assistance. The app lets users interact with an intelligent chatbot for personalized baking suggestions, ingredients guidance, and more.\n\n🧁 React frontend\n🧠 Langchain-powered backend\n💬 Smart chatbot UX\n🚀 Built for real-world client deployment",
+  imageUrl: "/bake-bot.png",
+  techStack: ["React", "Express.js", "Langchain", "JavaScript"],
+  githubUrl: "https://github.com/abdulmoiz248/Bake-Bot",
+  category: "web"
+}
+
+  ,
+  {
+    id: 18,
+    title: "Sudoku Solver with GUI",
+    description: "Interactive Sudoku solver with JavaFX",
+    fullDescription: "A JavaFX-based desktop application that solves Sudoku puzzles and lets you play them too. You can input your own puzzle or generate a random one. It features a clean, interactive GUI where you can watch the solver work or manually test your moves. It ensures all puzzles and solutions are valid. Whether you're just here to play or trying to debug your brain, it's a full Sudoku experience.\n\n🧠 Smart solver algorithm\n🎮 Playable with move validation\n🎲 Puzzle generator\n🖥️ Built using Java + JavaFX",
+    imageUrl: "/sudoku.png",
+    techStack: ["Java", "JavaFX"],
+    githubUrl: "https://github.com/abdulmoiz248/Sudoku"
+  ,category:'web'
+  },
+
+
+
 ]
+
 
 export default function Projects({ setSelectedProject }: { setSelectedProject: (project: Project) => void }) {
   const [searchTerm, setSearchTerm] = useState("")
