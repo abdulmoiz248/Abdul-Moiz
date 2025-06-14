@@ -1,6 +1,6 @@
 "use client"
 import { useEffect } from "react"
-import { motion, AnimatePresence, useAnimation } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import ProjectCard from "./ProjectCard"
 import { useState, useMemo } from "react"
 import { Search, Filter, SortAsc } from "lucide-react"
@@ -75,7 +75,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "LeetCode Solutions is a curated collection of my attempted problems on LeetCode, showcasing efficient solutions in Java, JavaScript, and Python. It reflects my approach to solving algorithmic challenges, improving coding skills, and preparing for technical interviews.",
     imageUrl: "/leetcode.jpeg",
-    techStack: ["Java", "JavaScript", "Python", 'DSA'],
+    techStack: ["Java", "JavaScript", "Python"],
     githubUrl: "https://github.com/abdulmoiz248/LeetCode-Attempts",
     category: "dsa",
   },
@@ -86,7 +86,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     fullDescription:
       "Docgent is an AI-powered document generation assistant built to create professional Word documents like assignments, reports, and invoices. Users can upload images, provide inputs, and get structured outlines through an integrated chatbot powered by Grok and Gemini APIs. The chatbot helps brainstorm, refine, and edit content, while the user verifies the outline before final generation. Docgent streamlines the entire documentation process—fully customizable, collaborative, and intelligent.",
     imageUrl: "/docgent.png",
-    techStack: ["Next.js", "TypeScript", "Gemini API", "Grok"],
+    techStack: ["Next.js", "TypeScript", "Gemini API", "Grok", "OpenAI", "Docx.js"],
     githubUrl: "https://github.com/abdulmoiz248/Docgent",
     category: "web",
   },
@@ -151,9 +151,9 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "Finance Flow Pro",
     description: "A vibe coded full-stack personal finance app with dashboards, invoices & goal tracking",
     fullDescription:
-      "Finance Flow Pro is a full-stack, vibe-coded personal finance app that evolved through 29 versions—driven purely by vision and vibes ✨. Originally a Vercel (v0.dev) test, it became a daily-use powerhouse that tracks transactions, auto-calculates income/expenses/net savings, visualizes data with sleek dashboards, and manages investments. It includes monthly summaries (1, 6, 12 months), saving goal tracking, invoice generation and email sending, and even lets you instantly add invoice values to your financial logs. With dark/light modes for every mood, this one’s built for me—but maybe perfect for you too.",
+      "Finance Flow Pro is a full-stack, vibe-coded personal finance app that evolved through 29 versions—driven purely by vision and vibes ✨. Originally a Vercel (v0.dev) test, it became a daily-use powerhouse that tracks transactions, auto-calculates income/expenses/net savings, visualizes data with sleek dashboards, and manages investments. It includes monthly summaries (1, 6, 12 months), saving goal tracking, invoice generation and email sending, and even lets you instantly add invoice values to your financial logs. With dark/light modes for every mood, this one's built for me—but maybe perfect for you too.",
     imageUrl: "/finance.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "MongoDB",],
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "PostgreSQL", "Prisma"],
     githubUrl: "https://github.com/abdulmoiz248/Finance-Flow-Pro",
     category: "web",
   },
@@ -173,7 +173,7 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "PDF Quiz App",
     description: "Ask MCQs from your own PDFs and get instant answers",
     fullDescription:
-      "PDF Quiz App is a collab I built with my friend Zain, where users upload PDFs and then ask multiple-choice questions based on the uploaded content. The backend (Python) processes the documents and responds with accurate answers sourced directly from the PDF. I handled the full frontend in Next.js, crafting a smooth and intuitive UI for uploading, questioning, and interacting with the quiz bot. It’s like having your own AI-powered study buddy for any document.",
+      "PDF Quiz App is a collab I built with my friend Zain, where users upload PDFs and then ask multiple-choice questions based on the uploaded content. The backend (Python) processes the documents and responds with accurate answers sourced directly from the PDF. I handled the full frontend in Next.js, crafting a smooth and intuitive UI for uploading, questioning, and interacting with the quiz bot. It's like having your own AI-powered study buddy for any document.",
     imageUrl: "/quiz-app.png",
     techStack: ["Next.js", "Tailwind", "Python", "HuggingFace"],
     githubUrl: "https://github.com/abdulmoiz248/Quiz-App",
@@ -184,9 +184,9 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "COMSATS CGPA Calculator",
     description: "A GPA/CGPA calculator tailored for COMSATS students",
     fullDescription:
-      "COMSATS CGPA Calculator is a web-based tool built to help students at COMSATS University Islamabad accurately compute their CGPA and GPA. It includes three main modules: overall CGPA calculation using semester-wise inputs, GPA calculation based on quizzes, assignments, mids, and finals, and semester-specific CGPA using course-wise data. The app features a clean UI, progress bars, and responsive design. Built with HTML, CSS, and vanilla JS (plus jQuery), it’s flexible and functional—but grounded in the grading system used by COMSATS. Perfect for students who want clarity on their academic performance.",
+      "COMSATS CGPA Calculator is a web-based tool built to help students at COMSATS University Islamabad accurately compute their CGPA and GPA. It includes three main modules: overall CGPA calculation using semester-wise inputs, GPA calculation based on quizzes, assignments, mids, and finals, and semester-specific CGPA using course-wise data. The app features a clean UI, progress bars, and responsive design. Built with HTML, CSS, and vanilla JS (plus jQuery), it's flexible and functional—but grounded in the grading system used by COMSATS. Perfect for students who want clarity on their academic performance.",
     imageUrl: "/cgpa-calculator.png",
-    techStack: ["HTML", "CSS", "JavaScript"],
+    techStack: ["HTML", "CSS", "JavaScript", "jQuery"],
     githubUrl: "https://github.com/abdulmoiz248/COMSATS-CGPA-Calculator",
     deployedUrl: "https://abdulmoiz248.github.io/COMSATS-CGPA-Calculator/",
     category: "web",
@@ -196,46 +196,35 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     title: "E-Commerce System (MS SQL Project)",
     description: "Full-featured e-commerce DBMS project with inventory, orders, payments & analytics",
     fullDescription:
-      "This MS SQL-based e-commerce system is a feature-rich backend project handling everything from user registration, cart handling via cookies, and categorized products to full order processing. It supports both guest and registered users, handles payments (cash/card), applies discount coupons, tracks shipping, and enables prebooking out-of-stock items. Users can add reviews, submit complaints (with ticketing), and request returns/refunds. Retailer billing is recorded, and daily revenue is calculated. It’s a complete database-driven solution simulating real-world e-commerce flow and business intelligence in a relational environment.",
+      "This MS SQL-based e-commerce system is a feature-rich backend project handling everything from user registration, cart handling via cookies, and categorized products to full order processing. It supports both guest and registered users, handles payments (cash/card), applies discount coupons, tracks shipping, and enables prebooking out-of-stock items. Users can add reviews, submit complaints (with ticketing), and request returns/refunds. Retailer billing is recorded, and daily revenue is calculated. It's a complete database-driven solution simulating real-world e-commerce flow and business intelligence in a relational environment.",
     imageUrl: "/e-com-sql.png",
-    techStack: ["MS SQL", "Lucide Chart"],
+    techStack: ["MS SQL", "T-SQL", "Stored Procedures", "ERD Design"],
     githubUrl: "https://github.com/abdulmoiz248/MS-SQL-Project",
     category: "db",
   },
-  {
-  id: 17,
-  title: "BakeBot",
-  description: "AI-powered baking assistant built with Langchain & React",
-  fullDescription: "BakeBot is a smart baking assistant app developed for a client in collaboration with Zain Ul Abideen. I led the frontend in React to create a seamless user interface, while Zain built the backend, Langchain to power AI-driven recipe and baking assistance. The app lets users interact with an intelligent chatbot for personalized baking suggestions, ingredients guidance, and more.\n\n🧁 React frontend\n🧠 Langchain-powered backend\n💬 Smart chatbot UX\n🚀 Built for real-world client deployment",
-  imageUrl: "/bake-bot.png",
-  techStack: ["React", "Express.js", "Langchain", "JavaScript"],
-  githubUrl: "https://github.com/abdulmoiz248/Bake-Bot",
-  category: "web"
-}
-
-  ,
-  {
-    id: 18,
-    title: "Sudoku Solver with GUI",
-    description: "Interactive Sudoku solver with JavaFX",
-    fullDescription: "A JavaFX-based desktop application that solves Sudoku puzzles and lets you play them too. You can input your own puzzle or generate a random one. It features a clean, interactive GUI where you can watch the solver work or manually test your moves. It ensures all puzzles and solutions are valid. Whether you're just here to play or trying to debug your brain, it's a full Sudoku experience.\n\n🧠 Smart solver algorithm\n🎮 Playable with move validation\n🎲 Puzzle generator\n🖥️ Built using Java + JavaFX",
-    imageUrl: "/sudoku.png",
-    techStack: ["Java", "JavaFX"],
-    githubUrl: "https://github.com/abdulmoiz248/Sudoku"
-  ,category:'web'
-  },
-
-
-
 ]
 
 export default function Projects({ setSelectedProject }: { setSelectedProject: (project: Project) => void }) {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const [sortBy, setSortBy] = useState<string>("original")
-  const controls = useAnimation()
+  const [showCount, setShowCount] = useState(8)
 
-  
+  const categories = [
+    { value: "all", label: "All Projects" },
+    { value: "web", label: "Web Development" },
+    { value: "ml", label: "Machine Learning" },
+    { value: "dsa", label: "Data Structures & Algorithms" },
+    { value: "db", label: "Database" },
+  ]
+
+  const sortOptions = [
+    { value: "original", label: "Original Order" },
+    { value: "title", label: "Title A-Z" },
+    { value: "category", label: "Category" },
+    { value: "recent", label: "Most Recent" },
+  ]
+
   const filteredAndSortedProjects = useMemo(() => {
     const filtered = projects.filter((project) => {
       const matchesSearch =
@@ -266,37 +255,14 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
 
     return filtered
   }, [searchTerm, selectedCategory, sortBy])
+
+  const displayedProjects = filteredAndSortedProjects.slice(0, showCount)
+  const hasMoreProjects = showCount < filteredAndSortedProjects.length
+
+  // Reset showCount when filters change
   useEffect(() => {
-    controls.start((i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.1 },
-    }))
-  }, [controls])
-
-  useEffect(() => {
-    controls.start((i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.1 },
-    }))
-  }, [controls, filteredAndSortedProjects])
-
-  const categories = [
-    { value: "all", label: "All Projects" },
-    { value: "web", label: "Web Development" },
-    { value: "ml", label: "Machine Learning" },
-    { value: "dsa", label: "Data Structures & Algorithms" },
-    { value: "db", label: "Database" },
-  ]
-
-  const sortOptions = [
-    { value: "original", label: "Original Order" },
-    { value: "title", label: "Title A-Z" },
-    { value: "category", label: "Category" },
-    { value: "recent", label: "Most Recent" },
-  ]
-
+    setShowCount(8)
+  }, [searchTerm, selectedCategory, sortBy])
 
   return (
     <section id="work" className="bg-black py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
@@ -365,22 +331,55 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
           </div>
 
           {/* Results Count */}
-          <div className="text-center text-gray-400 text-sm">Showing {filteredAndSortedProjects.length} projects</div>
+          <div className="text-center text-gray-400 text-sm">
+            Showing {displayedProjects.length} of {filteredAndSortedProjects.length} projects
+          </div>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-          {filteredAndSortedProjects.map((project, index) => (
-            <motion.div
-              key={`${project.id}-${searchTerm}-${selectedCategory}-${sortBy}`}
-              custom={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: index * 0.1 } }}
-            >
-              <ProjectCard project={project} onClick={() => setSelectedProject(project)} />
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+          <AnimatePresence mode="wait">
+            {displayedProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    delay: index * 0.1,
+                    duration: 0.5,
+                    ease: "easeOut",
+                  },
+                }}
+                exit={{ opacity: 0, y: -50, scale: 0.9 }}
+                whileHover={{ scale: 1.02 }}
+                className="w-full"
+              >
+                <ProjectCard project={project} onClick={() => setSelectedProject(project)} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
+
+        {/* Show More Button */}
+        {hasMoreProjects && (
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <button
+              onClick={() => setShowCount((prev) => Math.min(prev + 8, filteredAndSortedProjects.length))}
+              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+            >
+              Show More Projects
+            </button>
+          </motion.div>
+        )}
 
         {/* No Results Message */}
         {filteredAndSortedProjects.length === 0 && (
@@ -390,15 +389,15 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
               onClick={() => {
                 setSearchTerm("")
                 setSelectedCategory("all")
+                setShowCount(8)
               }}
-              className="mt-4 text-blue-400 hover:text-blue-300 underline"
+              className="mt-4 text-blue-400 hover:text-blue-300 underline focus:outline-none"
             >
               Clear filters
             </button>
           </motion.div>
         )}
       </div>
-      <AnimatePresence></AnimatePresence>
     </section>
   )
 }
