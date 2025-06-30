@@ -1,14 +1,11 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useRef, useState } from "react"
-import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion"
-import {  Code, Layers, Brain, Sparkles } from "lucide-react"
-// Custom cursor component
+import { motion, AnimatePresence } from "framer-motion"
+import { Code, Layers, Brain, Sparkles, Star, Zap, Rocket, Terminal } from "lucide-react"
 
-
-// Particle component
+// Enhanced Particle component
 const Particles = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
@@ -34,19 +31,20 @@ const Particles = () => {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  const particles = Array.from({ length: 30 }, (_, i) => ({
+  const particles = Array.from({ length: 50 }, (_, i) => ({
     id: i,
     x: Math.random() * dimensions.width,
     y: Math.random() * dimensions.height,
-    size: Math.random() * 5 + 1,
+    size: Math.random() * 4 + 1,
     color: [
-      "rgba(123, 97, 255, 0.4)",
-      "rgba(56, 189, 248, 0.4)",
-      "rgba(253, 224, 71, 0.3)",
-      "rgba(167, 139, 250, 0.4)",
-    ][Math.floor(Math.random() * 4)],
-    duration: Math.random() * 20 + 10,
-    delay: Math.random() * 5,
+      "rgba(99, 102, 241, 0.4)",
+      "rgba(139, 92, 246, 0.4)",
+      "rgba(59, 130, 246, 0.3)",
+      "rgba(34, 197, 94, 0.3)",
+      "rgba(251, 191, 36, 0.3)",
+    ][Math.floor(Math.random() * 5)],
+    duration: Math.random() * 25 + 15,
+    delay: Math.random() * 8,
   }))
 
   return (
@@ -67,17 +65,18 @@ const Particles = () => {
             animate={{
               x: [
                 particle.x,
-                particle.x + (Math.random() * 100 - 50),
-                particle.x + (Math.random() * 200 - 100),
+                particle.x + (Math.random() * 150 - 75),
+                particle.x + (Math.random() * 300 - 150),
                 particle.x,
               ],
               y: [
                 particle.y,
-                particle.y + (Math.random() * 100 - 50),
-                particle.y + (Math.random() * 200 - 100),
+                particle.y + (Math.random() * 150 - 75),
+                particle.y + (Math.random() * 300 - 150),
                 particle.y,
               ],
-              opacity: [0.2, 0.8, 0.4, 0.2],
+              opacity: [0.1, 0.6, 0.3, 0.1],
+              scale: [1, 1.5, 0.8, 1],
             }}
             transition={{
               duration: particle.duration,
@@ -91,77 +90,41 @@ const Particles = () => {
   )
 }
 
-// 3D card effect
-const Card3D = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+// Enhanced Card component without 3D effect
+const EnhancedCard = ({ children }: { children: React.ReactNode }) => {
   const [isHovered, setIsHovered] = useState(false)
-
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
-
-  const rotateY = useTransform(mouseX, [-dimensions.width / 2, dimensions.width / 2], [10, -10])
-
-  const rotateX = useTransform(mouseY, [-dimensions.height / 2, dimensions.height / 2], [-10, 10])
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return
-    const rect = ref.current.getBoundingClientRect()
-
-    const x = e.clientX - rect.left - dimensions.width / 2
-    const y = e.clientY - rect.top - dimensions.height / 2
-
-    mouseX.set(x)
-    mouseY.set(y)
-  }
-
-  useEffect(() => {
-    if (ref.current) {
-      setDimensions({
-        width: ref.current.offsetWidth,
-        height: ref.current.offsetHeight,
-      })
-    }
-  }, [])
 
   return (
     <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => {
-        setIsHovered(false)
-        mouseX.set(0)
-        mouseY.set(0)
-      }}
-      style={{
-        rotateY: isHovered ? rotateY : 0,
-        rotateX: isHovered ? rotateX : 0,
-        transformPerspective: 1000,
-        transformStyle: "preserve-3d",
-      }}
-      className="relative w-full"
-      transition={{ type: "spring", damping: 20, stiffness: 300 }}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative w-full group"
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", damping: 25, stiffness: 300 }}
     >
+      {/* Glowing background effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-green-500/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+
+      {/* Border gradient */}
       <motion.div
-        className="absolute -inset-px rounded-2xl"
+        className="absolute -inset-px rounded-3xl"
         style={{
-          background: "linear-gradient(145deg, rgba(123, 97, 255, 0.3), rgba(56, 189, 248, 0.3))",
-          backdropFilter: "blur(8px)",
-          zIndex: -1,
-          transformStyle: "preserve-3d",
-          transform: "translateZ(-10px)",
+          background:
+            "linear-gradient(145deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3))",
+          opacity: isHovered ? 0.8 : 0.3,
         }}
         animate={{
-          opacity: isHovered ? 1 : 0.3,
+          background: isHovered
+            ? "linear-gradient(145deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5), rgba(59, 130, 246, 0.5))"
+            : "linear-gradient(145deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
         }}
+        transition={{ duration: 0.3 }}
       />
-      <div>{children}</div>
+
+      <div className="relative">{children}</div>
     </motion.div>
   )
 }
-
-
 
 // TextReveal component
 const TextReveal = ({ text }: { text: string }) => {
@@ -183,42 +146,81 @@ const TextReveal = ({ text }: { text: string }) => {
   )
 }
 
-// Skill icon component
-const SkillIcon = ({ icon: Icon, label }: { icon: React.ElementType; label: string }) => {
+// Enhanced Skill icon component
+const SkillIcon = ({ icon: Icon, label, color }: { icon: React.ElementType; label: string; color: string }) => {
   return (
-    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className="flex flex-col items-center gap-2">
+    <motion.div
+      whileHover={{ scale: 1.15, y: -5 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex flex-col items-center gap-3 group cursor-pointer"
+    >
       <motion.div
-        className="p-3 rounded-full bg-white/5 backdrop-blur-md border border-white/10"
+        className={`p-3 rounded-2xl bg-gradient-to-br ${color} backdrop-blur-md border border-white/10 shadow-lg`}
         whileHover={{
-          boxShadow: "0 0 15px rgba(123, 97, 255, 0.5)",
-          borderColor: "rgba(123, 97, 255, 0.5)",
+          boxShadow: "0 0 25px rgba(99, 102, 241, 0.4)",
+          borderColor: "rgba(99, 102, 241, 0.6)",
         }}
+        transition={{ duration: 0.3 }}
       >
-        <Icon className="w-6 h-6 text-indigo-400" />
+        <Icon className="w-6 h-6 text-white group-hover:text-blue-200 transition-colors" />
       </motion.div>
-      <span className="text-xs font-medium text-white/70">{label}</span>
+      <span className="text-sm font-semibold text-white/80 group-hover:text-white transition-colors">{label}</span>
     </motion.div>
   )
 }
 
-// Animated gradient background
+// Enhanced animated gradient background
 const AnimatedGradient = () => {
   return (
-    <motion.div
-      className="absolute inset-0 -z-10"
-      style={{
-        background: "radial-gradient(circle at 50% 50%, rgba(30, 27, 75, 0.5) 0%, rgba(12, 10, 30, 0) 50%)",
-      }}
-      animate={{
-        opacity: [0.4, 0.8, 0.4],
-        scale: [1, 1.1, 1],
-      }}
-      transition={{
-        duration: 8,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut",
-      }}
-    />
+    <>
+      <motion.div
+        className="absolute inset-0 -z-10"
+        style={{
+          background: "radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)",
+        }}
+        animate={{
+          opacity: [0.3, 0.7, 0.3],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute inset-0 -z-10"
+        style={{
+          background: "radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%)",
+        }}
+        animate={{
+          opacity: [0.2, 0.6, 0.2],
+          scale: [1.2, 1, 1.2],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+      />
+      <motion.div
+        className="absolute inset-0 -z-10"
+        style={{
+          background: "radial-gradient(circle at 50% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%)",
+        }}
+        animate={{
+          opacity: [0.1, 0.4, 0.1],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+          delay: 4,
+        }}
+      />
+    </>
   )
 }
 
@@ -231,10 +233,12 @@ export default function About() {
   }, [])
 
   return (
-    <main className="min-h-screen w-full bg-black text-white flex items-center justify-center overflow-hidden relative p-4 md:p-8">
-     
+    <main className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white flex items-center justify-center overflow-hidden relative p-4 md:p-8">
       <Particles />
       <AnimatedGradient />
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
       {/* Loading overlay */}
       <AnimatePresence>
@@ -253,6 +257,7 @@ export default function About() {
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.5, 1, 0.5],
+                rotate: [0, 180, 360],
               }}
               transition={{
                 duration: 2,
@@ -260,15 +265,15 @@ export default function About() {
                 ease: "easeInOut",
               }}
             >
-              <Sparkles className="w-10 h-10 text-indigo-400" />
+              <Sparkles className="w-12 h-12 text-blue-400" />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Main content */}
-      <div className="container max-w-3xl mx-auto z-10">
-        <Card3D>
+      <div className="container max-w-4xl mx-auto z-10">
+        <EnhancedCard>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{
@@ -280,9 +285,27 @@ export default function About() {
               delay: 0.3,
               ease: [0.645, 0.045, 0.355, 1.0],
             }}
-            className="p-8 md:p-10 backdrop-blur-lg border border-white/10 rounded-2xl"
+            className="p-6 md:p-10 backdrop-blur-xl bg-gray-900/40 border border-white/10 rounded-3xl shadow-2xl"
           >
-            {/* Section title with glitch effect */}
+            {/* Floating decorative elements */}
+            <div className="absolute top-4 right-4">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              >
+                <Star className="w-5 h-5 text-yellow-400/60" />
+              </motion.div>
+            </div>
+            <div className="absolute bottom-4 left-4">
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              >
+                <Zap className="w-4 h-4 text-purple-400/60" />
+              </motion.div>
+            </div>
+
+            {/* Section title with enhanced effect */}
             <motion.div
               className="relative mb-8 overflow-hidden flex items-center"
               initial={{ clipPath: "inset(0 100% 0 0)" }}
@@ -290,20 +313,20 @@ export default function About() {
               transition={{ duration: 1, delay: 0.5, ease: [0.645, 0.045, 0.355, 1.0] }}
             >
               <motion.div
-                className="h-px flex-grow bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-50"
+                className="h-px flex-grow bg-gradient-to-r from-transparent via-blue-500 to-transparent"
                 animate={{
-                  opacity: [0.2, 0.8, 0.2],
-                  scaleY: [1, 1.5, 1],
+                  opacity: [0.3, 1, 0.3],
+                  scaleY: [1, 2, 1],
                 }}
                 transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
               />
               <motion.h2
-                className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400 px-4 whitespace-nowrap"
+                className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 px-4 whitespace-nowrap"
                 animate={{
                   textShadow: [
-                    "0 0 8px rgba(123, 97, 255, 0)",
-                    "0 0 12px rgba(123, 97, 255, 0.5)",
-                    "0 0 8px rgba(123, 97, 255, 0)",
+                    "0 0 10px rgba(99, 102, 241, 0)",
+                    "0 0 20px rgba(99, 102, 241, 0.6)",
+                    "0 0 10px rgba(99, 102, 241, 0)",
                   ],
                 }}
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
@@ -311,34 +334,40 @@ export default function About() {
                 <TextReveal text="ABDUL MOIZ" />
               </motion.h2>
               <motion.div
-                className="h-px flex-grow bg-gradient-to-r from-indigo-500 via-transparent to-transparent opacity-50"
+                className="h-px flex-grow bg-gradient-to-r from-blue-500 via-transparent to-transparent"
                 animate={{
-                  opacity: [0.2, 0.8, 0.2],
-                  scaleY: [1, 1.5, 1],
+                  opacity: [0.3, 1, 0.3],
+                  scaleY: [1, 2, 1],
                 }}
                 transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
               />
             </motion.div>
 
-            {/* Main heading */}
+            {/* Main heading with better sizing */}
             <motion.h1
-              className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-br from-white to-white/70"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-br from-white via-blue-100 to-purple-100"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8, ease: [0.645, 0.045, 0.355, 1.0] }}
             >
               Full-Stack Developer
-              <br />& AI Specialist
+              <br />
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                & AI Specialist
+              </span>
               <motion.span
-                className="inline-block ml-1 text-indigo-400"
-                animate={{ rotate: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                className="inline-block ml-2 text-blue-400"
+                animate={{
+                  opacity: [1, 0, 1],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               >
-                _
+                <Terminal className="w-6 h-6 md:w-8 md:h-8 inline" />
               </motion.span>
             </motion.h1>
 
-            {/* Content with staggered reveal */}
+            {/* Content with better sizing */}
             <div className="space-y-4 mb-8">
               {[
                 "I'm Abdul Moiz — a full-stack developer and problem-solver crafting high-impact digital solutions.",
@@ -347,7 +376,7 @@ export default function About() {
               ].map((line, i) => (
                 <motion.p
                   key={i}
-                  className="text-lg text-white/80"
+                  className="text-base md:text-lg text-white/90 leading-relaxed"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{
@@ -361,49 +390,70 @@ export default function About() {
               ))}
             </div>
 
-            {/* Skills */}
+            {/* Enhanced Skills section */}
             <motion.div
               className="mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5, duration: 0.8 }}
             >
-              <motion.h3
-                className="text-sm uppercase tracking-wider text-white/50 mb-4 font-medium"
+              <motion.div
+                className="flex items-center gap-3 mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.8 }}
               >
-                EXPERTISE
-              </motion.h3>
+                <Rocket className="w-4 h-4 text-blue-400" />
+                <h3 className="text-sm uppercase tracking-wider text-white/80 font-bold">EXPERTISE</h3>
+                <div className="flex-1 h-px bg-gradient-to-r from-blue-400/50 to-transparent"></div>
+              </motion.div>
+
               <motion.div
-                className="flex flex-wrap gap-6"
+                className="flex flex-wrap gap-6 justify-center md:justify-start"
                 variants={{
                   hidden: { opacity: 0 },
                   show: {
                     opacity: 1,
-                    transition: { staggerChildren: 0.2 },
+                    transition: { staggerChildren: 0.3 },
                   },
                 }}
                 initial="hidden"
                 animate="show"
               >
-                <SkillIcon icon={Code} label="Full-Stack" />
-                <SkillIcon icon={Layers} label="Next.js" />
-                <SkillIcon icon={Brain} label="AI" />
+                <SkillIcon icon={Code} label="Full-Stack" color="from-blue-500/20 to-blue-600/20" />
+                <SkillIcon icon={Layers} label="Next.js" color="from-purple-500/20 to-purple-600/20" />
+                <SkillIcon icon={Brain} label="AI/ML" color="from-green-500/20 to-green-600/20" />
               </motion.div>
             </motion.div>
 
-            {/* Button */}
+            {/* Status indicator */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.8, duration: 0.8, ease: [0.645, 0.045, 0.355, 1.0] }}
+              className="flex items-center justify-center gap-4 pt-6 border-t border-white/10"
             >
-             
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-sm text-white/70 font-medium">Available for Projects</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.2s" }}
+                ></div>
+                <div
+                  className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.4s" }}
+                ></div>
+                <div
+                  className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.6s" }}
+                ></div>
+              </div>
             </motion.div>
           </motion.div>
-        </Card3D>
+        </EnhancedCard>
       </div>
     </main>
   )
