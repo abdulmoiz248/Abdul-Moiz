@@ -95,7 +95,7 @@ export function ExperienceSection() {
             </motion.div>
 
             <motion.h2
-              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text"
+              className="text-5xl md:text-6xl font-bold pb-2 bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >

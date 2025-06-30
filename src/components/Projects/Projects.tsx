@@ -294,12 +294,15 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
     <section id="work" className="bg-black py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-          Projects
-        </motion.h2>
+  className="text-5xl md:text-6xl mb-8 py-2 font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text text-center"
+  whileHover={{ scale: 1.05 }}
+  transition={{ type: "spring", stiffness: 300 }}
+>
+ My Projects
+</motion.h2>
+
+
+
 
         {/* Search and Filter Controls */}
         <motion.div
