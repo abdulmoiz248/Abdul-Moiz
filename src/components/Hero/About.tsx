@@ -98,12 +98,12 @@ const EnhancedCard = ({ children }: { children: React.ReactNode }) => {
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative w-full group"
+      className="relative w-full group z-0"
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
     >
       {/* Glowing background effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-green-500/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+      <div className="absolute inset-0 bg-gradient-to-r z-0 from-blue-500/10 via-purple-500/10 to-green-500/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
 
       {/* Border gradient */}
       <motion.div
@@ -233,7 +233,7 @@ export default function About() {
   }, [])
 
   return (
-    <main className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white flex items-center justify-center overflow-hidden relative p-4 md:p-8">
+    <main className="min-h-screen z-0 w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white flex items-center justify-center overflow-hidden relative p-4 md:p-8">
       <Particles />
       <AnimatedGradient />
 

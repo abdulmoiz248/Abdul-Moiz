@@ -173,12 +173,11 @@ export default function CertificateSection({
     <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
       <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
       <div className="container z-10 mx-auto px-4">
-        <motion.h2
-          className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+      <motion.h2
+                   className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text"
+                   whileHover={{ scale: 1.05 }}
+                   transition={{ type: "spring", stiffness: 300 }}
+                 >
           My Certifications & Achievements
         </motion.h2>
 

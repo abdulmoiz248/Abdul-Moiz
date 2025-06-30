@@ -294,19 +294,17 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
     <section id="work" className="bg-black py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl py-3 font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text sm:text-5xl mb-8 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
           Projects
         </motion.h2>
 
         {/* Search and Filter Controls */}
         <motion.div
           className="mb-8 space-y-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+         
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {/* Search Bar */}
@@ -369,18 +367,8 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: {
-                    delay: index * 0.1,
-                    duration: 0.5,
-                    ease: "easeOut",
-                  },
-                }}
-                exit={{ opacity: 0, y: -50, scale: 0.9 }}
+           
+               
                 whileHover={{ scale: 1.02 }}
                 className="w-full"
               >
@@ -394,8 +382,7 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
         {hasMoreProjects && (
           <motion.div
             className="text-center mt-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+           
             transition={{ delay: 0.5 }}
           >
             <button
@@ -409,7 +396,7 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
 
         {/* No Results Message */}
         {filteredAndSortedProjects.length === 0 && (
-          <motion.div className="text-center py-12" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <motion.div className="text-center py-12" >
             <p className="text-gray-400 text-lg">No projects found matching your criteria.</p>
             <button
               onClick={() => {

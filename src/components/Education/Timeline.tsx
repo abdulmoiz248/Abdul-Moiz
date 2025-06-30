@@ -90,7 +90,13 @@ export default function Timeline({setSelectedEvent}: {setSelectedEvent: (event: 
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
       <FuturisticBackground isHovering={isHovering} mouseX={mouseX} mouseY={mouseY} />
       <div className="bg-black text-white min-h-screen p-8 relative z-8">
-        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center">Educational Journey</h1>
+       <motion.h2
+              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+                Educational Journey
+          </motion.h2>  
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-700" />
           <div className="space-y-24"> {/* Increased space between items to 24 */}
