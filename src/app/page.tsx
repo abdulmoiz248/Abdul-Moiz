@@ -80,9 +80,9 @@ export default function Page() {
      
         <Timeline setSelectedEvent={setSelectedEvent}/>
       </AnimatedSection>
-      <AnimatedSection>
+     
         <Projects setSelectedProject={setSelectedProject}/>
-      </AnimatedSection>
+    
       <AnimatedSection>
         <CertificateSection setSelectedCertificate={setSelectedCertificate}/>
        

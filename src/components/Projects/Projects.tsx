@@ -90,17 +90,18 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     githubUrl: "https://github.com/abdulmoiz248/Docgent",
     category: "web",
   },
-  {
-    id: 7,
-    title: "AI Tic Tac Toe",
-    description: "AI-powered Tic Tac Toe game using Gemini API",
-    fullDescription:
-      "AI-powered Tic Tac Toe Game using Gemini API is an interactive web-based game where users can play Tic Tac Toe against an AI opponent. Powered by the Gemini API, the AI leverages advanced algorithms to challenge players with dynamic difficulty levels. The project showcases real-time gameplay, with an intuitive interface and intelligent move predictions, offering a fun and engaging experience. Deployed on a web platform, the game demonstrates the integration of AI technologies to enhance user interaction and gameplay.",
-    imageUrl: "/tic.png",
-    techStack: ["JavaScript", "HTML", "CSS", "Gemini API"],
-    githubUrl: "https://github.com/abdulmoiz248/Tick-Tac-Toe?tab=readme-ov-file#tic-tac-toe-game-with-gemini-api",
-    category: "web",
-  },
+{
+  id: 7,
+  title: "NoteMind",
+  description: "RAG-powered intelligent note assistant",
+  fullDescription:
+    "NoteMind is a smart note assistant built using Retrieval-Augmented Generation (RAG). It enables users to upload academic or personal notes (PDFs, DOCX, or handwritten scans), processes them using OCR (for handwritten content), and leverages vector embeddings with FAISS to enable intelligent querying. With a FastAPI backend and a custom GPT engine, NoteMind allows users to ask questions, generate summaries, extract key concepts, and even get quiz-style questions—all contextualized to their notes. This project demonstrates the power of AI-enhanced document understanding for productivity and learning.",
+  imageUrl: "/notemind.png",
+  techStack: ["Python", "FastAPI", "LangChain", "FAISS", "OCR", "Gemini", "pdf2image", "Poppler"],
+  githubUrl: "https://github.com/abdulmoiz248/NoteMind",
+  category: "web",
+}
+,
   {
     id: 8,
     title: "Twiiter Clone",
@@ -224,7 +225,17 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     githubUrl: "https://github.com/abdulmoiz248/Sudoku"
   ,category:'web'
   },
-
+{
+    id: 19,
+    title: "AI Tic Tac Toe",
+    description: "AI-powered Tic Tac Toe game using Gemini API",
+    fullDescription:
+      "AI-powered Tic Tac Toe Game using Gemini API is an interactive web-based game where users can play Tic Tac Toe against an AI opponent. Powered by the Gemini API, the AI leverages advanced algorithms to challenge players with dynamic difficulty levels. The project showcases real-time gameplay, with an intuitive interface and intelligent move predictions, offering a fun and engaging experience. Deployed on a web platform, the game demonstrates the integration of AI technologies to enhance user interaction and gameplay.",
+    imageUrl: "/tic.png",
+    techStack: ["JavaScript", "HTML", "CSS", "Gemini API"],
+    githubUrl: "https://github.com/abdulmoiz248/Tick-Tac-Toe?tab=readme-ov-file#tic-tac-toe-game-with-gemini-api",
+    category: "web",
+  },
 
 
 ]
