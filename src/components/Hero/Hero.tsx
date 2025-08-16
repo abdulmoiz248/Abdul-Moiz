@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ userName = "VISITOR" }) => {
     >
       {userName}
     </motion.h1>
-    <TypingAnimation className='text-[15px] md:text-2xl text-white p-2 rounded'>
+    <TypingAnimation className='text-[15px] md:text-2xl text-white p-2 rounded pb-10 mb-5'>
       I Don’t Just Code Projects — I Engineer Possibilities
     </TypingAnimation>
   </div>
