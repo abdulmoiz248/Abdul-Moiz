@@ -51,7 +51,7 @@ const allExperiences = [
   company: "Axtra Studios",
   period: "July, 2025 - Present",
   description: "Currently working on scalable software engineering projects involving applied AI and core CS concepts.",
-  technologies: ["Operating Systems", "Data Structures", "OOP", "Java"],
+  technologies: ["JavaScript", "LLM", "Frontend", "Backend"],
   logo: "https://www.axtrastudios.com/_next/static/media/axtra-studios-logo.80e67abb.svg"
 }
 
