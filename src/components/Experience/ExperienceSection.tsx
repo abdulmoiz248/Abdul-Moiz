@@ -34,6 +34,25 @@ const allExperiences = [
       "Tutored a university student in core CS subjects like Distributed Computing, OS, and DSA—focused on concepts, assignments, projects, and boosting performance with hands-on examples.",
     technologies: ["Operating Systems", "Data Structures", "OOP", "Java"],
   },
+{
+  id: 4,
+  title: "AI Intern",
+  company: "BlunderBot",
+  period: "June, 2025 - August, 2025",
+  description:
+    "Developed an AI-powered project management application named TaskWise. Implemented RAG (Retrieval-Augmented Generation) to automate task distribution among team members, intelligently assign team leads, generate AI-driven reports, and perform sentiment analysis on user chats.",
+  technologies: ["RAG", "NLP", "AI Reports", "Sentiment Analysis", "Python"],
+},
+{
+  id: 5,
+  title: "Associate Software Engineer Intern",
+  company: "Axtra Studios",
+  period: "July, 2025 - Present",
+  description:
+    "Currently working on software engineering projects involving core CS concepts and applied AI solutions, contributing to design, development, and optimization of scalable applications.",
+  technologies: ["Operating Systems", "Data Structures", "OOP", "Java"],
+}
+
 ]
 
 export function ExperienceSection() {
