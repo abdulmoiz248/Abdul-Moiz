@@ -1,6 +1,6 @@
 import { useMemo } from "react"
 
-const items = Array.from({ length: 19 }, (_, i) => ({
+const items = Array.from({ length: 20 }, (_, i) => ({
   title: `Image ${i + 1}`,
   src: `/museum/${i + 1}.png`,
 }))
