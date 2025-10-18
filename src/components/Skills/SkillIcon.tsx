@@ -41,6 +41,7 @@ const slugs = [
   "opencv",
   "notion",
   "canva",
+  "openai",
 ];
 
 
