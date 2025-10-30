@@ -7,18 +7,7 @@ import Link from "next/link"
 
 
 
-const SkillIcon = ({ icon: Icon, label }: { icon: React.ElementType; label: string }) => (
-  <motion.div
-    whileHover={{ scale: 1.15 }}
-    whileTap={{ scale: 0.95 }}
-    className="flex flex-col items-center gap-2 cursor-pointer"
-  >
-    <div className="p-4 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-md shadow-lg">
-      <Icon className="w-7 h-7 text-blue-300" />
-    </div>
-    <span className="text-sm text-white/70 font-light">{label}</span>
-  </motion.div>
-)
+
 
 export default function About() {
   const [loaded, setLoaded] = useState(false)
