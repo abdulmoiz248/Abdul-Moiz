@@ -43,24 +43,15 @@ const allExperiences = [
   period: "June, 2025 - August, 2025",
   description: "Developed TaskWise, an AI-powered project management app with RAG, automated task division, team-lead selection, AI-driven reports, and sentiment analysis.",
   technologies: ["RAG", "NLP", "AI Reports", "Sentiment Analysis", "Python"],
-  logo: "https://blunderbottech.com/file.png"
+  logo: "https://media.licdn.com/dms/image/v2/D4E0BAQEj7BMECrAt8g/img-crop_100/img-crop_100/0/1719189330023?e=1764806400&v=beta&t=zlttNXl4MppXgxyutBK8MzuvWoMxPyq2tUzGF9r34Ho"
 },
 {
   id: 5,
   title: "Associate Software Engineer Intern",
   company: "Axtra Studios",
   period: "July, 2025 - October, 2025",
-  description: "Currently working on scalable software engineering projects involving applied AI and core CS concepts.",
+  description: "Worked on scalable software engineering projects applying AI and core CS concepts. Hands-on experience with JavaScript, LLMs, frontend, and backend development.",
   technologies: ["JavaScript", "LLM", "Frontend", "Backend"],
-  logo: "https://www.axtrastudios.com/_next/static/media/axtra-studios-logo.80e67abb.svg"
-},
-{
-  id: 6,
-  title: "Associate Software Engineer",
-  company: "Axtra Studios",
-  period: "October, 2025 - Present",
-  description: "Currently working on scalable software engineering projects involving applied AI and core CS concepts.",
-  technologies: ["JavaScript", "LLM", "Frontend", "Backend", "AI"],
   logo: "https://www.axtrastudios.com/_next/static/media/axtra-studios-logo.80e67abb.svg"
 }
 
