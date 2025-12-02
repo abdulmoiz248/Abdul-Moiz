@@ -49,7 +49,7 @@ const allExperiences = [
   id: 5,
   title: "Associate Software Engineer Intern",
   company: "Axtra Studios",
-  period: "July, 2025 - October, 2025",
+  period: "July, 2025 - November, 2025",
   description: "Worked on scalable software engineering projects applying AI and core CS concepts. Hands-on experience with JavaScript, LLMs, frontend, and backend development.",
   technologies: ["JavaScript", "LLM", "Frontend", "Backend"],
   logo: "https://www.axtrastudios.com/_next/static/media/axtra-studios-logo.80e67abb.svg"
