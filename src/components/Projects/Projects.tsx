@@ -1,11 +1,10 @@
 "use client"
-import { useEffect } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import ProjectCard from "./ProjectCard"
-import { useState, useMemo } from "react"
 import { Search, Filter, SortAsc } from "lucide-react"
+
 export interface Project {
-  id: number
   title: string
   description: string
   fullDescription: string
@@ -13,23 +12,23 @@ export interface Project {
   techStack: string[]
   githubUrl: string
   deployedUrl?: string
-  category: "ml" | "web" | "dsa" | "db"
+  category: "ml" | "web" | "dsa" | "db" | "ai"
 }
 
 const projects: Project[] = [
+ 
   {
-    id: 1,
-    title: "Github-Agent",
-    description: "AI Agents that generate and push readme files for my repos",
+    title: "Tasks by AION",
+    description: "AI-Powered Automation Platform",
     fullDescription:
-      "An intelligent AI-powered agent designed to analyze GitHub repositories and streamline project management. It automatically detects the tech stack and core functionality of any project, generates a detailed README.md file, and publishes it on GitHub. The agent simplifies documentation, ensures consistency across projects, and saves developers significant time.",
-    imageUrl: "/agent.png",
-    techStack: ["NextJs", "React", "TypeScript", "Gemini Api"],
-    githubUrl: "https://github.com/abdulmoiz248/Github-Agent",
-    category: "web",
+      "Aion Tasks is an AI-powered automation platform built to streamline documentation, research, and productivity workflows. The system allows users to upload document templates and dynamically generate content using AI, create on-brand AI-generated slide decks, intelligently expand spreadsheets with pattern detection, and run advanced research that delivers instant insights via webhooks. It integrates multiple AI engines to deliver faster, smarter task execution with a focus on automation at scale.",
+    imageUrl: "/aion.png",
+    techStack: ["React", "Netlify", "OpenAI", "Claude", "Perplexity"],
+    githubUrl: "",
+    deployedUrl: "https://tasks.go-aion.com/login",
+    category: "ai",
   },
   {
-    id: 2,
     title: "Zero Limit Apparel",
     description: "E-Commerce Platform",
     fullDescription:
@@ -40,152 +39,168 @@ const projects: Project[] = [
     deployedUrl: "https://zero-limit.vercel.app",
     category: "web",
   },
+  
   {
-    id: 3,
     title: "Personal Assistant",
-    description: "Your Ultimate Discord Personal Assistant – Automate Tasks, Manage Finances, and Boost Productivity",
-    fullDescription: `A smart Discord-based assistant designed to streamline productivity and daily management. It automates email handling, tracks income and expenses, and generates monthly income statements. The assistant also sends daily LeetCode challenges to keep coding skills sharp and provides task reminders for events, deadlines, and birthdays.
-
-Key Features includes Email Management: Sends, receives, and summarizes emails,
-Finance Tracker: Monitors income and expenses; auto-generates monthly income statements.
-,Daily Coding Practice: Sends LeetCode challenges and tracks your progress.
-,Task & Event Reminders: Keeps you organized with timely alerts.
-Perfect for developers and students seeking to simplify their workflow and stay consistent with learning and financial management.`,
+    description:
+      "Your Ultimate Discord Personal Assistant – Automate Tasks, Manage Finances, and Boost Productivity",
+    fullDescription: `A smart Discord-based assistant designed to streamline productivity and daily management. It automates email handling, tracks income and expenses, and generates monthly income statements. The assistant also sends daily LeetCode challenges to keep coding skills sharp and provides task reminders for events, deadlines, and birthdays.`,
     imageUrl: "/assistant.png",
     techStack: ["Next.js", "TypeScript", "Nodemailer"],
     githubUrl: "https://github.com/abdulmoiz248/Ai-Assistant-",
     category: "web",
   },
   {
-    id: 4,
+
+  title: "Fear Insight",
+  description: "Premium Streetwear Apparel Brand",
+  fullDescription:
+    "Fear Insight is a faith‑driven streetwear brand, offering premium quality clothing that blends fashion with spiritual inspiration and bold self‑expression. The platform allows users to browse and shop a curated collection of apparel. Built with Next.js and backed by modern web tech, the store emphasises quality fabrics, meaningful brand messaging, and a seamless shopping experience.",
+  imageUrl: "/fearinsight.png",
+  techStack: ["Next.js", "TailwindCSS", "TypeScript", "Supabase"], 
+  githubUrl: "",         // not publicly shared
+  deployedUrl: "https://fearinsight.com/",
+  category: "web"
+}
+,
+  {
     title: "Predator-Prey Simulation",
     description: "Parallel Computing Project",
     fullDescription:
-      "Built an interactive, parallelized ecosystem simulation using Python (backend) and TypeScript (frontend). Integrated real-time visualization, PDF report generation with dynamic graphs, and AI-powered summary using Gemini API. The web interface includes a chatbot for simulation assistance. Developed as part of a university-level parallel computing project.",
+      "Built an interactive, parallelized ecosystem simulation using Python (backend) and TypeScript (frontend). Integrated real-time visualization, PDF report generation with dynamic graphs, and AI-powered summary using Gemini API.",
     imageUrl: "/pdc.png",
     techStack: ["React", "TypeScript", "TailwindCSS", "Next.js", "Fast Api", "Multi Processing", "Socket.io"],
     githubUrl: "https://github.com/abdulmoiz248/Predator-Prey-Simulation",
     category: "web",
   },
-
+   {
+    title: "Github-Agent",
+    description: "AI Agents that generate and push readme files for my repos",
+    fullDescription:
+      "An intelligent AI-powered agent designed to analyze GitHub repositories and streamline project management. It automatically detects the tech stack and core functionality of any project, generates a detailed README.md file, and publishes it on GitHub. The agent simplifies documentation, ensures consistency across projects, and saves developers significant time.",
+    imageUrl: "/agent.png",
+    techStack: ["NextJs", "React", "TypeScript", "Gemini Api"],
+    githubUrl: "https://github.com/abdulmoiz248/Github-Agent",
+    category: "web",
+  },
   {
-    id: 5,
     title: "LeetCode Solutions",
     description: "Solution of all my leetcode attempted questions",
     fullDescription:
-      "LeetCode Solutions is a curated collection of my attempted problems on LeetCode, showcasing efficient solutions in Java, JavaScript, and Python. It reflects my approach to solving algorithmic challenges, improving coding skills, and preparing for technical interviews.",
+      "LeetCode Solutions is a curated collection of my attempted problems on LeetCode, showcasing efficient solutions in Java, JavaScript, and Python.",
     imageUrl: "/leetcode.jpeg",
-    techStack: ["Java", "JavaScript", "Python", 'DSA'],
+    techStack: ["Java", "JavaScript", "Python", "DSA"],
     githubUrl: "https://github.com/abdulmoiz248/LeetCode-Attempts",
     category: "dsa",
   },
   {
-    id: 6,
     title: "Docgent",
     description: "Smart document generator for assignments, reports, and invoices",
     fullDescription:
-      "Docgent is an AI-powered document generation assistant built to create professional Word documents like assignments, reports, and invoices. Users can upload images, provide inputs, and get structured outlines through an integrated chatbot powered by Grok and Gemini APIs. The chatbot helps brainstorm, refine, and edit content, while the user verifies the outline before final generation. Docgent streamlines the entire documentation process—fully customizable, collaborative, and intelligent.",
+      "Docgent is an AI-powered document generation assistant built to create professional Word documents like assignments, reports, and invoices.",
     imageUrl: "/docgent.png",
     techStack: ["Next.js", "TypeScript", "Gemini API", "Grok"],
     githubUrl: "https://github.com/abdulmoiz248/Docgent",
     category: "web",
   },
-{
-  id: 7,
-  title: "NoteMind",
-  description: "RAG-powered intelligent note assistant",
-  fullDescription:
-    "NoteMind is a smart note assistant built using Retrieval-Augmented Generation (RAG). It enables users to upload academic or personal notes (PDFs, DOCX, or handwritten scans), processes them using OCR (for handwritten content), and leverages vector embeddings with FAISS to enable intelligent querying. With a FastAPI backend and a custom GPT engine, NoteMind allows users to ask questions, generate summaries, extract key concepts, and even get quiz-style questions—all contextualized to their notes. This project demonstrates the power of AI-enhanced document understanding for productivity and learning.",
-  imageUrl: "/notemind.png",
-  techStack: ["Python", "FastAPI", "LangChain", "FAISS", "OCR", "Gemini", "pdf2image", "Poppler"],
-  githubUrl: "https://github.com/abdulmoiz248/NoteMind",
-  category: "web",
-}
-,
   {
-    id: 8,
+    title: "NoteMind",
+    description: "RAG-powered intelligent note assistant",
+    fullDescription:
+      "NoteMind is a smart note assistant built using Retrieval-Augmented Generation (RAG).",
+    imageUrl: "/notemind.png",
+    techStack: ["Python", "FastAPI", "LangChain", "FAISS", "OCR", "Gemini"],
+    githubUrl: "https://github.com/abdulmoiz248/NoteMind",
+    category: "web",
+  },
+  {
+  
+  title: "Updates Bot",
+  description: "AI-Powered Discord Update Automation",
+  fullDescription:
+    "Updates Bot is a Discord automation tool I built to streamline daily internship updates. Instead of manually formatting messages, you can drop your raw update and the bot leverages Gemini AI to craft a perfectly formatted post. Additionally, it stores your GitHub access token securely and automatically reads your daily git commit messages at 7 AM, sending them as updates to the designated Discord channel. Currently deployed on Vercel, the bot is built for efficiency, automation, and stress-free daily reporting.",
+  imageUrl: "/updates-bot.png",
+  techStack: ["Next.js", "Vercel", "Gemini AI", "Supabase", "TypeScript"],
+  githubUrl: "https://github.com/abdulmoiz248/updates-bot",
+  deployedUrl: "https://updates-bot.vercel.app/",
+  category: "ai"
+},
+
+  {
     title: "Twiiter Clone",
     description: "DSA Semester Project implementing various data structures",
     fullDescription:
-      "The Twitter-Clone project is a demonstration of Data Structures and Algorithms (DSA) skills, showcasing the implementation of various data structures in a simplified social media context. In this project, user IDs are created and managed using a linked list, tweets are displayed using a queue, and stacks are employed for handling notifications. Additionally, file handling is utilized for efficient data storage and retrieval.",
+      "User IDs via linked list, tweets via queue, notifications via stack, file handling for persistence.",
     imageUrl: "/twiiter.png",
     techStack: ["Java", "JavaFx"],
     githubUrl: "https://github.com/abdulmoiz248/Twitter-clone?tab=readme-ov-file#twitter-clone-project",
     category: "dsa",
   },
-
   {
-    id: 9,
     title: "FOOBER",
     description: "Your Food, Your Way, Your Ride!!",
     fullDescription:
-      "Welcome to FOOBER, a revolutionary startup concept that redefines the dining experience by seamlessly integrating food selection, ordering, and transportation. FOOBER provides a unique and convenient solution for food enthusiasts who want to enjoy their favorite meals without the hassle of driving or waiting in queues. With FOOBER, you have the freedom to choose your food, place an order, and have a dedicated rider pick you up, transporting you directly to the restaurant where your delicious meal awaits.",
+      "Integrated food ordering with rider pickup to dine-in experience.",
     imageUrl: "/Foober.jpeg",
     techStack: ["Java", "Javafx", "DSA", "OOP"],
     githubUrl: "https://github.com/abdulmoiz248/FOOBER",
     category: "web",
   },
   {
-    id: 10,
     title: "GPT Emailer Extension",
     description: "A Chrome Extension that generates and send emails using chatgpt website",
     fullDescription:
-      "GPT Emailer is a Chrome Extension that helps you generate and send emails directly using ChatGPT. It integrates with Gmail to create smart, context-aware emails quickly and easily, saving you time and effort.",
+      "Generate and send context-aware emails via Gmail using ChatGPT.",
     imageUrl: "/gpt-email.png",
     techStack: ["React", "TypeScript", "TailwindCSS", "Next.js", "Nodemailer"],
     githubUrl: "https://github.com/abdulmoiz248/Gpt-Emailer-Extension",
     category: "web",
   },
   {
-    id: 11,
     title: "Nexa Link",
     description: "A Chatting App",
     fullDescription:
-      "Nexa Link is a Chatting App that allows users to connect and communicate with each other in real-time. It features a user-friendly interface, enabling seamless messaging, and group chats. The app is designed to enhance social interactions and foster connections among users.",
+      "Real-time messaging and group chats.",
     imageUrl: "/nexalink.png",
     techStack: ["React", "TypeScript", "TailwindCSS", "Next.js", "NestJs", "Socket.io"],
     githubUrl: "https://github.com/abdulmoiz248/NexaLink-Frontend",
     category: "web",
   },
   {
-    id: 12,
     title: "Finance Flow Pro",
     description: "A vibe coded full-stack personal finance app with dashboards, invoices & goal tracking",
     fullDescription:
-      "Finance Flow Pro is a full-stack, vibe-coded personal finance app that evolved through 29 versions—driven purely by vision and vibes ✨. Originally a Vercel (v0.dev) test, it became a daily-use powerhouse that tracks transactions, auto-calculates income/expenses/net savings, visualizes data with sleek dashboards, and manages investments. It includes monthly summaries (1, 6, 12 months), saving goal tracking, invoice generation and email sending, and even lets you instantly add invoice values to your financial logs. With dark/light modes for every mood, this one’s built for me—but maybe perfect for you too.",
+      "Dashboards, summaries, invoice gen, and goals with dark/light modes.",
     imageUrl: "/finance.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "MongoDB",],
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel AI SDK", "MongoDB"],
     githubUrl: "https://github.com/abdulmoiz248/Finance-Flow-Pro",
     category: "web",
   },
   {
-    id: 13,
     title: "Broken Bone Detection",
     description: "ML-based X-ray bone fracture classification system",
     fullDescription:
-      "Broken Bone Detection is a machine learning assignment focused on classifying X-ray images to detect bone fractures. The project uses deep learning models trained on a labeled dataset of fractured and non-fractured X-rays, incorporating image preprocessing techniques and evaluation metrics like accuracy, precision, recall, and confusion matrix. It's built to explore the practical application of computer vision in the medical field, automating diagnosis and reducing human error in radiology.",
+      "Deep learning on labeled X-rays with metrics.",
     imageUrl: "/broken-bone.png",
     techStack: ["Python", "TensorFlow", "OpenCV", "Matplotlib"],
     githubUrl: "https://github.com/abdulmoiz248/Broken-Bone-Detection",
     category: "ml",
   },
   {
-    id: 14,
     title: "PDF Quiz App",
     description: "Ask MCQs from your own PDFs and get instant answers",
     fullDescription:
-      "PDF Quiz App is a collab I built with my friend Zain, where users upload PDFs and then ask multiple-choice questions based on the uploaded content. The backend (Python) processes the documents and responds with accurate answers sourced directly from the PDF. I handled the full frontend in Next.js, crafting a smooth and intuitive UI for uploading, questioning, and interacting with the quiz bot. It’s like having your own AI-powered study buddy for any document.",
+      "Frontend in Next.js, backend in Python using document QA.",
     imageUrl: "/quiz-app.png",
     techStack: ["Next.js", "Tailwind", "Python", "HuggingFace"],
     githubUrl: "https://github.com/abdulmoiz248/Quiz-App",
     category: "web",
   },
   {
-    id: 15,
     title: "COMSATS CGPA Calculator",
     description: "A GPA/CGPA calculator tailored for COMSATS students",
     fullDescription:
-      "COMSATS CGPA Calculator is a web-based tool built to help students at COMSATS University Islamabad accurately compute their CGPA and GPA. It includes three main modules: overall CGPA calculation using semester-wise inputs, GPA calculation based on quizzes, assignments, mids, and finals, and semester-specific CGPA using course-wise data. The app features a clean UI, progress bars, and responsive design. Built with HTML, CSS, and vanilla JS (plus jQuery), it’s flexible and functional—but grounded in the grading system used by COMSATS. Perfect for students who want clarity on their academic performance.",
+      "CGPA/GPA tools with progress bars and responsive UI.",
     imageUrl: "/cgpa-calculator.png",
     techStack: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/abdulmoiz248/COMSATS-CGPA-Calculator",
@@ -193,53 +208,46 @@ Perfect for developers and students seeking to simplify their workflow and stay 
     category: "web",
   },
   {
-    id: 16,
     title: "E-Commerce System (MS SQL Project)",
     description: "Full-featured e-commerce DBMS project with inventory, orders, payments & analytics",
     fullDescription:
-      "This MS SQL-based e-commerce system is a feature-rich backend project handling everything from user registration, cart handling via cookies, and categorized products to full order processing. It supports both guest and registered users, handles payments (cash/card), applies discount coupons, tracks shipping, and enables prebooking out-of-stock items. Users can add reviews, submit complaints (with ticketing), and request returns/refunds. Retailer billing is recorded, and daily revenue is calculated. It’s a complete database-driven solution simulating real-world e-commerce flow and business intelligence in a relational environment.",
+      "Relational backend with BI features.",
     imageUrl: "/e-com-sql.png",
     techStack: ["MS SQL", "Lucide Chart"],
     githubUrl: "https://github.com/abdulmoiz248/MS-SQL-Project",
     category: "db",
   },
   {
-  id: 17,
-  title: "BakeBot",
-  description: "AI-powered baking assistant built with Langchain & React",
-  fullDescription: "BakeBot is a smart baking assistant app developed for a client in collaboration with Zain Ul Abideen. I led the frontend in React to create a seamless user interface, while Zain built the backend, Langchain to power AI-driven recipe and baking assistance. The app lets users interact with an intelligent chatbot for personalized baking suggestions, ingredients guidance, and more.\n\n🧁 React frontend\n🧠 Langchain-powered backend\n💬 Smart chatbot UX\n🚀 Built for real-world client deployment",
-  imageUrl: "/bake-bot.png",
-  techStack: ["React", "Express.js", "Langchain", "JavaScript"],
-  githubUrl: "https://github.com/abdulmoiz248/Bake-Bot",
-  category: "web"
-}
-
-  ,
+    title: "BakeBot",
+    description: "AI-powered baking assistant built with Langchain & React",
+    fullDescription:
+      "Chat-driven baking assistant with React frontend.",
+    imageUrl: "/bake-bot.png",
+    techStack: ["React", "Express.js", "Langchain", "JavaScript"],
+    githubUrl: "https://github.com/abdulmoiz248/Bake-Bot",
+    category: "web",
+  },
   {
-    id: 18,
     title: "Sudoku Solver with GUI",
     description: "Interactive Sudoku solver with JavaFX",
-    fullDescription: "A JavaFX-based desktop application that solves Sudoku puzzles and lets you play them too. You can input your own puzzle or generate a random one. It features a clean, interactive GUI where you can watch the solver work or manually test your moves. It ensures all puzzles and solutions are valid. Whether you're just here to play or trying to debug your brain, it's a full Sudoku experience.\n\n🧠 Smart solver algorithm\n🎮 Playable with move validation\n🎲 Puzzle generator\n🖥️ Built using Java + JavaFX",
+    fullDescription:
+      "Solver, generator, and playable UI.",
     imageUrl: "/sudoku.png",
     techStack: ["Java", "JavaFX"],
-    githubUrl: "https://github.com/abdulmoiz248/Sudoku"
-  ,category:'web'
+    githubUrl: "https://github.com/abdulmoiz248/Sudoku",
+    category: "web",
   },
-{
-    id: 19,
+  {
     title: "AI Tic Tac Toe",
     description: "AI-powered Tic Tac Toe game using Gemini API",
     fullDescription:
-      "AI-powered Tic Tac Toe Game using Gemini API is an interactive web-based game where users can play Tic Tac Toe against an AI opponent. Powered by the Gemini API, the AI leverages advanced algorithms to challenge players with dynamic difficulty levels. The project showcases real-time gameplay, with an intuitive interface and intelligent move predictions, offering a fun and engaging experience. Deployed on a web platform, the game demonstrates the integration of AI technologies to enhance user interaction and gameplay.",
+      "Web game with smart AI opponent.",
     imageUrl: "/tic.png",
     techStack: ["JavaScript", "HTML", "CSS", "Gemini API"],
     githubUrl: "https://github.com/abdulmoiz248/Tick-Tac-Toe?tab=readme-ov-file#tic-tac-toe-game-with-gemini-api",
     category: "web",
   },
-
-
 ]
-
 
 export default function Projects({ setSelectedProject }: { setSelectedProject: (project: Project) => void }) {
   const [searchTerm, setSearchTerm] = useState("")
@@ -263,18 +271,17 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
   ]
 
   const filteredAndSortedProjects = useMemo(() => {
-    const filtered = projects.filter((project) => {
+    const withIndex = projects.map((p, index) => ({ ...p, _index: index }))
+
+    const filtered = withIndex.filter((project) => {
       const matchesSearch =
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.techStack.some((tech) => tech.toLowerCase().includes(searchTerm.toLowerCase()))
-
       const matchesCategory = selectedCategory === "all" || project.category === selectedCategory
-
       return matchesSearch && matchesCategory
     })
 
-    // Sort projects
     filtered.sort((a, b) => {
       switch (sortBy) {
         case "title":
@@ -282,11 +289,10 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
         case "category":
           return a.category.localeCompare(b.category)
         case "recent":
-          return b.id - a.id // Assuming higher ID means more recent
+          return b._index - a._index
         case "original":
-          return a.id - b.id // Original order by ID
         default:
-          return a.id - b.id // Default to original order
+          return a._index - b._index
       }
     })
 
@@ -296,7 +302,6 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
   const displayedProjects = filteredAndSortedProjects.slice(0, showCount)
   const hasMoreProjects = showCount < filteredAndSortedProjects.length
 
-  // Reset showCount when filters change
   useEffect(() => {
     setShowCount(8)
   }, [searchTerm, selectedCategory, sortBy])
@@ -305,23 +310,14 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
     <section id="work" className="bg-black py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-  className="text-5xl md:text-6xl mb-8 py-2 font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text text-center"
-  whileHover={{ scale: 1.05 }}
-  transition={{ type: "spring", stiffness: 300 }}
->
- My Projects
-</motion.h2>
-
-
-
-
-        {/* Search and Filter Controls */}
-        <motion.div
-          className="mb-8 space-y-4"
-         
-          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-5xl md:text-6xl mb-8 py-2 font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 text-transparent bg-clip-text text-center"
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
-          {/* Search Bar */}
+          My Projects
+        </motion.h2>
+
+        <motion.div className="mb-8 space-y-4" transition={{ duration: 0.5, delay: 0.2 }}>
           <div className="relative max-w-md mx-auto">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
@@ -333,9 +329,7 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
             />
           </div>
 
-          {/* Filter and Sort Controls */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* Category Filter */}
             <div className="flex items-center gap-2">
               <Filter className="text-gray-400 w-5 h-5" />
               <select
@@ -351,7 +345,6 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
               </select>
             </div>
 
-            {/* Sort Options */}
             <div className="flex items-center gap-2">
               <SortAsc className="text-gray-400 w-5 h-5" />
               <select
@@ -368,37 +361,23 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
             </div>
           </div>
 
-          {/* Results Count */}
           <div className="text-center text-gray-400 text-sm">
             Showing {displayedProjects.length} of {filteredAndSortedProjects.length} projects
           </div>
         </motion.div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
           <AnimatePresence mode="wait">
-            {displayedProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-           
-               
-                whileHover={{ scale: 1.02 }}
-                className="w-full"
-              >
+            {displayedProjects.map((project, index) => (
+              <motion.div key={`${project.title}-${index}`} layout whileHover={{ scale: 1.02 }} className="w-full">
                 <ProjectCard project={project} onClick={() => setSelectedProject(project)} />
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
 
-        {/* Show More Button */}
         {hasMoreProjects && (
-          <motion.div
-            className="text-center mt-12"
-           
-            transition={{ delay: 0.5 }}
-          >
+          <motion.div className="text-center mt-12" transition={{ delay: 0.5 }}>
             <button
               onClick={() => setShowCount((prev) => Math.min(prev + 8, filteredAndSortedProjects.length))}
               className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
@@ -408,9 +387,8 @@ export default function Projects({ setSelectedProject }: { setSelectedProject: (
           </motion.div>
         )}
 
-        {/* No Results Message */}
         {filteredAndSortedProjects.length === 0 && (
-          <motion.div className="text-center py-12" >
+          <motion.div className="text-center py-12">
             <p className="text-gray-400 text-lg">No projects found matching your criteria.</p>
             <button
               onClick={() => {
