@@ -12,7 +12,7 @@ export interface Project {
   techStack: string[]
   githubUrl: string
   deployedUrl?: string
-  category: "ml" | "web" | "dsa" | "db" | "ai"
+  category: "ml" | "web" | "dsa" | "db" | "ai" | "automation" | "devops"
 }
 
 const projects: Project[] = [
@@ -73,6 +73,16 @@ const projects: Project[] = [
     githubUrl: "https://github.com/abdulmoiz248/Predator-Prey-Simulation",
     category: "web",
   },
+  {
+  title: "Insightify",
+  description: "AI-powered GitHub activity analytics and insights platform",
+  fullDescription:
+    "An intelligent automated tracking system that monitors your GitHub coding activity daily and provides comprehensive analytics. It automatically fetches commits, calculates coding hours, tracks languages used, and generates AI-powered insights using Google Gemini. The platform delivers beautiful daily progress notifications via Discord and monthly comprehensive reports via email with auto-generated charts. Built with Python and GitHub Actions for complete automation, it helps developers understand their productivity patterns and maintain coding streaks.",
+  imageUrl: "/insightify.png",
+  techStack: ["Python", "GitHub Actions", "Gemini AI", "Discord API", "Matplotlib", "PyGithub"],
+  githubUrl: "https://github.com/abdulmoiz248/Insightify",
+  category: "automation",
+},
    {
     title: "Github-Agent",
     description: "AI Agents that generate and push readme files for my repos",
