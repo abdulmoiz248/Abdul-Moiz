@@ -104,6 +104,16 @@ const projects: Project[] = [
     category: "dsa",
   },
   {
+  "title": "GPTWrapped",
+  "description": "ChatGPT Year in Review",
+  "fullDescription": "GPT Wrapped is a Next.js application that analyzes your ChatGPT conversation history and generates a beautiful, shareable 'Wrapped' experience—similar to Spotify Wrapped. Upload your ChatGPT export and discover personalized insights including your usage personality type (Code Wizard, Creative Mind, Data Detective, etc.), longest usage streak, most active times and days, conversation depth, top discussion topics, and much more. The app features a beautiful gradient interface with swipeable slides, comprehensive analytics, and the ability to download and share your Wrapped as an image. Built for ChatGPT users who want to visualize and celebrate their AI journey throughout the year.",
+  "imageUrl": "/gpt-wrapped.png",
+  "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "React", "html2canvas"],
+  "githubUrl": "https://github.com/abdulmoiz248/Gpt-Wrap",
+  "deployedUrl": "https://gpt-wrap.vercel.app/",
+  "category": "web"
+},
+  {
     title: "Docgent",
     description: "Smart document generator for assignments, reports, and invoices",
     fullDescription:
