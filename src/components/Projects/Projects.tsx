@@ -83,6 +83,39 @@ const projects: Project[] = [
   githubUrl: "https://github.com/abdulmoiz248/Insightify",
   category: "automation",
 },
+{
+  title: "Joblyst",
+  description: "Automated AI-powered job hunting and resume matching for Pakistan",
+  fullDescription:
+    "Job Hunt Assistant is an intelligent automation tool that streamlines the job search process for Pakistani developers. It automatically scrapes multiple local career pages and LinkedIn to find relevant job opportunities based on your CV. The system matches job requirements with your resume, filters remote and location-based roles (e.g., Lahore or remote), and delivers daily curated job alerts directly to Discord. When required, it also generates tailored cover letters to speed up applications, enabling a low-effort, high-consistency job hunting workflow.",
+  imageUrl: "/joblyst.png",
+  techStack: [
+    "Python",
+    "BeautifulSoup",
+  "Sentence Transformers",
+  "Github Actions",
+  ],
+  githubUrl: "https://github.com/abdulmoiz248/Joblyst",
+  category: "automation",
+}
+,
+{
+  title: "Rewise",
+  description: "AI-powered smart revision bot for automated active recall from Notion notes",
+  fullDescription:
+    "Rewise is an intelligent revision automation system that transforms your Notion notes into interview-level MCQs using AI. It intelligently selects one note at a time using spaced repetition logic based on review history and confidence scores. The system generates 5–10 challenging, non-trivial MCQs, sends questions to Discord for distraction-free daily revision, and archives full questions with answers and explanations back into Notion. A live analytics dashboard tracks review frequency, overdue notes, confidence trends, and overall learning progress. Built for consistent, high-quality active recall without manual effort.",
+  imageUrl: "/rewise.png",
+  techStack: [
+    "Python",
+    "Notion API",
+    "Google Gemini",
+    "LangChain",
+    "GitHub Actions",
+  ],
+  githubUrl: "https://github.com/abdulmoiz248/Rewise",
+  category: "automation",
+}
+,
    {
     title: "Github-Agent",
     description: "AI Agents that generate and push readme files for my repos",
