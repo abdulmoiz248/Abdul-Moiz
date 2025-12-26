@@ -35,7 +35,7 @@ export default function GitHubLeetCodeStats() {
   }, [])
 
   useEffect(() => {
-    if (dataReady && leetCodeCount < 280) {
+    if (dataReady && leetCodeCount < 285) {
       const timer = setTimeout(() => setLeetCodeCount((prevCount) => prevCount + 3), 20)
       return () => clearTimeout(timer)
     }

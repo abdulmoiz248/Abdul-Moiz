@@ -63,6 +63,16 @@ const projects: Project[] = [
   category: "web"
 }
 ,
+{
+  "title": "ProtoML",
+  "description": "Automated ML Research Paper Analysis with Multi-Agent System",
+  "fullDescription": "ProtoML is an intelligent system leveraging Groq and Gemini AI agents to automatically discover, analyze, and summarize the latest machine learning research papers from arXiv. It features multi-agent scoring, debates for paper selection, PDF processing, semantic embeddings, structured report generation, and Discord integration for automated notifications.",
+  "imageUrl": "/protoml.png",
+  "techStack": ["Python",  "arXiv API", "Groq API", "Gemini API", "Sentence Transformers", "PDF Processing"],
+  "githubUrl": "https://github.com/abdulmoiz248/ProtoML",
+  "category": "ml"
+}
+,
   {
     title: "Predator-Prey Simulation",
     description: "Parallel Computing Project",
