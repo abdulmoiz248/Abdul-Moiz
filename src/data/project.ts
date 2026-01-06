@@ -1,5 +1,5 @@
-import { Project } from "@/components/Projects/Projects"
-export const projects: Project[] = [
+
+export const projects = [
  
   {
     title: "Tasks by AION",
