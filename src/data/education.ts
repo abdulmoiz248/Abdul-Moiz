@@ -1,6 +1,6 @@
-import { TimelineEvent } from '@/components/Education/Timeline'
 
-export const events: TimelineEvent[] = [
+
+export const events= [
   {
     id: 1,
     year: 2020,

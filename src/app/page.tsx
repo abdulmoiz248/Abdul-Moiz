@@ -2,7 +2,7 @@
 
 import CertificateSection from '@/components/Certifications/Certification'
 import ContributionsDisplay from '@/components/Contribution/ContributionsDisplay'
-import Timeline from '@/components/Education/Timeline'
+
 import { ExperienceSection } from '@/components/Experience/ExperienceSection'
 import Footer from '@/components/Layouts/Footer'
 import Hero from '@/components/Hero/Hero'
@@ -13,18 +13,17 @@ import { AnimatedSection } from '@/components/AnimatedSection'
 import { Certificate } from '@/components/Certifications/Certification'
 import { useState } from 'react'
 import CertificateModal from '@/components/Certifications/CertificateModal'
-import { TimelineEvent } from '@/components/Education/Timeline'
-import TimelineModal from '@/components/Education/TimelineModal'
-import { Project } from '@/components/Projects/Projects'
+
+
 import ProjectModal from '@/components/Projects/ProjectModal'
 import Head from 'next/head';
 import About from '@/components/Hero/About'
+import EducationSection from '@/components/Education/Education'
 
 export default function Page() {
   
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null)
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+ 
  return (
     <>
      <Head>
@@ -48,15 +47,7 @@ export default function Page() {
         <meta property="twitter:image" content="https://abdul-moiz-b419.vercel.app/og-image.jpg" />
       </Head>
 
-       {selectedEvent && (
-          <TimelineModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
-        )}
-         {selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
+      
 
 <CertificateModal
         certificate={selectedCertificate}
@@ -64,7 +55,7 @@ export default function Page() {
       />
       <div className='pt-12'>
       
-      <Hero userName='Abdul Moiz'/>
+      <Hero />
       </div>
       <About/>
       <AnimatedSection>
@@ -76,12 +67,10 @@ export default function Page() {
       <AnimatedSection>
         <ExperienceSection/>
       </AnimatedSection>
-      <AnimatedSection>
      
-        <Timeline setSelectedEvent={setSelectedEvent}/>
-      </AnimatedSection>
      
-        <Projects setSelectedProject={setSelectedProject}/>
+        <EducationSection/>
+        <Projects/>
     
       <AnimatedSection>
         <CertificateSection setSelectedCertificate={setSelectedCertificate}/>
