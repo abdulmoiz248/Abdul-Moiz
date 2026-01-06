@@ -3,7 +3,7 @@
 import CertificateSection from '@/components/Certifications/Certification'
 import ContributionsDisplay from '@/components/Contribution/ContributionsDisplay'
 
-import { ExperienceSection } from '@/components/Experience/ExperienceSection'
+import  ExperienceSection  from '@/components/Experience/ExperienceSection'
 import Footer from '@/components/Layouts/Footer'
 import Hero from '@/components/Hero/Hero'
 import Projects from '@/components/Projects/Projects'
@@ -64,9 +64,9 @@ export default function Page() {
       <AnimatedSection>
         <IconCloudDemo/>
       </AnimatedSection>
-      <AnimatedSection>
+      
         <ExperienceSection/>
-      </AnimatedSection>
+      
      
      
         <EducationSection/>
