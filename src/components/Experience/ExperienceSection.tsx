@@ -67,31 +67,6 @@ const ExperienceSection = () => {
   // Reverse the experiences array
   const reversedExperiences = [...allExperiences].reverse();
 
-  // Auto-close when scrolling to next item
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      
-      const container = containerRef.current;
-      const items = container.querySelectorAll('[data-experience-item]');
-      
-      items.forEach((item, index) => {
-        const rect = item.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Check if item is in view (centered)
-        if (rect.top >= windowHeight * 0.3 && rect.top <= windowHeight * 0.5) {
-          if (openIndex !== index) {
-            setOpenIndex(index);
-          }
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [openIndex]);
-
   const toggleExperience = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
