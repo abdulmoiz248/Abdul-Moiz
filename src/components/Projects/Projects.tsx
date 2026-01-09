@@ -33,7 +33,7 @@ const ProjectsSection = () => {
 
         {/* Projects Grid - Alternating Layout */}
         <div className="space-y-24">
-          {projects.map((project, index) => (
+          {projects.slice(0,5).map((project, index) => (
             <ProjectCard
               key={project.title}
               project={project}

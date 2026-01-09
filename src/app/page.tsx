@@ -1,16 +1,16 @@
 'use client'
 
 import CertificateSection from '@/components/Certifications/Certification'
-import ContributionsDisplay from '@/components/Contribution/ContributionsDisplay'
+import DeveloperSection from '@/components/Contribution/ContributionsDisplay'
 
 import  ExperienceSection  from '@/components/Experience/ExperienceSection'
 import Footer from '@/components/Layouts/Footer'
 import Hero from '@/components/Hero/Hero'
 import Projects from '@/components/Projects/Projects'
-import { IconCloudDemo } from '@/components/Skills/SkillIcon'
+import SkillsMarquee from '@/components/Skills/SkillIcon'
 import React from 'react'
 import { AnimatedSection } from '@/components/AnimatedSection'
-import { Certificate } from '@/components/Certifications/Certification'
+
 import { useState } from 'react'
 import CertificateModal from '@/components/Certifications/CertificateModal'
 
@@ -19,10 +19,11 @@ import ProjectModal from '@/components/Projects/ProjectModal'
 import Head from 'next/head';
 import About from '@/components/Hero/About'
 import EducationSection from '@/components/Education/Education'
+import AboutSection from '@/components/About/About'
+import BookCallSection from '@/components/BookCall/BookCall'
 
 export default function Page() {
   
-  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
  
  return (
     <>
@@ -49,21 +50,18 @@ export default function Page() {
 
       
 
-<CertificateModal
-        certificate={selectedCertificate}
-        onClose={() => setSelectedCertificate(null)}
-      />
-      <div className='pt-12'>
+
+      
       
       <Hero />
-      </div>
-      <About/>
-      <AnimatedSection>
-        <ContributionsDisplay/>
-      </AnimatedSection>
-      <AnimatedSection>
-        <IconCloudDemo/>
-      </AnimatedSection>
+      
+     <AboutSection/>
+
+   
+        <DeveloperSection/>
+  
+     
+      <SkillsMarquee />
       
         <ExperienceSection/>
       
@@ -71,11 +69,8 @@ export default function Page() {
      
         <EducationSection/>
         <Projects/>
-    
-      <AnimatedSection>
-        <CertificateSection setSelectedCertificate={setSelectedCertificate}/>
-       
-      </AnimatedSection>
+        <CertificateSection/>
+        <BookCallSection/>
      
       <Footer/>
     </>
