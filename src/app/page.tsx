@@ -19,6 +19,9 @@ import About from '@/components/Hero/About'
 import EducationSection from '@/components/Education/Education'
 import AboutSection from '@/components/About/About'
 import BookCallSection from '@/components/BookCall/BookCall'
+import TestimonialsSection from '@/components/Testimonials/Testimonials'
+import SocialBeamSection from '@/components/socials/social'
+import CTASection from '@/components/Gallery/GalleryCTA'
 
 export default function Page() {
   
@@ -63,12 +66,14 @@ export default function Page() {
       
         <ExperienceSection/>
       
-     
+      <CTASection/>
      
         <EducationSection/>
         <Projects/>
         <CertificateSection/>
         <BookCallSection/>
+        <TestimonialsSection/>
+        <SocialBeamSection/>
      
       <Footer/>
     </>

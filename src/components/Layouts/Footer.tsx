@@ -1,124 +1,221 @@
-'use client'
+"use client";
 
-import {  useState } from 'react'
-import { useFormStatus } from 'react-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Send, CheckCircle } from 'lucide-react'
-import axios from 'axios'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Send, CheckCircle, Github, Linkedin, Twitter, Mail, Heart, ArrowUp, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-function SubmitButton() {
-  const { pending } = useFormStatus()
+const FooterSection = () => {
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState("");
 
-  return (
-    <motion.button
-      type="submit"
-      disabled={pending}
-      className="group px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full font-semibold text-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <span className="flex items-center justify-center">
-        {pending ? 'Sending...' : 'Send Message'}
-        <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 ease-in-out" />
-      </span>
-    </motion.button>
-  )
-}
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-export default function StylishContactFooter() {
-  const [message, setMessage] = useState('')
-  const [feedback, setFeedback] = useState('')
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate sending message (replace with actual API call)
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    setMessage("");
+    setFeedback("Your message has been sent!");
+    setIsSubmitting(false);
+    setTimeout(() => setFeedback(""), 5000);
+  };
 
-  async function handleSubmit(event:React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  const socials = [
+    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+    { icon: Mail, href: "mailto:your@email.com", label: "Email" },
+  ];
 
-   let res=await axios.post('/api/send-mail',{message})
-  
-   if(res.data.success){
-    setMessage('')
-    setFeedback('Your message has been sent!')
-    setTimeout(() => setFeedback(''), 5000)
-   }else{//to counter 504 on vercel
-     res=await axios.post('/api/send-mail',message)
-     if(res.data.success){
-      setMessage('')
-      setFeedback('Your message has been sent!')
-      setTimeout(() => setFeedback(''), 5000)
-     }
-
-   }
-
-
-  }
+  const quickLinks = [
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
-    <footer id="contact" className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
-          className="text-4xl sm:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Speak Your Mind, Anonymously
-        </motion.h2>
-        <motion.p
-          className="text-xl text-center text-gray-300 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Your thoughts, unfiltered and untraced. Share whats on your mind.
-        </motion.p>
-        <form onSubmit={(e:React.FormEvent<HTMLFormElement>)=>handleSubmit(e)} className="space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <textarea
-              name="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Type your anonymous message here..."
-              className="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none transition-all duration-300 ease-in-out"
-              rows={5}
-              required
-            ></textarea>
-          </motion.div>
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <SubmitButton />
-            <AnimatePresence>
-              {feedback && (
-                <motion.p
-                  className="text-green-400 text-lg flex items-center"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
+    <footer id="contact" className="relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 gradient-dark" />
+      <div className="absolute inset-0 opacity-20">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(hsl(var(--primary) / 0.05) 1px, transparent 1px),
+                             linear-gradient(90deg, hsl(var(--primary) / 0.05) 1px, transparent 1px)`,
+            backgroundSize: "80px 80px",
+          }}
+        />
+      </div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
+
+      <div className="relative z-10">
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 pt-20 pb-12">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            {/* Left Side - Anonymous Message */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <MessageSquare className="w-6 h-6 text-primary" />
+                </div>
+                <span className="text-sm font-medium text-primary uppercase tracking-wider">
+                  Anonymous Message
+                </span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Speak Your Mind,{" "}
+                <span className="text-primary">Anonymously</span>
+              </h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                Your thoughts, unfiltered and untraced. Share what's on your mind — 
+                feedback, appreciation, or just a random thought.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-primary/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+                  <textarea
+                    name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Type your anonymous message here..."
+                    className="relative w-full p-4 bg-card/50 text-foreground border border-primary/10 rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary/30 resize-none transition-all duration-300 placeholder:text-muted-foreground/50"
+                    rows={4}
+                    required
+                  />
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <Button
+                    type="submit"
+                    variant="outline"
+                    size="lg"
+                    disabled={isSubmitting}
+                    className="group"
+                  >
+                    <span className="flex items-center">
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </Button>
+
+                  <AnimatePresence>
+                    {feedback && (
+                      <motion.p
+                        className="text-primary text-sm flex items-center"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                      >
+                        <CheckCircle className="mr-2 w-4 h-4" />
+                        {feedback}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </form>
+            </motion.div>
+
+            {/* Right Side - Quick Links & Socials */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              {/* Quick Links */}
+              <div>
+                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+                  Quick Links
+                </h3>
+                <ul className="grid grid-cols-2 gap-3">
+                  {quickLinks.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/30 group-hover:bg-primary transition-colors" />
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Social Links */}
+              <div>
+                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+                  Connect With Me
+                </h3>
+                <div className="flex gap-3">
+                  {socials.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative"
+                      aria-label={social.label}
+                    >
+                      <div className="absolute inset-0 bg-primary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300" />
+                      <div className="relative w-12 h-12 rounded-xl bg-card/80 border border-primary/10 flex items-center justify-center group-hover:border-primary/40 group-hover:scale-110 transition-all duration-300">
+                        <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Back to Top */}
+              <div>
+                <button
+                  onClick={scrollToTop}
+                  className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
-                  <CheckCircle className="mr-2 w-5 h-5" />
-                  {feedback}
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        </form>
-        <motion.div
-          className="mt-12 text-center text-gray-400"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          <p className="text-sm">© {new Date().getFullYear()} </p>
-       
-          <p className="text-sm">Designed with ❤️ Abdul Moiz</p>
-        </motion.div>
+                  <div className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-300">
+                    <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                  <span className="text-sm">Back to top</span>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-primary/10">
+          <div className="max-w-6xl mx-auto px-4 py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} All rights reserved.
+              </p>
+              <p className="text-sm text-muted-foreground flex items-center gap-2">
+                Designed with <Heart className="w-4 h-4 text-primary animate-pulse" /> by{" "}
+                <span className="text-primary font-medium">Abdul Moiz</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
-  )
-}
+  );
+};
+
+export default FooterSection;
