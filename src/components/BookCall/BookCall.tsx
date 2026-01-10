@@ -12,7 +12,13 @@ const timeSlots = [
   '03:00 PM',
   '04:00 PM',
   '05:00 PM',
+    '06:00 PM',
+  '07:00 PM',
+    '08:00 PM',
+  '09:00 PM',
+  '10:00 PM',
 ]
+
 
 const meetingTypes = [
   { 
@@ -47,6 +53,8 @@ const BookCallSection = () => {
   const [selectedType, setSelectedType] = useState<string | null>(null)
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,17 +73,52 @@ const BookCallSection = () => {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = () => {
-    // In real app, this would send to backend
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setStep(1)
-      setSelectedDate(undefined)
-      setSelectedTime(null)
-      setSelectedType(null)
-      setFormData({ name: '', email: '', message: '' })
-    }, 5000)
+  const handleSubmit = async () => {
+    if (!selectedDate || !selectedTime || !selectedType) return
+    
+    setIsSubmitting(true)
+    setSubmitError(null)
+
+    try {
+      const meetingTypeData = meetingTypes.find(t => t.id === selectedType)
+      
+      const response = await fetch('/api/book-call', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          date: selectedDate.toISOString(),
+          dateFormatted: format(selectedDate, 'PPP'),
+          time: selectedTime,
+          meetingType: `${meetingTypeData?.title} (${meetingTypeData?.duration})`,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to book call')
+      }
+
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setStep(1)
+        setSelectedDate(undefined)
+        setSelectedTime(null)
+        setSelectedType(null)
+        setFormData({ name: '', email: '', message: '' })
+      }, 5000)
+    } catch (error) {
+      console.error('Error submitting booking:', error)
+      setSubmitError(error instanceof Error ? error.message : 'Failed to book call. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const canProceedStep1 = selectedType !== null
@@ -245,26 +288,25 @@ const BookCallSection = () => {
                         selected={selectedDate}
                         onSelect={setSelectedDate}
                         disabled={(date) => date < new Date() || date > addDays(new Date(), 60) || isWeekend(date)}
-                        className="pointer-events-auto rounded-xl"
+                        className="pointer-events-auto rounded-xl w-full"
                         classNames={{
-                          months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+                          months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 w-full",
                           month: "space-y-4 w-full",
                           caption: "flex justify-center pt-1 relative items-center",
                           caption_label: "text-sm font-medium text-foreground",
                           nav: "space-x-1 flex items-center",
-                          nav_button: "h-8 w-8 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center text-foreground transition-colors",
-                          nav_button_previous: "absolute left-1",
-                          nav_button_next: "absolute right-1",
+                          button_previous: "absolute left-1 h-8 w-8 bg-white/10 hover:bg-white/20 rounded-lg inline-flex items-center justify-center text-foreground transition-colors",
+                          button_next: "absolute right-1 h-8 w-8 bg-white/10 hover:bg-white/20 rounded-lg inline-flex items-center justify-center text-foreground transition-colors",
                           table: "w-full border-collapse",
-                          head_row: "flex w-full",
-                          head_cell: "text-muted-foreground rounded-md w-full font-normal text-[0.8rem] py-2",
-                          row: "flex w-full mt-1",
-                          cell: "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 h-10 w-full",
+                          weekdays: "flex w-full",
+                          weekday: "text-muted-foreground rounded-md w-full font-normal text-[0.8rem] py-2 flex-1",
+                          week: "flex w-full mt-1",
                           day: cn(
                             "h-10 w-10 p-0 font-normal rounded-lg mx-auto flex items-center justify-center",
                             "hover:bg-accent/20 hover:text-foreground transition-colors",
                             "aria-selected:opacity-100"
                           ),
+                          day_button: "h-10 w-10 p-0 font-normal",
                           day_selected:
                             "bg-accent text-background hover:bg-accent hover:text-background focus:bg-accent focus:text-background",
                           day_today: "bg-white/10 text-foreground",
@@ -304,9 +346,7 @@ const BookCallSection = () => {
                           </button>
                         ))}
                       </div>
-                      <p className="mt-4 text-center text-xs text-muted-foreground">
-                        Times shown in your local timezone
-                      </p>
+                     
                     </div>
                   </div>
 
@@ -392,22 +432,29 @@ const BookCallSection = () => {
                     <button
                       onClick={() => setStep(2)}
                       className="rounded-xl border border-white/10 bg-white/5 px-6 py-4 font-medium text-foreground transition-all hover:bg-white/10"
+                      disabled={isSubmitting}
                     >
                       Back
                     </button>
                     <button
                       onClick={handleSubmit}
-                      disabled={!canSubmit}
+                      disabled={!canSubmit || isSubmitting}
                       className={`flex items-center gap-2 rounded-xl px-8 py-4 font-semibold transition-all duration-300 ${
-                        canSubmit
+                        canSubmit && !isSubmitting
                           ? 'bg-gradient-to-r from-accent to-primary text-background shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40'
                           : 'cursor-not-allowed bg-white/10 text-muted-foreground'
                       }`}
                     >
-                      <Sparkles className="h-5 w-5" />
-                      Confirm Booking
+                      <Sparkles className={`h-5 w-5 ${isSubmitting ? 'animate-spin' : ''}`} />
+                      {isSubmitting ? 'Confirming...' : 'Confirm Booking'}
                     </button>
                   </div>
+                  
+                  {submitError && (
+                    <div className="mx-auto max-w-lg rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-center">
+                      <p className="text-sm text-red-400">{submitError}</p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
