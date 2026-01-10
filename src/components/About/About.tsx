@@ -13,8 +13,8 @@ import {
 const facts = [
   { icon: Code2, label: 'Lines of Code', value: '100K+' },
   { icon: Coffee, label: 'Cups of Coffee', value: '∞' },
-  { icon: Rocket, label: 'Projects Shipped', value: '25+' },
-  { icon: Zap, label: 'Automations Built', value: '15+' },
+  { icon: Rocket, label: 'Projects Shipped', value: '15+' },
+  { icon: Zap, label: 'Automations Built', value: '10+' },
 ]
 
 const AboutSection = () => {

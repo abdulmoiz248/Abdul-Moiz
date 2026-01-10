@@ -3,26 +3,7 @@ import { useRef, useState } from "react";
 import { ChevronDown, Briefcase, Building2 } from "lucide-react";
 
 const allExperiences = [
-  {
-    id: 1,
-    title: "IT Team Member",
-    company: "IEEE RAS Society",
-    period: "2022 - 2023",
-    logo: 'https://zero-limit.vercel.app/_next/image?url=%2Fimages%2Flogo.png&w=256&q=75',
-    description:
-      "A dedicated IT team member at RAS Society, ensuring seamless technology solutions and support for all events.",
-    technologies: ["HTML", "CSS", "Event Management"],
-  },
-  {
-    id: 2,
-    title: "Co-founder",
-    company: "Zero Limit Apparel",
-    period: "2024 - 2025",
-    description:
-      "As a co-founder of Zero Limit Apparel, I contributed to the brand's strategic direction, website and product development, marketing, and overall growth",
-    technologies: ["Next.js", "React", "MongoDB", "Start-up Leadership"],
-    logo: 'https://zero-limit.vercel.app/_next/image?url=%2Fimages%2Flogo.png&w=256&q=75'
-  },
+  
   {
     id: 3,
     title: "Private Tutor",
@@ -31,6 +12,18 @@ const allExperiences = [
     description:
       "Tutored a university student in core CS subjects like Distributed Computing, OS, and DSA—focused on concepts, assignments, projects, and boosting performance with hands-on examples.",
     technologies: ["Operating Systems", "Data Structures", "OOP", "Java"],
+    logo: '/experience/tutor.png'
+  },
+ 
+  {
+    id: 2,
+    title: "Co-founder",
+    company: "Zero Limit Apparel",
+    period: "2024 - 2025",
+    description:
+      "As a co-founder of Zero Limit Apparel, I contributed to the brand's strategic direction, website and product development, marketing, and overall growth",
+    technologies: ["Next.js", "React", "MongoDB", "Start-up Leadership"],
+    logo: '/experience/zero-limit.png'
   },
   {
     id: 4,
@@ -39,8 +32,7 @@ const allExperiences = [
     period: "June, 2025 - August, 2025",
     description: "Developed TaskWise, an AI-powered project management app with RAG, automated task division, team-lead selection, AI-driven reports, and sentiment analysis.",
     technologies: ["RAG", "NLP", "AI Reports", "Sentiment Analysis", "Python"],
-    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQEj7BMECrAt8g/img-crop_100/img-crop_100/0/1719189330023?e=1764806400&v=beta&t=zlttNXl4MppXgxyutBK8MzuvWoMxPyq2tUzGF9r34Ho"
-  },
+    logo: '/experience/blunder-bot.png'},
   {
     id: 5,
     title: "Associate Software Engineer Intern",
@@ -48,7 +40,7 @@ const allExperiences = [
     period: "July, 2025 - November, 2025",
     description: "Worked on scalable software engineering projects applying AI and core CS concepts. Hands-on experience with JavaScript, LLMs, frontend, and backend development.",
     technologies: ["JavaScript", "LLM", "Frontend", "Backend"],
-    logo: "https://www.axtrastudios.com/_next/static/media/axtra-studios-logo.80e67abb.svg"
+    logo: "/experience/axtrastudios.png"
   }
 ];
 
@@ -234,47 +226,9 @@ const ExperienceSection = () => {
             })}
           </div>
 
-          {/* Timeline End Marker */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="absolute left-0 md:left-1/2 -bottom-4 md:-translate-x-1/2"
-          >
-            <div className="w-8 h-8 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-            </div>
-          </motion.div>
         </div>
 
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
-        >
-          {[
-            { value: "3+", label: "Years Experience" },
-            { value: "5+", label: "Companies" },
-            { value: "10+", label: "Technologies" },
-            { value: "∞", label: "Curiosity" },
-          ].map((stat, index) => (
-            <div
-              key={stat.label}
-              className="text-center p-4 rounded-xl bg-muted/30 border border-border/50"
-            >
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
-                {stat.value}
-              </div>
-              <div className="text-xs md:text-sm text-muted-foreground">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+      
       </div>
     </section>
   );

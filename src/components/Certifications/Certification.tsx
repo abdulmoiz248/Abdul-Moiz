@@ -105,43 +105,14 @@ const CertificationsSection = () => {
             <Sparkles className="h-4 w-4 animate-pulse" />
           </div>
           <h2 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-            Certifications & <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent">Wins</span>
+            Certifications 
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Hackathon victories, competition wins, and certifications that mark my journey.
           </p>
         </div>
 
-        {/* Stats Bar */}
-        <div
-          className={`mb-12 flex flex-wrap justify-center gap-4 transition-all duration-700 delay-150 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}
-        >
-          {[
-            { label: 'Total', value: stats.total, icon: Award, gradient: 'from-accent to-primary' },
-            { label: 'Hackathons', value: stats.hackathons, icon: Code, gradient: 'from-accent to-primary' },
-            { label: 'Competitions', value: stats.competitions, icon: Trophy, gradient: 'from-amber-400 to-orange-500' },
-            { label: 'Courses', value: stats.courses, icon: BookOpen, gradient: 'from-blue-400 to-cyan-400' },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="group relative"
-            >
-              <div className={`absolute -inset-0.5 rounded-2xl bg-gradient-to-r ${stat.gradient} opacity-0 blur transition-opacity group-hover:opacity-50`} />
-              <div className="relative flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-sm transition-all hover:border-white/20">
-                <div className={`rounded-lg bg-gradient-to-r ${stat.gradient} p-2`}>
-                  <stat.icon className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground">{stat.label}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
+   
         {/* Filter Tabs */}
         <div
           className={`mb-14 flex justify-center transition-all duration-700 delay-200 ${
@@ -272,12 +243,7 @@ const CertificationsSection = () => {
                           {cert.title}
                         </h3>
 
-                        {cert.project && (
-                          <div className="mb-5 rounded-xl border border-accent/30 bg-accent/10 px-4 py-3">
-                            <p className="text-xs font-medium uppercase tracking-wider text-accent/70">Project Built</p>
-                            <p className="text-lg font-semibold text-accent">{cert.project.name}</p>
-                          </div>
-                        )}
+                      
 
                         {/* Skills */}
                         <div className="flex flex-wrap gap-2">

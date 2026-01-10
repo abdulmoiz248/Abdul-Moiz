@@ -1,4 +1,4 @@
-import { Download, Sparkles, ArrowRight, Palette } from "lucide-react";
+import { Download,  ArrowRight,  Image } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -51,7 +51,7 @@ const CTASection = () => {
                   className="w-full sm:w-auto group/btn"
                   asChild
                 >
-                  <a href="/resume.pdf" download>
+                  <a href="/resume/Abdul Moiz.pdf" download>
                     <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
                     Download Resume
                     <ArrowRight className="w-4 h-4 ml-2 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all" />
@@ -75,13 +75,10 @@ const CTASection = () => {
               {/* Corner Accent */}
               <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-br-full" />
 
-              {/* Floating Sparkles */}
-              <Sparkles className="absolute top-6 right-6 w-6 h-6 text-primary/30 animate-float" />
-              <Sparkles className="absolute bottom-12 left-12 w-4 h-4 text-primary/20 animate-float" style={{ animationDelay: "1s" }} />
-              
+            
               {/* Icon */}
               <div className="relative z-10 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <Palette className="w-8 h-8 text-primary" />
+                <Image className="w-8 h-8 text-primary" />
               </div>
 
               {/* Content */}
@@ -93,15 +90,14 @@ const CTASection = () => {
                   Step into a living archive of experiments, flops, happy accidents, and near misses. 
                   Every "failure" here is proof that trying is where the magic starts.
                 </p>
-
-                <Button
-                 
-                  className="w-full sm:w-auto group/btn border-primary/30 hover:bg-primary/10"
+ <Button
+                
+                  className="w-full sm:w-auto group/btn"
                   asChild
                 >
                   <Link href="/gallery-of-trying">
-                    <Sparkles className="w-5 h-5 mr-2" />
-                    Explore Gallery
+                    <Image className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
+                   Explore the Gallery
                     <ArrowRight className="w-4 h-4 ml-2 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all" />
                   </Link>
                 </Button>

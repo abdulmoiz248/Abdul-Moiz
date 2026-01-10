@@ -9,13 +9,7 @@ import Hero from '@/components/Hero/Hero'
 import Projects from '@/components/Projects/Projects'
 import SkillsMarquee from '@/components/Skills/SkillIcon'
 import React from 'react'
-import { AnimatedSection } from '@/components/AnimatedSection'
-
-import { useState } from 'react'
-import CertificateModal from '@/components/Certifications/CertificateModal'
- 
 import Head from 'next/head';
-import About from '@/components/Hero/About'
 import EducationSection from '@/components/Education/Education'
 import AboutSection from '@/components/About/About'
 import BookCallSection from '@/components/BookCall/BookCall'

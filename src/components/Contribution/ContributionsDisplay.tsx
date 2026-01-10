@@ -1,9 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 import { Github, Code2, Flame, Target, Calendar, Trophy } from 'lucide-react'
+import { LeetCodeIcon } from '../Layouts/Header'
+
+interface GitHubStats {
+  totalContributions: number
+  publicRepos: number
+  followers: number
+}
 
 const DeveloperSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [githubStats, setGithubStats] = useState<GitHubStats | null>(null)
+  const [isLoadingGithub, setIsLoadingGithub] = useState(true)
+
+  const githubUsername = 'abdulmoiz248'
+  const leetcodeUsername = 'abdul248'
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,10 +34,50 @@ const DeveloperSection = () => {
     return () => observer.disconnect()
   }, [])
 
-  // Replace with your actual GitHub username
-  const githubUsername = 'abdulmoiz248'
-  // Replace with your actual LeetCode username
-  const leetcodeUsername = 'abdulmoiz248'
+  useEffect(() => {
+    const fetchGitHubStats = async () => {
+      try {
+        setIsLoadingGithub(true)
+        
+        // Fetch user data from GitHub API
+        const userResponse = await fetch(`https://api.github.com/users/${githubUsername}`)
+        const userData = await userResponse.json()
+        
+        // Fetch contribution data from GitHub GraphQL API
+        const contributionResponse = await fetch('/api/contribution', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username: githubUsername }),
+        })
+        
+        let totalContributions = 0
+        if (contributionResponse.ok) {
+          const contributionData = await contributionResponse.json()
+          totalContributions = contributionData.totalContributions || 0
+        }
+        
+        setGithubStats({
+          totalContributions,
+          publicRepos: userData.public_repos || 0,
+          followers: userData.followers || 0,
+        })
+      } catch (error) {
+        console.error('Error fetching GitHub stats:', error)
+        // Set default values on error
+        setGithubStats({
+          totalContributions: 0,
+          publicRepos: 0,
+          followers: 0,
+        })
+      } finally {
+        setIsLoadingGithub(false)
+      }
+    }
+
+    fetchGitHubStats()
+  }, [githubUsername])
 
   return (
     <section
@@ -66,7 +118,7 @@ const DeveloperSection = () => {
               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
             }`}
           >
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20">
+            <div className="group h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20 flex flex-col">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-gray-700 to-gray-900">
                   <Github className="h-6 w-6 text-white" />
@@ -85,11 +137,17 @@ const DeveloperSection = () => {
               </div>
 
               {/* GitHub Contribution Graph */}
-              <div className="rounded-2xl border border-white/10 bg-background/50 p-4 overflow-hidden">
+              <div className="rounded-2xl border border-white/10 bg-background/50 p-4 overflow-hidden flex-grow">
                 <img
                   src={`https://ghchart.rshah.org/39d353/${githubUsername}`}
-                  alt="GitHub Contribution Graph"
+                  alt="GitHub Contribution Heatmap"
                   className="w-full h-auto"
+                  onError={(e) => {
+                    // Try alternative heatmap service
+                    if (!e.currentTarget.src.includes('ssr-contributions-svg')) {
+                      e.currentTarget.src = `https://ssr-contributions-svg.vercel.app/_/${githubUsername}?chart=calendar&theme=dark&flatten=2`
+                    }
+                  }}
                 />
               </div>
 
@@ -97,12 +155,24 @@ const DeveloperSection = () => {
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
                   <Flame className="mx-auto mb-2 h-5 w-5 text-orange-400" />
-                  <p className="text-xl font-bold text-foreground">300+</p>
+                  <p className="text-xl font-bold text-foreground">
+                    {isLoadingGithub ? (
+                      <span className="animate-pulse">...</span>
+                    ) : (
+                      `${githubStats?.totalContributions || 0}+`
+                    )}
+                  </p>
                   <p className="text-xs text-muted-foreground">Contributions</p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
                   <Calendar className="mx-auto mb-2 h-5 w-5 text-green-400" />
-                  <p className="text-xl font-bold text-foreground">50+</p>
+                  <p className="text-xl font-bold text-foreground">
+                    {isLoadingGithub ? (
+                      <span className="animate-pulse">...</span>
+                    ) : (
+                      `${githubStats?.publicRepos || 0}+`
+                    )}
+                  </p>
                   <p className="text-xs text-muted-foreground">Repositories</p>
                 </div>
               </div>
@@ -126,10 +196,11 @@ const DeveloperSection = () => {
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
             }`}
           >
-            <div className="group rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20">
+            <div className="group h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20 flex flex-col">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-600">
-                  <Target className="h-6 w-6 text-white" />
+               
+                   <LeetCodeIcon className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">LeetCode Stats</h3>
@@ -145,11 +216,14 @@ const DeveloperSection = () => {
               </div>
 
               {/* LeetCode Card */}
-              <div className="rounded-2xl border border-white/10 bg-background/50 p-4 overflow-hidden">
+              <div className="rounded-2xl border border-white/10 bg-background/50 p-4 overflow-hidden flex-grow">
                 <img
-                  src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?theme=dark&font=JetBrains%20Mono&ext=heatmap`}
+                  src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?theme=dark&font=Sora&ext=contest`}
                   alt="LeetCode Stats"
                   className="w-full h-auto rounded-lg"
+                  onError={(e) => {
+                    e.currentTarget.src = `https://leetcode-stats-six.vercel.app/api?username=${leetcodeUsername}&theme=dark`
+                  }}
                 />
               </div>
 

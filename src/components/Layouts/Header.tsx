@@ -79,7 +79,7 @@ function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
-function LeetCodeIcon(props: React.SVGProps<SVGSVGElement>) {
+export function LeetCodeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
