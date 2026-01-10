@@ -4,6 +4,7 @@ import React, { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { User, Github, Linkedin, Twitter, Mail, Instagram, Globe } from "lucide-react";
+import { LeetCodeIcon, WhatsAppIcon } from "../Layouts/Header";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -45,12 +46,12 @@ const SocialBeamSection = () => {
   const portfolioRef = useRef<HTMLDivElement>(null);
 
   const socials = [
-    { ref: githubRef, icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-    { ref: linkedinRef, icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-    { ref: twitterRef, icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
-    { ref: emailRef, icon: Mail, href: "mailto:your@email.com", label: "Email" },
-    { ref: instagramRef, icon: Instagram, href: "https://instagram.com/yourusername", label: "Instagram" },
-    { ref: portfolioRef, icon: Globe, href: "https://yourportfolio.com", label: "Portfolio" },
+    { ref: githubRef, icon: Github, href: "https://github.com/abdulmoiz248", label: "GitHub" },
+    { ref: linkedinRef, icon: Linkedin, href: "https://www.linkedin.com/in/abdul-moiz-170222246/", label: "LinkedIn" },
+    { ref: twitterRef, icon: Twitter, href: "https://leetcode.com/abdul248/", label: "LeetCode" },
+    { ref: emailRef, icon: Mail, href: "mailto:moiz20920@gmail.com", label: "Email" },
+    { ref: instagramRef, icon: Instagram, href: "https://instagram.com/_abdul__moiz_", label: "Instagram" },
+    { ref: portfolioRef, icon: Globe, href:    `https://wa.me/923080485737?text=Hello,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20potential%20opportunity.`, label: "Whatsapp" },
   ];
 
   return (
@@ -73,12 +74,12 @@ const SocialBeamSection = () => {
         {/* Beam Animation Container */}
         <div
           ref={containerRef}
-          className="relative flex h-[400px] md:h-[500px] w-full items-center justify-center"
+          className="relative h-[400px] md:h-[500px] w-full"
         >
           {/* Center User Circle */}
           <Circle
             ref={centerRef}
-            className="size-20 md:size-24 bg-gradient-to-br from-primary to-primary/70 border-primary/50"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 md:size-24 bg-gradient-to-br from-primary to-primary/70 border-primary/50"
           >
             <User className="w-10 h-10 md:w-12 md:h-12 text-primary-foreground" />
           </Circle>
@@ -106,7 +107,7 @@ const SocialBeamSection = () => {
             href={socials[2].href}
             className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2"
           >
-            <Twitter className="w-6 h-6 md:w-7 md:h-7 text-foreground" />
+           <LeetCodeIcon className="w-6 h-6 md:w-7 md:h-7 text-foreground" />
           </Circle>
 
           <Circle
@@ -131,7 +132,7 @@ const SocialBeamSection = () => {
             href={socials[5].href}
             className="absolute bottom-8 right-1/4 translate-x-1/2"
           >
-            <Globe className="w-6 h-6 md:w-7 md:h-7 text-foreground" />
+            <WhatsAppIcon className="w-6 h-6 md:w-7 md:h-7 text-foreground" />
           </Circle>
 
           {/* Animated Beams */}

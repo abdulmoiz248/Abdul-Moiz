@@ -17,22 +17,35 @@ const FooterSection = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate sending message (replace with actual API call)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    setMessage("");
-    setFeedback("Your message has been sent!");
-    setIsSubmitting(false);
-    setTimeout(() => setFeedback(""), 5000);
+    setFeedback("");
+  
+    try {
+      const response = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setMessage("");
+        setFeedback("Your message has been sent!");
+      } else {
+        setFeedback(data.message || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setFeedback("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setFeedback(""), 5000);
+    }
   };
 
-  const socials = [
-    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
-    { icon: Mail, href: "mailto:your@email.com", label: "Email" },
-  ];
+ 
 
   const quickLinks = [
     { label: "About", href: "#about" },
@@ -40,6 +53,8 @@ const FooterSection = () => {
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ];
+
+
 
   return (
     <footer id="contact" className="relative overflow-hidden">
@@ -159,29 +174,7 @@ const FooterSection = () => {
                 </ul>
               </div>
 
-              {/* Social Links */}
-              <div>
-                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-                  Connect With Me
-                </h3>
-                <div className="flex gap-3">
-                  {socials.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative"
-                      aria-label={social.label}
-                    >
-                      <div className="absolute inset-0 bg-primary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300" />
-                      <div className="relative w-12 h-12 rounded-xl bg-card/80 border border-primary/10 flex items-center justify-center group-hover:border-primary/40 group-hover:scale-110 transition-all duration-300">
-                        <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
+          
 
               {/* Back to Top */}
               <div>

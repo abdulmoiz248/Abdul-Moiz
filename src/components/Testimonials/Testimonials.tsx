@@ -131,21 +131,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Bottom Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-1">100%</div>
-            <div className="text-sm text-muted-foreground">Satisfaction</div>
-          </div>
-          <div className="text-center border-x border-primary/10">
-            <div className="text-3xl font-bold text-primary mb-1">5.0</div>
-            <div className="text-sm text-muted-foreground">Avg Rating</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-1">∞</div>
-            <div className="text-sm text-muted-foreground">Dedication</div>
-          </div>
-        </div>
+     
       </div>
     </section>
   );

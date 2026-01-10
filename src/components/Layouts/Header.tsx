@@ -67,7 +67,7 @@ export default function Header() {
   )
 }
 
-function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
+export function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"

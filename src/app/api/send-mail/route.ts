@@ -10,6 +10,37 @@ export async function POST(req:Request) {
       return NextResponse.json({ success: false, message: 'Message cannot be empty.' }, { status: 400 });
     }
 
+    const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+
+    // Send to Discord webhook
+    if (DISCORD_WEBHOOK_URL) {
+      try {
+        const discordPayload = {
+          embeds: [
+            {
+              title: '💬 New Anonymous Message',
+              description: message,
+              color: 0x3b82f6, // Blue color
+              timestamp: new Date().toISOString(),
+              footer: {
+                text: 'Portfolio Anonymous Message',
+              },
+            },
+          ],
+        };
+
+        await fetch(DISCORD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(discordPayload),
+        });
+      } catch (discordError) {
+        console.error('Error sending to Discord:', discordError);
+      }
+    }
+
     // Configure the transporter for Nodemailer
     const transporter = nodemailer.createTransport({
       service: 'Gmail',

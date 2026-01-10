@@ -13,8 +13,9 @@ const stats = [
 const HeroSection = () => {
   const router=useRouter()
   return (
-    <section className="relative min-h-screen bg-black gradient-dark noise-overlay overflow-hidden">
-      {/* Radial glow effect */}
+  <section className="relative min-h-screen bg-black gradient-dark noise-overlay overflow-hidden pt-24 sm:pt-0">
+
+   {/* Radial glow effect */}
       <div className="absolute inset-0 gradient-radial-glow" />
       
       {/* Subtle grid pattern */}
@@ -86,7 +87,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -right-4 sm:-right-8 top-8 bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-4 shadow-2xl animate-float">
+                <div className="hidden sm:block absolute -right-4 sm:-right-8 top-8 bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-4 shadow-2xl animate-float">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                       <Award className="w-5 h-5 text-primary" />
@@ -99,7 +100,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Bottom info card */}
-                <div className="absolute -left-4 sm:-left-8 bottom-12 bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-4 shadow-2xl max-w-[200px]">
+                <div className="hidden sm:block  absolute -left-4 sm:-left-8 bottom-12 bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-4 shadow-2xl max-w-[200px]">
                   <p className="text-xs text-muted-foreground mb-1">Currently Building</p>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-medium text-foreground/70">Healthcare AI Platform</span>
