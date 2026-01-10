@@ -4,16 +4,16 @@ import { Quote, Star, Sparkles } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Chen",
-    role: "Tech Lead @ StartupX",
-    content: "Working with this developer was an absolute game-changer. The attention to detail and technical expertise exceeded all expectations. Our project was delivered ahead of schedule with exceptional quality.",
+    name: "Aliya Haider",
+    role: "Student @ Abu Dhabi University",
+    content: "I have been working with Mr. Abdul Moiz for the past 2y on multiple side projects related to Python, Java, and AI, and i must say that he focuses more on detail, and also has great analytical and problem solving skills. Would be delighted to work with him in the future.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Marcus Johnson",
-    role: "Founder @ DevStudio",
-    content: "Incredible problem-solving skills and a genuine passion for clean code. The communication throughout the project was seamless, and the final product speaks for itself. Highly recommend!",
+    name: "Subhan Shahzad",
+    role: "Co-Founder @ Axtra Studios",
+    content: `Moiz it was too good to have you. You did great work under my supervision, too many requirements and all revisions were handled too perfectly. Thankyou!`,
     rating: 5,
   },
 ];
