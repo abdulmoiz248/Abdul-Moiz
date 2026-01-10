@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Header() {
   return (
-    <div className="w-full fixed z-10 mt-5 mx-1 flex justify-center p-4">
+    <div className="w-full fixed z-50 mt-5 mx-1 flex justify-center p-4">
       <div className="bg-black rounded-full border-white border-2  p-2 flex items-center gap-2">
         <div className="flex items-center gap-2 px-2">
           <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>

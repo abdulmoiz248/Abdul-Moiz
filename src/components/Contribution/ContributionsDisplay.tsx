@@ -153,21 +153,7 @@ const DeveloperSection = () => {
                 />
               </div>
 
-              {/* Problem Stats */}
-              <div className="mt-6 grid grid-cols-3 gap-3">
-                <div className="rounded-xl border border-green-500/20 bg-green-500/10 p-3 text-center">
-                  <p className="text-lg font-bold text-green-400">Easy</p>
-                  <p className="text-xs text-muted-foreground">Solved</p>
-                </div>
-                <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3 text-center">
-                  <p className="text-lg font-bold text-amber-400">Medium</p>
-                  <p className="text-xs text-muted-foreground">Solved</p>
-                </div>
-                <div className="rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-center">
-                  <p className="text-lg font-bold text-red-400">Hard</p>
-                  <p className="text-xs text-muted-foreground">Solved</p>
-                </div>
-              </div>
+             
 
               {/* View Profile Button */}
               <a

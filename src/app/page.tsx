@@ -13,9 +13,7 @@ import { AnimatedSection } from '@/components/AnimatedSection'
 
 import { useState } from 'react'
 import CertificateModal from '@/components/Certifications/CertificateModal'
-
-
-import ProjectModal from '@/components/Projects/ProjectModal'
+ 
 import Head from 'next/head';
 import About from '@/components/Hero/About'
 import EducationSection from '@/components/Education/Education'
