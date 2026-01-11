@@ -19,8 +19,7 @@ export default function Gallery({ items }: { items: Item[] }) {
             className="w-full h-auto transform-gpu transition-all duration-500 ease-out opacity-90 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-[1.02]"
             loading="lazy"
           />
-          <figcaption className="mt-2 text-sm font-mono font-semibold tracking-wide text-center">{item.title}</figcaption>
-        </figure>
+       </figure>
       ))}
     </div>
   )
