@@ -1,6 +1,8 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /.next/
 
 # Host
 Host: https://abdul-moiz-b419.vercel.app/
