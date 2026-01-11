@@ -35,11 +35,11 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="py-24 px-4 relative overflow-hidden bg-background">
       {/* Background Elements */}
-      <div className="absolute inset-0 gradient-dark" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}

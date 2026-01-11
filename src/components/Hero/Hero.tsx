@@ -13,7 +13,9 @@ const stats = [
 const HeroSection = () => {
   const router=useRouter()
   return (
-  <section className="relative min-h-screen bg-black gradient-dark noise-overlay overflow-hidden pt-24 sm:pt-0">
+  <section
+  id="home"
+   className="relative min-h-screen bg-black gradient-dark noise-overlay overflow-hidden pt-24 sm:pt-0">
 
    {/* Radial glow effect */}
       <div className="absolute inset-0 gradient-radial-glow" />

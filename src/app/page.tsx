@@ -2,9 +2,7 @@
 
 import CertificateSection from '@/components/Certifications/Certification'
 import DeveloperSection from '@/components/Contribution/ContributionsDisplay'
-
 import  ExperienceSection  from '@/components/Experience/ExperienceSection'
-import Footer from '@/components/Layouts/Footer'
 import Hero from '@/components/Hero/Hero'
 import Projects from '@/components/Projects/Projects'
 import SkillsMarquee from '@/components/Skills/SkillIcon'
@@ -22,7 +20,7 @@ export default function Page() {
  
  return (
     <>
-     <Head>
+      <Head>
         <title>Abdul Moiz</title>
         <meta name="description" content="Welcome to Abdul Moiz's portfolio. Freelancer, full-stack and AI developer Showcasing projects, skills, and expertise." />
         <meta name="keywords" content="Abdul Moiz, Moiz, developer, programmer, freelancer, Abdul Moiz Iqbal, portfolio" />
@@ -41,35 +39,21 @@ export default function Page() {
         <meta property="twitter:title" content="Abdul Moiz | Developer, Freelancer" />
         <meta property="twitter:description" content="Portfolio of Abdul Moiz: Web  and AI developer, freelancer, and tech enthusiast." />
         <meta property="twitter:image" content="https://abdul-moiz-b419.vercel.app/og-image.jpg" />
-      </Head>
+      </Head>  
 
-      
-
-
-      
-      
-      <Hero />
-      
-     <AboutSection/>
-
-   
-        <DeveloperSection/>
-  
-     
+      <Hero />  
+      <AboutSection/>
+      <ExperienceSection/>
       <SkillsMarquee />
-      
-        <ExperienceSection/>
-      
+      <Projects/>
       <CTASection/>
+      <EducationSection/>
+      <DeveloperSection/>
+      <CertificateSection/>
+      <BookCallSection/>
+      <TestimonialsSection/>
+      <SocialBeamSection/>
      
-        <EducationSection/>
-        <Projects/>
-        <CertificateSection/>
-        <BookCallSection/>
-        <TestimonialsSection/>
-        <SocialBeamSection/>
-     
-      <Footer/>
     </>
   )
 }

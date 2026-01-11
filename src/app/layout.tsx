@@ -3,6 +3,8 @@ import "./globals.css";
 import  Header from "@/components/Layouts/Header";
 import CustomScrollbar from "@/components/Layouts/CustomScrollbar";
 import { Analytics } from "@vercel/analytics/next"
+import FooterSection from "@/components/Layouts/Footer";
+
 export const metadata: Metadata = {
   title: "Abdul Moiz",
   description: "Abdul Moiz's Portfolio",
@@ -24,6 +26,7 @@ export default function RootLayout({
         <CustomScrollbar/>
         <Header/>
         {children}
+        <FooterSection/>
       </body>
     </html>
   );

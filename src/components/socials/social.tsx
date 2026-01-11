@@ -1,3 +1,4 @@
+//@ts-nocheck library file issues
 "use client";
 
 import React, { forwardRef, useRef } from "react";
@@ -55,9 +56,11 @@ const SocialBeamSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section 
+    id="socials"
+    className="py-24 px-4 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 gradient-dark" />
+      <div className="absolute inset-0 bg-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
 
       <div className="max-w-4xl mx-auto relative z-10">

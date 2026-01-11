@@ -1,71 +1,52 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
-import { Home, PenSquare, Github, Linkedin, Mail } from 'lucide-react'
 import Link from "next/link"
+import {
+  Home,
+  User,
+  Briefcase,
+  FolderKanban,
+  Phone,
+  Calendar,
+  Download
+} from "lucide-react"
+
+const navItems = [
+  { href: "#home", label: "Home", icon: Home },
+  { href: "#about", label: "About", icon: User },
+  { href: "#experience", label: "Experience", icon: Briefcase },
+  { href: "#projects", label: "Projects", icon: FolderKanban },
+  { href: "#socials", label: "Connect", icon: Phone },
+  { href: "#call", label: "Book Call", icon: Calendar },
+  { href: "#resume", label: "Resume", icon: Download }
+]
 
 export default function Header() {
   return (
-    <div className="w-full fixed z-50 mt-5 mx-1 flex justify-center p-4">
-      <div className="bg-black rounded-full border-white border-2  p-2 flex items-center gap-2">
-        <div className="flex items-center gap-2 px-2">
-          <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="/">
-              <Home className="h-5 w-5" />
-              <span className="sr-only">Home</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="#contact">
-              <PenSquare className="h-5 w-5" />
-              <span className="sr-only">Edit</span>
-            </Link>
-          </Button>
-        </div>
-        
-        <div className="h-6 w-px  bg-white" aria-hidden="true" />
-        
-        <div className="flex items-center gap-2 px-2">
-          <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="https://github.com/abdulmoiz248" target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="https://www.linkedin.com/in/abdul-moiz-170222246/" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="https://leetcode.com/abdul248/" target="_blank" rel="noopener noreferrer">
-            <LeetCodeIcon className="h-5 w-5" />
-              <span className="sr-only">LeetCode</span>
-            </Link>
-          </Button>
-        </div>
-        
-        <div className="h-6 w-px bg-white" aria-hidden="true" />
-        
-        <div className="flex items-center gap-2 px-2">
-          <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="https://wa.me/+923080485737?text=Hello! i visited your portfolio" target="_blank" rel="noopener noreferrer">
-              <WhatsAppIcon className="h-5 w-5" />
-              <span className="sr-only">WhatsApp</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" className="text-white hover:bg-gray-800" asChild>
-            <Link href="mailto:moiz20920@gmail.com">
-              <Mail className="h-5 w-5" />
-              <span className="sr-only">Email</span>
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </div>
+    <header className="fixed top-0 left-0 w-full z-50 flex justify-center px-4">
+      <nav className="mt-4 bg-black/70 backdrop-blur-xl border border-green-500/20 rounded-2xl px-4 py-3 shadow-xl shadow-green-500/5">
+        <ul className="flex items-center gap-1 sm:gap-2">
+          {navItems.map(({ href, label, icon: Icon }) => (
+            <li key={label}>
+              <Link
+                href={"/" + href}
+                className="group flex items-center gap-2 px-3 py-2 rounded-xl text-muted-foreground hover:text-green-400 hover:bg-green-500/10 transition-all"
+              >
+                <Icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span className="hidden md:inline text-sm font-medium">
+                  {label}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
   )
 }
+
+
+
 
 export function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

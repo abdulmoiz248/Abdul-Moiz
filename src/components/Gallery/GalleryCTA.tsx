@@ -5,9 +5,11 @@ import Link from "next/link";
 
 const CTASection = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section 
+    id="resume"
+    className="py-24 px-4 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 gradient-dark" />
+      <div className="absolute inset-0 bg-background" />
       
       {/* Animated Grid */}
       <div className="absolute inset-0 opacity-20">

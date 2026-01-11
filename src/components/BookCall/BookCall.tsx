@@ -128,7 +128,7 @@ const BookCallSection = () => {
   return (
     <section
       ref={sectionRef}
-      id="book-call"
+      id="call"
       className="relative bg-background py-24 overflow-hidden"
     >
       {/* Background effects */}

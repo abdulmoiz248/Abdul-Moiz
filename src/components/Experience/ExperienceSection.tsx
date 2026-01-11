@@ -63,6 +63,7 @@ const ExperienceSection = () => {
   return (
     <section
       ref={containerRef}
+      id="experience"
       className="relative py-24 md:py-32 overflow-hidden bg-background"
     >
       {/* Subtle background effects */}
