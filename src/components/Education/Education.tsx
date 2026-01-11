@@ -4,7 +4,7 @@ import { events } from '@/data/education'
 
 const EducationSection = () => {
   return (
-    <section id="education" className="relative min-h-screen overflow-x-hidden bg-background py-20">
+    <section id="education" className="relative min-h-screen  bg-background py-20">
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-accent/5 blur-[120px]" />
