@@ -11,6 +11,8 @@ export const projects = [
     githubUrl: "",
     deployedUrl: "https://tasks.go-aion.com/login",
     category: "ai",
+   motivation:"",
+   lessonLearnt:""
   },
   {
     title: "Zero Limit Apparel",

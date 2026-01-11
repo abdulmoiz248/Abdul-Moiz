@@ -22,7 +22,7 @@ const ProjectsPage = () => {
     : projects.filter((p) => p.category === activeCategory)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-20 sm:pt-10">
       {/* Background effects */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-accent/5 blur-[150px]" />
@@ -30,14 +30,7 @@ const ProjectsPage = () => {
       </div>
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4 py-12">
-        {/* Back to Home */}
-        <Link
-          href="/"
-          className="mb-8 inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-accent"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Home
-        </Link>
+      
 
         {/* Header */}
         <div className="mb-12 text-center">
@@ -47,7 +40,7 @@ const ProjectsPage = () => {
           </div>
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
             My{' '}
-            <span className="text-gradient">Portfolio</span>
+            <span className="text-gradient">Projects</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             A complete collection of my work, from AI-powered automation tools to full-stack web applications.

@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-10 sm:pt-20">
       {/* Background effects */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-accent/5 blur-[150px]" />
@@ -33,15 +33,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
 
       <div className="container relative z-10 mx-auto max-w-4xl px-4 py-12">
-        {/* Back Button */}
-        <Link
-          href="/projects"
-          className="mb-8 inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-accent"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Projects
-        </Link>
-
+    
+     
         {/* Project Header */}
         <div className="mb-12">
           <span className="mb-4 inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-accent">
@@ -119,15 +112,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </p>
             </div>
 
-            <div>
-              <h3 className="mb-3 text-lg font-semibold text-accent">Key Features</h3>
-              <ul className="list-inside list-disc space-y-2 text-muted-foreground">
-                <li>Built with modern technologies for optimal performance</li>
-                <li>Clean, intuitive user interface</li>
-                <li>Scalable architecture for future enhancements</li>
-                <li>Comprehensive error handling and edge cases</li>
-              </ul>
-            </div>
 
             <div>
               <h3 className="mb-3 text-lg font-semibold text-accent">Lessons Learned</h3>
