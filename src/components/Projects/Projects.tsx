@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="relative bg-background py-24">
+    <section id="projects" className="relative overflow-x-hidden bg-background py-24">
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute right-0 top-1/4 h-[600px] w-[600px] rounded-full bg-accent/5 blur-[150px]" />

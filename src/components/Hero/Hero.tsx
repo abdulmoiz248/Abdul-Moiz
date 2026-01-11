@@ -15,7 +15,7 @@ const HeroSection = () => {
   return (
   <section
   id="home"
-   className="relative min-h-screen bg-black gradient-dark noise-overlay overflow-hidden pt-24 sm:pt-0">
+   className="relative min-h-screen bg-black gradient-dark noise-overlay overflow-hidden pt-20 sm:pt-10">
 
    {/* Radial glow effect */}
       <div className="absolute inset-0 gradient-radial-glow" />

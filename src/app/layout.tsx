@@ -21,7 +21,7 @@ export default function RootLayout({
      
       <meta name="google-site-verification" content="T6KEfvY5mg61yDcFbDKpQCYP_4-yBhpBp51u4_IQn20" />
       </head>
-      <body className="overflow-x-hidden">
+      <body >
         <Analytics/>
         <CustomScrollbar/>
         <Header/>
