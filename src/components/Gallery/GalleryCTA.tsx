@@ -90,7 +90,7 @@ const CTASection = () => {
                 </h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   Step into a living archive of experiments, flops, happy accidents, and near misses. 
-                  Every "failure" here is proof that trying is where the magic starts.
+                  Every &quot;failure&quot; here is proof that trying is where the magic starts.
                 </p>
  <Button
                 

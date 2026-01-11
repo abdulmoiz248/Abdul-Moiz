@@ -90,6 +90,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
     };
 
     const resizeObserver = new ResizeObserver((entries) => {
+     /* eslint-disable */
       for (let entry of entries) {
         updatePath();
       }

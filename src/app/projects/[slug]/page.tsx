@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react'
+import {  ExternalLink, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { projects } from '@/data/project'
 import Link from 'next/link'

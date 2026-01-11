@@ -1,4 +1,8 @@
-//@ts-nocheck library file issues
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
+// @ts-nocheck
+
+
 "use client";
 
 import React, { forwardRef, useRef } from "react";
@@ -67,10 +71,10 @@ const SocialBeamSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Let's <span className="text-primary">Connect</span>
+            Let&apos;s <span className="text-primary">Connect</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Reach out through any of these platforms — I'm always excited to connect!
+            Reach out through any of these platforms — I&apos;m always excited to connect!
           </p>
         </div>
 
@@ -139,13 +143,17 @@ const SocialBeamSection = () => {
           </Circle>
 
           {/* Animated Beams */}
+         
+
+         { 
+       
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={centerRef}
             toRef={githubRef}
             curvature={-50}
             duration={4}
-          />
+          />}
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={centerRef}

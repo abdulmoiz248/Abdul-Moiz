@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowLeft, Code2, Filter } from 'lucide-react'
+import {  Code2, Filter } from 'lucide-react'
 import { projects } from '@/data/project'
 import Link from 'next/link'
 

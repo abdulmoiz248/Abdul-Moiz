@@ -1,14 +1,8 @@
-import { ArrowRight, Award, Users, Sparkles, Router } from "lucide-react";
+import { ArrowRight, Award} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import expertPortrait from "@/assets/expert-portrait.png";
 import { useRouter } from "next/navigation";
 
 
-const stats = [
-  { icon: Users, value: "20+", label: "Projects" },
-  { icon: Award, value: "5+", label: "Tech Stacks" },
-  { icon: Sparkles, value: "3", label: "AI Models" },
-];
 
 const HeroSection = () => {
   const router=useRouter()

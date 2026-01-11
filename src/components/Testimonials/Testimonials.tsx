@@ -52,7 +52,7 @@ const TestimonialsSection = () => {
             Words That <span className="text-primary">Matter</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Quality over quantity — here's what collaborators have to say
+            Quality over quantity — here&apos;s what collaborators have to say
           </p>
         </div>
 
@@ -83,7 +83,7 @@ const TestimonialsSection = () => {
 
               {/* Quote Text */}
               <blockquote className="text-xl md:text-2xl lg:text-3xl text-foreground font-light leading-relaxed text-center mb-10 max-w-3xl mx-auto">
-                "{testimonials[activeIndex].content}"
+                &quot;{testimonials[activeIndex].content}&quot;
               </blockquote>
 
               {/* Author */}

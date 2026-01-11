@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Github, Code2, Flame, Target, Calendar, Trophy } from 'lucide-react'
+import { Github, Code2, Flame,  Calendar, Trophy } from 'lucide-react'
 import { LeetCodeIcon } from '../Layouts/Header'
 
 interface GitHubStats {
@@ -251,7 +251,7 @@ const DeveloperSection = () => {
         >
           <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-accent/5 via-transparent to-primary/5 p-8 text-center backdrop-blur-sm">
             <p className="text-xl font-medium text-foreground italic">
-              "The only way to learn a new programming language is by writing programs in it."
+              &quot;The only way to learn a new programming language is by writing programs in it.&quot;
             </p>
             <p className="mt-3 text-muted-foreground">— Dennis Ritchie</p>
           </div>

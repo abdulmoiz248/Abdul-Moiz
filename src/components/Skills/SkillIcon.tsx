@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import {  useRef } from 'react'
 import { Code2 } from 'lucide-react'
 
 const slugs = [

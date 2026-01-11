@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Calendar, Clock, Video, ArrowRight, Check, Sparkles, Globe, Mail, MessageSquare } from 'lucide-react'
 import { Calendar as CalendarComponent } from '@/components/ui/calendar'
 import { cn } from '@/lib/utils'
-import { format, addDays, isSameDay, isWeekend } from 'date-fns'
+import { format, addDays,  isWeekend } from 'date-fns'
 
 const timeSlots = [
   '09:00 AM',
@@ -149,14 +149,14 @@ const BookCallSection = () => {
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-5 py-2.5 text-sm font-medium text-accent backdrop-blur-sm">
             <Video className="h-4 w-4" />
-            Let's Connect
+            Let&apos;s Connect
             <Sparkles className="h-4 w-4 animate-pulse" />
           </div>
           <h2 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl">
             Book a <span className="text-gradient">Call</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Have a project in mind? Let's discuss how I can help bring your ideas to life.
+            Have a project in mind? Let&apos;s discuss how I can help bring your ideas to life.
           </p>
         </div>
 
@@ -199,7 +199,7 @@ const BookCallSection = () => {
               </div>
               <h3 className="mb-3 text-2xl font-bold text-foreground">Booking Confirmed!</h3>
               <p className="mb-6 text-muted-foreground">
-                You'll receive a calendar invite at <span className="text-accent">{formData.email}</span>
+                You&apos;ll receive a calendar invite at <span className="text-accent">{formData.email}</span>
               </p>
               <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                 <p className="text-sm text-muted-foreground">

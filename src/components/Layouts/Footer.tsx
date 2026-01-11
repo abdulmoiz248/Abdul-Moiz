@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle, Github, Linkedin, Twitter, Mail, Heart, ArrowUp, MessageSquare } from "lucide-react";
+import { Send, CheckCircle,  Heart, ArrowUp, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const FooterSection = () => {
@@ -97,7 +97,7 @@ const FooterSection = () => {
                 <span className="text-primary">Anonymously</span>
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Your thoughts, unfiltered and untraced. Share what's on your mind — 
+                Your thoughts, unfiltered and untraced. Share what&apos;s on your mind — 
                 feedback, appreciation, or just a random thought.
               </p>
 

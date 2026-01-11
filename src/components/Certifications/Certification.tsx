@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Award, Trophy, BookOpen, Code, Sparkles, ChevronLeft, ChevronRight, Zap } from 'lucide-react'
-import { certificates, Certificate } from '@/data/certificates'
+import { certificates } from '@/data/certificates'
 
 const typeIcons = {
   course: BookOpen,
@@ -57,16 +57,7 @@ const CertificationsSection = () => {
     ? certificates 
     : certificates.filter(c => c.type === filter)
 
-  const stats = {
-    total: certificates.length,
-    hackathons: certificates.filter(c => c.type === 'hackathon').length,
-    competitions: certificates.filter(c => c.type === 'competition').length,
-    courses: certificates.filter(c => c.type === 'course').length,
-  }
-
-  const activeCert = filteredCerts[activeIndex]
-  const Icon = activeCert ? typeIcons[activeCert.type] : Trophy
-
+ 
   const goNext = () => setActiveIndex((prev) => (prev + 1) % filteredCerts.length)
   const goPrev = () => setActiveIndex((prev) => (prev - 1 + filteredCerts.length) % filteredCerts.length)
 
