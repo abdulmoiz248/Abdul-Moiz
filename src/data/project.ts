@@ -75,7 +75,8 @@ export const projects = [
   "fullDescription": "Fynix is a modern finance management platform built with Next.js that lets you track everything at a glance. It covers daily transactions with smart categorization, real-time Pakistan Stock Exchange (PSX) portfolio tracking, mutual fund performance analysis, and automated dividend calculations with tax insights. Fynix also includes invoice management with reminders, budget planning with deep analytics, recurring payment automation, smart notifications for financial events, and complete accounting books including ledgers, journals, balance sheets, and income statements — all in one clean dashboard.",
   "imageUrl": "/projects/fynix.png",
   "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-  "githubUrl": "",
+  "githubUrl": "https://github.com/abdulmoiz248/Fynix",
+  deployedUrl: "https://fynix-seven.vercel.app/",
   "category": "web"
 }
 ,
