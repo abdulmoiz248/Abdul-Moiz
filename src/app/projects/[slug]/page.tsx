@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { projects } from '@/data/project'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>
@@ -12,6 +13,37 @@ export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.title.toLowerCase().replace(/\s+/g, '-'),
   }))
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find(
+    (p) => p.title.toLowerCase().replace(/\s+/g, '-') === slug
+  )
+
+  if (!project) {
+    return {
+      title: 'Project Not Found | Abdul Moiz',
+      description: 'The requested project could not be found.',
+    }
+  }
+
+  return {
+    title: `${project.title} | Abdul Moiz`,
+    description: project.description,
+    keywords: [project.title, project.category, ...project.techStack, 'portfolio', 'project'],
+    openGraph: {
+      title: `${project.title} | Abdul Moiz`,
+      description: project.description,
+      type: 'website',
+      images: [
+        {
+          url: project.imageUrl,
+          alt: project.title,
+        },
+      ],
+    },
+  }
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

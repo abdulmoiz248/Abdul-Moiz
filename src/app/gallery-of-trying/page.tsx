@@ -4,8 +4,14 @@ import Intro from "@/components/museum/intro"
 import Gallery from "@/components/museum/gallery"
 
 export const metadata = {
-  title: "Gallery of Trying",
-  description: "A minimalist, black-and-white digital gallery of experiments, unfinished ideas, and creative misfires.",
+  title: "Gallery of Trying | Abdul Moiz",
+  description: "A minimalist, black-and-white digital gallery of experiments, unfinished ideas, and creative misfires. Explore my creative journey through trials and explorations.",
+  keywords: ['gallery', 'experiments', 'creative work', 'digital art', 'portfolio'],
+  openGraph: {
+    title: 'Gallery of Trying | Abdul Moiz',
+    description: 'A minimalist, black-and-white digital gallery of experiments, unfinished ideas, and creative misfires.',
+    type: 'website',
+  },
 }
 
 export default async function Page() {
