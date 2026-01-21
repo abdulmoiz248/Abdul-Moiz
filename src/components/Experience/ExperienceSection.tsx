@@ -41,6 +41,15 @@ const allExperiences = [
     description: "Worked on scalable software engineering projects applying AI and core CS concepts. Hands-on experience with JavaScript, LLMs, frontend, and backend development.",
     technologies: ["JavaScript", "LLM", "Frontend", "Backend"],
     logo: "/experience/axtrastudios.png"
+  },
+  {
+    id: 6,
+    title: "Associate Software Engineer ",
+    company: "Devsinc",
+    period: "January, 2026 - Present",
+    description: "Contributing to scalable software engineering projects applying AI and core CS concepts. Hands-on experience with  LLMs, frontend, backend and AI/ML.",
+    technologies: ["LLM", "Frontend", "Backend", "AI/ML"],
+    logo: "/experience/devsinc.png"
   }
 ];
 
