@@ -109,5 +109,17 @@ export const certificates: Certificate[] = [
     project: {
       name: "Health Assistant-Hygieia",
     }
+
+  },
+  {
+    id: "10",
+    title: "Softec'26",
+    issuer: "Fast University",
+    date: "17-April-2026",
+    imageUrl: "/cert/softec26.png",
+    skills: ["Speed Programming", "DSA", "Problem Solving"],
+    type: "competition",
+
+
   },
 ]
