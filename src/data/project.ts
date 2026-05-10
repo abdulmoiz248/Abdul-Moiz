@@ -194,7 +194,7 @@ export const projects = [
   "title": "Next Word Prediction",
   "description": "AI-powered next word prediction pipeline",
   "fullDescription": "Next Word Prediction is a machine learning-based application that uses natural language processing to predict the next word in a sequence.",
-  "imageUrl": "/projects/next-word-prediction.png",
+  "imageUrl": "/projects/next-word.png",
   "techStack": ["Python", "Pytorch", "LSTM" ],
   "githubUrl": "https://github.com/abdulmoiz248/Next-Word-Predictor",
   "category": "ml"
