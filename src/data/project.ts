@@ -237,7 +237,7 @@ export const projects = [
   "title": "SubSignal",
   "description": "AI-powered startup idea analyzer that discovers, validates, and ranks the best business ideas from Reddit — delivered straight to Discord.",
   "fullDescription": "SubSignal is an automated AI-driven startup idea analysis system that scans top Reddit communities for fresh ideas, filters the most promising ones using GROQ, and performs deep validation and ranking with Gemini. Every day, it fetches top posts from startup-focused subreddits, intelligently selects the best idea per community, evaluates market potential, feasibility, competitive advantage, and future outlook, then sends beautifully formatted, ranked insights directly to Discord. Designed for founders, indie hackers, and builders who want signal over noise.",
-  "imageUrl": "/subsignal.png",
+  "imageUrl": "/projects/subsignal.png",
   "techStack": ["Python", "GROQ API", "Gemini API", "Reddit API", "Discord Webhooks", "GitHub Actions"],
   "githubUrl": "https://github.com/YOUR_USERNAME/SubSignal",
   "category": "ai"
