@@ -153,6 +153,66 @@ export const projects = [
   "deployedUrl": "https://gpt-wrap.vercel.app/",
   "category": "web"
 },
+ {
+  "title": "Acne Detection",
+  "description": "AI-powered acne detection pipeline",
+  "fullDescription": "Acne Detection is a machine learning-based application that uses computer vision to identify and classify acne lesions in photographs.",
+  "imageUrl": "/projects/acne-detection.png",
+  "techStack": ["Python", "Pytorch", "OpenCV"],
+  "githubUrl": "https://github.com/abdulmoiz248/Acne-Detection",
+  "category": "ml"
+}
+,
+ {
+  "title": "Dental Detection",
+  "description": "AI-powered dental detection pipeline",
+  "fullDescription": "Dental Detection is a machine learning-based application that uses computer vision to identify and classify dental issues in photographs.",
+  "imageUrl": "/projects/dental-detection.png",
+  "techStack": ["Python", "Pytorch", "OpenCV", ],
+  "githubUrl": "https://github.com/abdulmoiz248/Dental-Xray-Detection",
+  "category": "ml"
+},
+ {
+  "title": "Fashion MNIST Classification",
+  "description": "AI-powered fashion image classification pipeline",
+  "fullDescription": "Fashion MNIST Classification is a machine learning-based application that uses deep learning to classify fashion items in the MNIST dataset.",
+  "imageUrl": "/projects/fm.png",
+  "techStack": ["Python", "Pytorch", "OpenCV", ],
+  "githubUrl": "https://github.com/abdulmoiz248/Fashion-Mnist",
+  "category": "ml"
+},
+ {
+  "title": "Question Answering System",
+  "description": "AI-powered question answering pipeline",
+  "fullDescription": "The Question Answering System is a machine learning-based application that uses natural language processing to provide accurate answers to user queries.",
+  "imageUrl": "/projects/qa.png",
+  "techStack": ["Python", "Pytorch", "LSTM" ],
+  "githubUrl": "https://github.com/abdulmoiz248/Question-Answering-System",
+  "category": "ml"
+},
+{
+  "title": "Next Word Prediction",
+  "description": "AI-powered next word prediction pipeline",
+  "fullDescription": "Next Word Prediction is a machine learning-based application that uses natural language processing to predict the next word in a sequence.",
+  "imageUrl": "/projects/next-word-prediction.png",
+  "techStack": ["Python", "Pytorch", "LSTM" ],
+  "githubUrl": "https://github.com/abdulmoiz248/Next-Word-Predictor",
+  "category": "ml"
+},
+
+
+
+
+{
+  "title": "Scenario Lab",
+  "description": "A simulation engine by AI agents",
+  "fullDescription": "Scenario Lab is an AI-driven simulation engine that creates dynamic, interactive scenarios based on user prompts. It create multiple subagents and simulate what will happen to them under certain scenario and give insights about the scenario.",
+  "imageUrl": "/projects/scenario-lab.png",
+  "techStack": ["Python", "Pytorch", "LangChain" ],
+  "githubUrl": "https://github.com/abdulmoiz248/Scenario-Lab",
+  "category": "ai"
+},
+
   {
     title: "Docgent",
     description: "Smart document generator for assignments, reports, and invoices",
@@ -194,6 +254,15 @@ export const projects = [
   githubUrl: "https://github.com/abdulmoiz248/updates-bot",
   deployedUrl: "https://updates-bot.vercel.app/",
   category: "ai"
+},
+{
+  "title": "Customer Churn Prediction",
+  "description": "AI-powered customer churn prediction pipeline",
+  "fullDescription": "Customer Churn Prediction is a machine learning-based application that uses historical data to predict the likelihood of a customer discontinuing their service.",
+  "imageUrl": "/projects/customer-churn.png",
+  "techStack": ["Python", "Pytorch", "NN" ],
+  "githubUrl": "https://github.com/abdulmoiz248/Customer-Churn-Detection",
+  "category": "ml"
 },
 
   {
