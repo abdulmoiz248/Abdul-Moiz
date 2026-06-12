@@ -1,0 +1,6 @@
+https://hygieia-frontend.vercel.app/viewReport?fileUrl=https%3A%2F%2Fhygieia-frontend.vercel.app%2FviewReport%3FfileUrl%3Dhttps%253A%252F%252Fres.cloudinary.com%252Fdpotbrijz%252Fraw%252Fupload%252Fv1777920447%252Fmedical_records%252Fresults%252FPregnancy_Test_%252528Beta_HCG%252529_ddf82fdf-80af-4e04-a7fb-509334aba6a9_1777920446453.pdf&patientName=Abdul%20Moiz
+
+this is the url of sample report if you want to add the screenshot of it 
+then kindly add it
+
+

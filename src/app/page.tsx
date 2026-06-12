@@ -14,6 +14,7 @@ import BookCallSection from '@/components/BookCall/BookCall'
 import TestimonialsSection from '@/components/Testimonials/Testimonials'
 import SocialBeamSection from '@/components/socials/social'
 import CTASection from '@/components/Gallery/GalleryCTA'
+import HygieiaCTA from '@/components/Hygieia/HygieiaCTA'
 
 export default function Page() {
   
@@ -46,6 +47,7 @@ export default function Page() {
       <ExperienceSection/>
       <SkillsMarquee />
       <Projects/>
+      <HygieiaCTA/>
       <CTASection/>
       <EducationSection/>
       <DeveloperSection/>
