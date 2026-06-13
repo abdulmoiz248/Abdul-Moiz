@@ -251,7 +251,7 @@ export default function HygieiaClient() {
               />
               <div>
                 <span className="inline-block text-[10px] sm:text-[11px] font-bold tracking-wider sm:tracking-widest text-primary uppercase bg-primary/10 border border-primary/20 px-2.5 sm:px-3 py-1 rounded-full mb-2">
-                  Final Year Project &bull; Award Class
+                  Final Year Project 2022-26
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mt-1 text-white">
                   Hygieia
