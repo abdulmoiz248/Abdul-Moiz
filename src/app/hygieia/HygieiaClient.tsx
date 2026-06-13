@@ -231,14 +231,7 @@ export default function HygieiaClient() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-24">
-        {/* ── HEADER NAVIGATION ── */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-all duration-300 mb-10 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Portfolio
-        </Link>
+       
 
         {/* ── PROJECT HERO SECTION ── */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
@@ -366,25 +359,6 @@ export default function HygieiaClient() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-            {[
-              { label: 'API Gateway', detail: 'Coordinates CORS, authorization, and route forwarding', port: 'HTTP: 4000' },
-              { label: 'Auth Microservice', detail: 'Local credentials and Google / Fitbit OAuth tokens', port: 'HTTP: 4001' },
-              { label: 'Python Recommendations', detail: 'Acne/dental ML inference and LangGraph chatbot', port: 'HTTP: 4012' },
-              { label: 'Scheduler & Mailer', detail: 'BullMQ queues and SMTP notification dispatch', port: 'Ports: 4009/4010' },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="p-5 rounded-2xl bg-card/30 border border-white/5 text-left flex flex-col justify-between"
-              >
-                <div>
-                  <div className="text-xs font-bold text-primary mb-1">{item.label}</div>
-                  <div className="text-xs text-muted-foreground">{item.detail}</div>
-                </div>
-                <div className="text-[10px] text-white/50 font-mono mt-3 pt-2 border-t border-white/5">{item.port}</div>
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* ── SYSTEM OBJECTIVES ── */}
@@ -568,42 +542,7 @@ export default function HygieiaClient() {
           </div>
         </section>
 
-        {/* ── EVALUATION SUMMARY BLOCK ── */}
-        <section className="max-w-4xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-card/30 p-6 sm:p-8 md:p-12">
-            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-tl-full pointer-events-none" />
-
-            <div className="flex items-start gap-4 sm:gap-5 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
-                <Award className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-1">Final Year Project Evaluation</h3>
-                <p className="text-xs text-muted-foreground">Summary definition for presentation reviewers</p>
-              </div>
-            </div>
-
-            <blockquote className="text-sm text-muted-foreground leading-relaxed border-l-2 border-primary pl-4 italic mb-8">
-              &quot;Hygieia is a modular, microservice-based health portal integrating Next.js client terminals with multi-agent LangGraph chatbot workflows and medical vision models. Operating with separate databases (MongoDB, Supabase, and Redis Caches) and utilizing RabbitMQ message brokers, it ensures high service autonomy, system scalability, and secure data storage.&quot;
-            </blockquote>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="w-full sm:w-auto justify-center" asChild>
-                <Link href="/">
-                  <ArrowLeft className="w-4.5 h-4.5 mr-2" />
-                  Back to Portfolio
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="border-white/10 text-white hover:bg-white/5 w-full sm:w-auto justify-center" asChild>
-                <a href="https://github.com/abdulmoiz248" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4.5 h-4.5 mr-2" />
-                  Developer GitHub
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
+     
       </div>
 
       {/* LIGHTBOX MODAL */}
