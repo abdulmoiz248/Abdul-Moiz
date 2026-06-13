@@ -2,28 +2,17 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import {
-  ArrowLeft,
   ArrowRight,
   X,
   ChevronLeft,
   ChevronRight,
   Github,
-  Server,
-  Database,
-  Cpu,
-  MessageSquare,
-  Layers,
   Maximize2,
   ZoomIn,
   AlertCircle,
-  CheckCircle2,
-  Play,
-  Heart,
-  TrendingUp,
-  Award
+  CheckCircle2
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import {
   hygieiaIntro,
   hygieiaStats,

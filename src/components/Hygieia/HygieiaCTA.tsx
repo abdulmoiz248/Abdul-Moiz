@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Heart, Cpu, Server, Shield, Activity, Sparkles, Bot } from 'lucide-react'
+import { ArrowRight, Heart, Activity, Bot } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { useState, useRef } from 'react'
