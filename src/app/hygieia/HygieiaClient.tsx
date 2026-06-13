@@ -68,7 +68,7 @@ function Lightbox({
   }, [handleKey])
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-2 sm:p-4" onClick={onClose}>
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" />
 
@@ -77,7 +77,7 @@ function Lightbox({
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 md:-top-12 md:right-0 text-white/70 hover:text-white transition-colors z-50 p-2 bg-black/50 md:bg-transparent rounded-full"
+          className="absolute right-3 top-3 z-50 rounded-full bg-black/50 p-2 text-white/70 transition-colors hover:text-white md:-top-12 md:right-0 md:bg-transparent"
           aria-label="Close Lightbox"
         >
           <X className="w-6 h-6 md:w-8 md:h-8" />
@@ -88,7 +88,7 @@ function Lightbox({
           <img
             src={item.img}
             alt={item.label}
-            className="max-w-full h-auto max-h-[75vh] object-contain select-none"
+            className="max-h-[65vh] w-full select-none object-contain sm:max-h-[75vh]"
             loading="eager"
           />
         </div>
@@ -137,11 +137,11 @@ function PosterModal({ src, onClose }: { src: string; onClose: () => void }) {
   }, [])
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl" onClick={onClose}>
-      <button onClick={onClose} className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-white transition-colors z-50 p-2 bg-black/50 rounded-full border border-white/10">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 p-2 backdrop-blur-xl sm:p-4" onClick={onClose}>
+      <button onClick={onClose} className="absolute right-3 top-3 z-50 rounded-full border border-white/10 bg-black/50 p-2 text-white/70 transition-colors hover:text-white md:right-6 md:top-6">
         <X className="w-6 h-6 md:w-8 md:h-8" />
       </button>
-      <div className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-xl border border-white/15" onClick={e => e.stopPropagation()}>
+      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl border border-white/15" onClick={e => e.stopPropagation()}>
         <img src={src} alt="Hygieia FYP Poster" className="w-full h-auto object-contain bg-neutral-950" />
       </div>
     </div>
@@ -214,7 +214,7 @@ export default function HygieiaClient() {
   }
 
   return (
-    <main className="relative min-h-screen bg-background noise-overlay text-foreground">
+    <main className="relative min-h-screen overflow-x-hidden bg-background noise-overlay text-foreground">
       {/* Glow Rings */}
       <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/10 via-emerald-500/5 to-transparent pointer-events-none" />
       <div className="absolute top-[800px] right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
@@ -230,12 +230,12 @@ export default function HygieiaClient() {
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-24">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-28 lg:pt-32">
        
 
         {/* ── PROJECT HERO SECTION ── */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
-          <div className="lg:col-span-8 space-y-6">
+        <section className="mb-16 grid grid-cols-1 items-center gap-10 lg:mb-20 lg:grid-cols-12 lg:gap-12">
+          <div className="space-y-6 lg:col-span-8">
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <img
                 src={hygieiaIntro.logo}
@@ -274,9 +274,9 @@ export default function HygieiaClient() {
             </div>
           </div>
 
-          <div className="lg:col-span-4 flex justify-center w-full">
+          <div className="flex w-full justify-center lg:col-span-4">
             {/* Logo Display Card */}
-            <div className="relative group w-48 sm:w-56 md:w-64 aspect-square rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-br from-card/85 to-card/40 shadow-2xl transition-all duration-500 hover:scale-[1.03] hover:border-primary/40 flex items-center justify-center p-6 sm:p-8">
+            <div className="relative group flex aspect-square w-40 items-center justify-center overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-card/85 to-card/40 p-5 shadow-2xl transition-all duration-500 hover:scale-[1.03] hover:border-primary/40 sm:w-48 sm:p-6 md:w-56 md:p-8 lg:w-64">
               {/* Glowing effects */}
               <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-500" />
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-emerald-500/30 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none" />
@@ -290,7 +290,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── PROJECT SUMMARY (PROBLEM vs SOLUTION) ── */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24 relative">
+        <section className="relative mb-20 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:mb-24">
           <div className="relative group bg-gradient-to-br from-card/80 to-card/30 border border-white/5 rounded-3xl p-6 sm:p-8 hover:border-red-500/20 transition-all duration-500">
             <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full pointer-events-none" />
             <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-6">
@@ -315,7 +315,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── STATISTICS STRIP ── */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        <section className="mb-20 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:mb-24 lg:grid-cols-4">
           {hygieiaStats.map((stat, idx) => (
             <div
               key={idx}
@@ -331,7 +331,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── SYSTEM ARCHITECTURE SECTION ── */}
-        <section className="mb-24">
+        <section className="mb-20 lg:mb-24">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-white">
               System <span className="text-gradient">Architecture</span>
@@ -343,7 +343,7 @@ export default function HygieiaClient() {
 
           <div 
             onClick={() => setArchLightbox(true)}
-            className="group relative rounded-3xl overflow-hidden border border-white/10 bg-black/40 cursor-pointer shadow-2xl hover:border-primary/30 transition-all duration-500"
+            className="group relative mx-auto max-w-4xl cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-2xl transition-all duration-500 hover:border-primary/30"
           >
             <img
               src={systemArchitecture.src}
@@ -362,7 +362,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── SYSTEM OBJECTIVES ── */}
-        <section className="mb-24">
+        <section className="mb-20 lg:mb-24">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-white">
               Project <span className="text-gradient">Objectives</span>
@@ -372,7 +372,7 @@ export default function HygieiaClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {[
               { id: '1', title: 'Visual Disease Detection', text: 'Integrating deep convolutional neural networks to identify dermatological anomalies and classifying dental conditions directly from images.' },
               { id: '2', title: 'Stateful Chatbot Companion', text: 'Formulating LangGraph-driven conversational flows with dynamic databases, fetching patient history context to resolve medical queries.' },
@@ -398,7 +398,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── KEY FEATURES DETAILED ── */}
-        <section className="mb-24">
+        <section className="mb-20 lg:mb-24">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-white">
               Product <span className="text-gradient">Features</span>
@@ -408,7 +408,7 @@ export default function HygieiaClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {hygieiaFeatures.map((feat, idx) => (
               <div
                 key={idx}
@@ -428,7 +428,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── FYP POSTER SECTION ── */}
-        <section className="mb-24">
+        <section className="mb-20 lg:mb-24">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-white">
               Project <span className="text-gradient">Poster</span>
@@ -440,7 +440,7 @@ export default function HygieiaClient() {
 
           <div 
             onClick={() => setPosterOpen(true)}
-            className="group relative rounded-3xl overflow-hidden border border-white/10 bg-black/40 cursor-pointer shadow-2xl hover:border-primary/30 transition-all duration-500 max-w-3xl mx-auto w-full"
+            className="group relative mx-auto w-full max-w-3xl cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-2xl transition-all duration-500 hover:border-primary/30"
           >
             <img
               src={hygieiaIntro.poster}
@@ -464,7 +464,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── TECH STACK MATRIX ── */}
-        <section className="mb-24">
+        <section className="mb-20 lg:mb-24">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-white">
               Technology <span className="text-gradient">Matrix</span>
@@ -474,7 +474,7 @@ export default function HygieiaClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
             {hygieiaTechStack.map((tech, i) => (
               <div
                 key={i}
@@ -491,7 +491,7 @@ export default function HygieiaClient() {
         </section>
 
         {/* ── MASONRY SCREENSHOT GALLERY ── */}
-        <section id="screenshots" className="mb-24 scroll-mt-28">
+        <section id="screenshots" className="mb-20 scroll-mt-28 lg:mb-24">
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-white">
               Platform <span className="text-gradient">Showcase</span>
@@ -502,7 +502,7 @@ export default function HygieiaClient() {
           </div>
 
           {/* TAB HEADERS */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10 px-2">
+          <div className="mb-10 flex flex-nowrap justify-start gap-2 overflow-x-auto px-2 pb-2 sm:flex-wrap sm:justify-center">
             {screenshotCategories.map((tab) => (
               <button
                 key={tab.id}
@@ -520,7 +520,7 @@ export default function HygieiaClient() {
           </div>
 
           {/* GALLERY CONTAINER */}
-          <div className="relative border border-white/5 rounded-3xl p-4 sm:p-6 bg-card/10 overflow-hidden">
+          <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-card/10 p-3 sm:p-6">
             {masonryItems.length > 0 ? (
               <Masonry
                 items={masonryItems}
