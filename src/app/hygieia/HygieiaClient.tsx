@@ -171,11 +171,15 @@ function CountUp({ target }: { target: number }) {
 }
 
 /* ─────────── Main Client Component ─────────── */
+const INITIAL_LOAD = 12
+const LOAD_MORE_COUNT = 12
+
 export default function HygieiaClient() {
   const [activeTab, setActiveTab] = useState('all')
   const [lightbox, setLightbox] = useState<{ items: ScreenshotItem[]; index: number } | null>(null)
   const [archLightbox, setArchLightbox] = useState(false)
   const [posterOpen, setPosterOpen] = useState(false)
+  const [visibleCount, setVisibleCount] = useState(INITIAL_LOAD)
 
   // Filter screenshots based on tab
   const filteredScreenshots = tabFilter(activeTab)
@@ -185,8 +189,17 @@ export default function HygieiaClient() {
     return screenshots.filter((s) => s.category === tabId)
   }
 
+  // Slice to only show visibleCount items
+  const visibleScreenshots = filteredScreenshots.slice(0, visibleCount)
+  const hasMore = visibleCount < filteredScreenshots.length
+
+  function handleTabChange(tabId: string) {
+    setActiveTab(tabId)
+    setVisibleCount(INITIAL_LOAD)
+  }
+
   // Convert custom screenshot item format into React Bits Masonry item format
-  const masonryItems: MasonryItem[] = filteredScreenshots.map((s) => ({
+  const masonryItems: MasonryItem[] = visibleScreenshots.map((s) => ({
     id: s.id,
     img: s.img,
     height: s.height,
@@ -196,9 +209,9 @@ export default function HygieiaClient() {
   }))
 
   const handleMasonryItemClick = (item: MasonryItem) => {
-    const index = filteredScreenshots.findIndex((s) => s.id === item.id)
+    const index = visibleScreenshots.findIndex((s) => s.id === item.id)
     if (index !== -1) {
-      setLightbox({ items: filteredScreenshots, index })
+      setLightbox({ items: visibleScreenshots, index })
     }
   }
 
@@ -495,7 +508,7 @@ export default function HygieiaClient() {
             {screenshotCategories.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabChange(tab.id)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold tracking-wider transition-all duration-300 border ${
                   activeTab === tab.id
                     ? 'bg-primary text-black border-primary shadow-lg shadow-primary/10'
@@ -529,6 +542,26 @@ export default function HygieiaClient() {
               </div>
             )}
           </div>
+
+          {/* Load More Button */}
+          {hasMore && (
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <p className="text-xs text-muted-foreground">
+                Showing {visibleScreenshots.length} of {filteredScreenshots.length} screenshots
+              </p>
+              <button
+                onClick={() => setVisibleCount((prev) => prev + LOAD_MORE_COUNT)}
+                className="group relative px-8 py-3 rounded-2xl bg-card/60 border border-white/10 hover:border-primary/30 text-sm font-semibold text-white transition-all duration-300 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/5"
+              >
+                <span className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-primary transition-transform duration-300 group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                  Load More Screenshots
+                </span>
+              </button>
+            </div>
+          )}
         </section>
 
      
